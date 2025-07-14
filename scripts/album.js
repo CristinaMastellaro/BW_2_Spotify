@@ -47,9 +47,9 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/album/75621062")
         explicit = `<p><i class="fab fa-etsy"></i> ${song.artist.name}</p>`;
       }
 
-      document.getElementsByTagName(
-        "section"
-      )[0].innerHTML += `<div class="infoSong d-flex justify-content-between">
+      document.getElementById(
+        "containerSongs"
+      ).innerHTML += `<div class="infoSong d-flex justify-content-between">
           <div class="song d-flex flex-column">
             <h5 class="text-light">${song.title}</h5>
             ${explicit}
