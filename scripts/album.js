@@ -42,7 +42,7 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/album/75621062")
     // Info singole canzoni
     dataAlbum.tracks.data.forEach((song) => {
       // Aggiungere o meno il disclaimer per canzoni esplicite
-      let explicit = `<p> ${song.artist.name}</p>`;
+      let explicit = `<p class="text-light"> ${song.artist.name}</p>`;
       if (song.explicit_lyrics) {
         explicit = `<p><i class="fab fa-etsy"></i> ${song.artist.name}</p>`;
       }
@@ -51,11 +51,11 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/album/75621062")
         "section"
       )[0].innerHTML += `<div class="infoSong d-flex justify-content-between">
           <div class="song d-flex flex-column">
-            <h5>${song.title}</h5>
+            <h5 class="text-light">${song.title}</h5>
             ${explicit}
           </div>
           <!--nome singolo e artista-->
-          <div class="point"><i class="fas fa-ellipsis-v"></i></div>
+          <div class="point"><i class="bi bi-three-dots-vertical text-white"></i></div>
         </div>`;
     });
   })
