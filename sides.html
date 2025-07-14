@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pinguini Tattici Nucleari - Spotify</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="assets/css/circular-font.css" />
+    <link rel="stylesheet" href="assets/css/artist.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <style>
+      small {
+        color: text-dark-emphasis;
+      }
+
+      #navSection {
+        width: 20%;
+        padding-left: 0.5em;
+        top: 10px;
+      }
+
+      #content {
+        width: 55%;
+        /* margin-left: auto;
+        margin-right: auto; */
+        /* position: sticky;
+        top: 10px;
+        left: 20%;
+        right: 20%; */
+      }
+
+      #friendSection {
+        width: 20%;
+        top: 10px;
+        position: fixed;
+        right: 0;
+        height: 100%;
+        padding-right: 1em;
+      }
+
+      #friendSection img {
+        width: 20px;
+        height: 20px;
+        border-radius: 20px;
+      }
+    </style>
+  </head>
+  <body class="bg-black text-white">
+    <!-- Header con immagine artista -->
+
+    <!-- Aggiungiamo le due barre laterali -->
+    <!-- <main class="container my-4"> -->
+    <main class="my-4 position-relative d-flex">
+      <!-- <div class="row row-cols-1 row-cols-md-3"> -->
+      <!-- Questa sarà la parte sinistra -->
+      <!-- <div class="col col-md-2 d-none d-md-block border border-light"> -->
+      <section class="position-sticky left-0 d-none d-lg-block" id="navSection">
+        <div id="hideLeftNav">
+          <i class="bi bi-three-dots"></i>
+        </div>
+        <nav class="bottom-nav d-flex flex-column mb-3">
+          <a
+            href="homepage.html"
+            class="nav-item d-flex flex-fill align-items-center py-2 text-decoration-none text-muted"
+          >
+            <div><i class="me-3 bi bi-house-door"></i></div>
+            <small class="fw-bold">Home</small>
+          </a>
+          <a
+            href="#"
+            class="nav-item d-flex flex-fill align-items-center py-2 text-decoration-none text-muted"
+          >
+            <div><i class="me-3 bi bi-search"></i></div>
+            <small class="fw-bold">Cerca</small>
+          </a>
+          <a
+            href="#"
+            class="nav-item d-flex flex-fill align-items-center py-2 text-decoration-none text-muted"
+          >
+            <div><i class="me-3 bi bi-collection"></i></div>
+            <small class="fw-bold">La tua libreria</small>
+          </a>
+        </nav>
+        <div class="mb-3">
+          <nav class="bottom-nav d-flex flex-column">
+            <a
+              href="homepage.html"
+              class="nav-item d-flex flex-fill align-items-center py-2 text-decoration-none text-muted"
+            >
+              <div><i class="me-3 bi bi-house-door"></i></div>
+              <small class="fw-bold">Crea playlist</small>
+            </a>
+            <a
+              href="#"
+              class="nav-item d-flex flex-fill align-items-center py-2 text-decoration-none text-muted"
+            >
+              <div><i class="me-3 bi bi-search"></i></div>
+              <small class="fw-bold">Brani che ti piacciono</small>
+            </a>
+            <a
+              href="#"
+              class="nav-item d-flex flex-fill align-items-center py-2 text-decoration-none text-muted"
+            >
+              <div><i class="me-3 bi bi-collection"></i></div>
+              <small class="fw-bold">I tuoi episodi</small>
+            </a>
+          </nav>
+        </div>
+        <div
+          id="searchChronology"
+          class="d-flex flex-column ps-2"
+          data-bs-spy="scroll"
+        >
+          <p>
+            <a href="#" class="text-decoration-none text-dark-emphasis"
+              ><small>early stage emily</small></a
+            >
+          </p>
+          <p>
+            <a href="#" class="text-decoration-none text-dark-emphasis"
+              ><small>Be the young</small></a
+            >
+          </p>
+          <p>
+            <a href="#" class="text-decoration-none text-dark-emphasis"
+              ><small>that's fucking mood</small></a
+            >
+          </p>
+          <p>
+            <a href="#" class="text-decoration-none text-dark-emphasis"
+              ><small>2021 lol</small></a
+            >
+          </p>
+          <p>
+            <a href="#" class="text-decoration-none text-dark-emphasis"
+              ><small>2021 lol</small></a
+            >
+          </p>
+          <p>
+            <a href="#" class="text-decoration-none text-dark-emphasis"
+              ><small>2021 lol</small></a
+            >
+          </p>
+          <p>
+            <a href="#" class="text-decoration-none text-dark-emphasis"
+              ><small>2021 lol</small></a
+            >
+          </p>
+          <p>
+            <a href="#" class="text-decoration-none text-dark-emphasis"
+              ><small>2021 lol</small></a
+            >
+          </p>
+          <p>
+            <a href="#" class="text-decoration-none text-dark-emphasis"
+              ><small>2021 lol</small></a
+            >
+          </p>
+          <p>
+            <a href="#" class="text-decoration-none text-dark-emphasis"
+              ><small>2021 lol</small></a
+            >
+          </p>
+          <p>
+            <a href="#" class="text-decoration-none text-dark-emphasis"
+              ><small>2021 lol</small></a
+            >
+          </p>
+          <p>
+            <a href="#" class="text-decoration-none text-dark-emphasis"
+              ><small>2021 lol</small></a
+            >
+          </p>
+        </div>
+        <!-- </div> -->
+      </section>
+      <!--  Qui andranno inseriti i contenuti delle pagine -->
+      <!-- <div class="col col-md-8 border border-light"></div> -->
+      <section id="content" class="bg-dark"></section>
+      <!-- Questa sarà la parte destra -->
+      <section id="friendSection" class="d-none d-lg-block">
+        <div class="my-2 d-flex justify-content-between">
+          <small class="fw-bold">Attività amici</small>
+          <div>
+            <i class="bi bi-person-add text-light-emphasis"></i>
+            <i class="bi bi-x-lg text-light-emphasis"></i>
+          </div>
+        </div>
+        <div>
+          <!-- Gli amici -->
+          <div class="d-flex justify-content-between">
+            <img
+              src="https://app.pemb.io/img/fake_user_avatar.c6a57028.png"
+              alt=""
+              class="me-1"
+            />
+            <div class="d-flex flex-column">
+              <small class="fw-bold text-dark-emphasis">Charlie Hookham</small>
+              <small class="text-dark-emphasis">In camera ◦ Yumi Zouma</small>
+              <small class="text-dark-emphasis"
+                ><i class="bi bi-disc text-light me-1"></i>EP III</small
+              >
+            </div>
+            <p class="mx-0"><small class="text-dark-emphasis">4 h</small></p>
+          </div>
+          <!-- </div> -->
+        </div>
+      </section>
+    </main>
+    <!-- Player musicale -->
+    <footer
+      class="player-footer position-fixed bottom-0 start-0 w-100 bg-dark border-top"
+    >
+      <div
+        class="current-playing px-3 py-2 d-flex align-items-center justify-content-between"
+      >
+        <div class="d-flex align-items-center flex-grow-1">
+          <div
+            class="now-playing-cover me-3 bg-secondary d-flex align-items-center justify-content-center"
+          >
+            <i class="bi bi-music-note text-muted"></i>
+          </div>
+          <div class="flex-grow-1">
+            <div class="now-playing-title text-truncate">
+              Supernatural Parody by The Hillywood Show
+            </div>
+          </div>
+        </div>
+        <div class="d-flex align-items-center gap-3">
+          <button class="btn btn-link text-white p-0">
+            <i class="bi bi-laptop"></i>
+          </button>
+          <button class="btn btn-link text-white p-0">
+            <i class="bi bi-heart"></i>
+          </button>
+          <button class="btn btn-link text-white p-0">
+            <i class="bi bi-play-fill fs-4"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Navigazione -->
+      <nav class="bottom-nav d-flex d-lg-none">
+        <a
+          href="homepage.html"
+          class="nav-item text-center flex-fill py-2 text-decoration-none text-muted"
+        >
+          <div><i class="bi bi-house-door"></i></div>
+          <small>Home</small>
+        </a>
+        <a
+          href="#"
+          class="nav-item text-center flex-fill py-2 text-decoration-none text-muted"
+        >
+          <div><i class="bi bi-search"></i></div>
+          <small>Cerca</small>
+        </a>
+        <a
+          href="#"
+          class="nav-item text-center flex-fill py-2 text-decoration-none text-muted"
+        >
+          <div><i class="bi bi-collection"></i></div>
+          <small>La tua libreria</small>
+        </a>
+      </nav>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+    <script src="scripts/artist.js"></script>
+    <script src="./scripts/album.js"></script>
+  </body>
+</html>
