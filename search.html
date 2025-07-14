@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cerca - Spotify</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="assets/css/circular-font.css" />
+    <link rel="stylesheet" href="assets/css/search.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    />
+  </head>
+  <body class="bg-dark text-white">
+    
+    <!-- Sidebar Desktop -->
+    <aside class="sidebar d-none d-md-flex flex-column position-fixed">
+      <div class="sidebar-header p-3">
+        <img src="assets/imgs/logo.svg" alt="Spotify" class="spotify-logo mb-4">
+      </div>
+      
+      <nav class="sidebar-nav flex-grow-1 px-3">
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2">
+            <a href="homepage2.html" class="nav-link d-flex align-items-center text-decoration-none text-muted">
+              <i class="bi bi-house-door me-3"></i>
+              <span class="sidebar-text">Home</span>
+            </a>
+          </li>
+          <li class="nav-item mb-2">
+            <a href="search.html" class="nav-link d-flex align-items-center text-decoration-none text-white active">
+              <i class="bi bi-search me-3"></i>
+              <span class="sidebar-text">Cerca</span>
+            </a>
+          </li>
+          <li class="nav-item mb-4">
+            <a href="artist.html" class="nav-link d-flex align-items-center text-decoration-none text-muted">
+              <i class="bi bi-collection me-3"></i>
+              <span class="sidebar-text">La tua libreria</span>
+            </a>
+          </li>
+          <li class="nav-item mb-2">
+            <a href="#" class="nav-link d-flex align-items-center text-decoration-none text-muted">
+              <i class="bi bi-plus-square me-3"></i>
+              <span class="sidebar-text">Crea playlist</span>
+            </a>
+          </li>
+          <li class="nav-item mb-2">
+            <a href="album.html" class="nav-link d-flex align-items-center text-decoration-none text-muted">
+              <i class="bi bi-heart-fill me-3"></i>
+              <span class="sidebar-text">Brani che ti piacciono</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link d-flex align-items-center text-decoration-none text-muted">
+              <i class="bi bi-collection me-3"></i>
+              <span class="sidebar-text">I tuoi episodi</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Contenuto principale -->
+    <main class="main-content">
+      <div class="container-fluid">
+        
+        <!-- Header con titolo e barra di ricerca -->
+        <div class="search-header">
+          <h1 class="page-title">Cerca</h1>
+          
+          <!-- Barra di ricerca -->
+          <div class="search-container">
+            <div class="search-input-wrapper">
+              <i class="bi bi-search search-icon"></i>
+              <input 
+                type="text" 
+                class="search-input" 
+                placeholder="Cosa vuoi ascoltare?"
+                aria-label="Cerca"
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Sezione Sfoglia tutto -->
+        <section class="browse-all-section">
+          <h2 class="section-title">Sfoglia tutto</h2>
+          
+          <div class="browse-grid">
+            <!-- Podcast -->
+            <div class="browse-card" style="background: linear-gradient(135deg, #e1118c 0%, #f34435 100%);">
+              <h3 class="browse-title">Podcast</h3>
+              <div class="browse-image">
+                <img src="assets/imgs/search/image-1.jpeg" alt="Podcast" class="browse-img">
+              </div>
+            </div>
+            
+            <!-- Create per te -->
+            <div class="browse-card" style="background: linear-gradient(135deg, #8400e7 0%, #3f5efb 100%);">
+              <h3 class="browse-title">Create per te</h3>
+              <div class="browse-image">
+                <img src="assets/imgs/search/image-2.jpg" alt="Create per te" class="browse-img">
+              </div>
+            </div>
+            
+            <!-- Nuove uscite -->
+            <div class="browse-card" style="background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 100%);">
+              <h3 class="browse-title">Nuove uscite</h3>
+              <div class="browse-image">
+                <img src="assets/imgs/search/image-3.jpg" alt="Nuove uscite" class="browse-img">
+              </div>
+            </div>
+            
+            <!-- Pop -->
+            <div class="browse-card" style="background: linear-gradient(135deg, #56ab2f 0%, #a8e6cf 100%);">
+              <h3 class="browse-title">Pop</h3>
+              <div class="browse-image">
+                <img src="assets/imgs/search/image-4.jpg" alt="Pop" class="browse-img">
+              </div>
+            </div>
+            
+            <!-- Hip Hop -->
+            <div class="browse-card" style="background: linear-gradient(135deg, #ff9a56 0%, #ff6a88 100%);">
+              <h3 class="browse-title">Hip Hop</h3>
+              <div class="browse-image">
+                <img src="assets/imgs/search/image-5.jpg" alt="Hip Hop" class="browse-img">
+              </div>
+            </div>
+            
+            <!-- Dance/Elettronica -->
+            <div class="browse-card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+              <h3 class="browse-title">Dance/<br/>Elettronica</h3>
+              <div class="browse-image">
+                <img src="assets/imgs/search/image-6.jpg" alt="Dance/Elettronica" class="browse-img">
+              </div>
+            </div>
+            
+            <!-- Latina -->
+            <div class="browse-card" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+              <h3 class="browse-title">Latina</h3>
+              <div class="browse-image">
+                <img src="assets/imgs/search/image-7.jpg" alt="Latina" class="browse-img">
+              </div>
+            </div>
+            
+            <!-- Classifiche -->
+            <div class="browse-card" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+              <h3 class="browse-title">Classifiche</h3>
+              <div class="browse-image">
+                <img src="assets/imgs/search/image-8.jpg" alt="Classifiche" class="browse-img">
+              </div>
+            </div>
+            
+            <!-- Rock -->
+            <div class="browse-card" style="background: linear-gradient(135deg, #ff4757 0%, #2f3542 100%);">
+              <h3 class="browse-title">Rock</h3>
+              <div class="browse-image">
+                <img src="assets/imgs/search/image-9.jpg" alt="Rock" class="browse-img">
+              </div>
+            </div>
+            
+            <!-- Jazz -->
+            <div class="browse-card" style="background: linear-gradient(135deg, #ffa726 0%, #8d4004 100%);">
+              <h3 class="browse-title">Jazz</h3>
+              <div class="browse-image">
+                <img src="assets/imgs/search/image-10.jpg" alt="Jazz" class="browse-img">
+              </div>
+            </div>
+            
+            <!-- Indie -->
+            <div class="browse-card" style="background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);">
+              <h3 class="browse-title">Indie</h3>
+              <div class="browse-image">
+                <img src="assets/imgs/search/image-11.jpg" alt="Indie" class="browse-img">
+              </div>
+            </div>
+            
+            <!-- R&B -->
+            <div class="browse-card" style="background: linear-gradient(135deg, #fd79a8 0%, #6c5ce7 100%);">
+              <h3 class="browse-title">R&B</h3>
+              <div class="browse-image">
+                <img src="assets/imgs/search/image-12.jpg" alt="R&B" class="browse-img">
+              </div>
+            </div>
+            
+            <!-- Country -->
+            <div class="browse-card" style="background: linear-gradient(135deg, #fdcb6e 0%, #e17055 100%);">
+              <h3 class="browse-title">Country</h3>
+              <div class="browse-image">
+                <img src="assets/imgs/search/image-13.jpeg" alt="Country" class="browse-img">
+              </div>
+            </div>
+            
+            <!-- Reggae -->
+            <div class="browse-card" style="background: linear-gradient(135deg, #55a3ff 0%, #003d82 100%);">
+              <h3 class="browse-title">Reggae</h3>
+              <div class="browse-image">
+                <img src="assets/imgs/search/image-14.jpg" alt="Reggae" class="browse-img">
+              </div>
+            </div>
+            
+            <!-- Alternative -->
+            <div class="browse-card" style="background: linear-gradient(135deg, #a29bfe 0%, #fd79a8 100%);">
+              <h3 class="browse-title">Alternative</h3>
+              <div class="browse-image">
+                <img src="assets/imgs/search/image-15.jpg" alt="Alternative" class="browse-img">
+              </div>
+            </div>
+            
+            <!-- Blues -->
+            <div class="browse-card" style="background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);">
+              <h3 class="browse-title">Blues</h3>
+              <div class="browse-image">
+                <img src="assets/imgs/search/image-16.jpg" alt="Blues" class="browse-img">
+              </div>
+            </div>
+            
+            <!-- Funk -->
+            <div class="browse-card" style="background: linear-gradient(135deg, #fd79a8 0%, #fdcb6e 100%);">
+              <h3 class="browse-title">Funk</h3>
+              <div class="browse-image">
+                <img src="assets/imgs/search/image-17.jpg" alt="Funk" class="browse-img">
+              </div>
+            </div>
+            
+            <!-- Classica -->
+            <div class="browse-card" style="background: linear-gradient(135deg, #636e72 0%, #2d3436 100%);">
+              <h3 class="browse-title">Classica</h3>
+              <div class="browse-image">
+                <img src="assets/imgs/search/image-18.jpg" alt="Classica" class="browse-img">
+              </div>
+            </div>
+            
+            <!-- Folk -->
+            <div class="browse-card" style="background: linear-gradient(135deg, #00b894 0%, #55a3ff 100%);">
+              <h3 class="browse-title">Folk</h3>
+              <div class="browse-image">
+                <img src="assets/imgs/search/image-19.jpg" alt="Folk" class="browse-img">
+              </div>
+            </div>
+            
+            <!-- Ambient -->
+            <div class="browse-card" style="background: linear-gradient(135deg, #fab1a0 0%, #e17055 100%);">
+              <h3 class="browse-title">Ambient</h3>
+              <div class="browse-image">
+                <img src="assets/imgs/search/image-20.jpg" alt="Ambient" class="browse-img">
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Player musicale -->
+    <footer class="player-footer position-fixed start-0 w-100 bg-dark border-top">
+      <div class="current-playing px-3 py-2 d-flex align-items-center justify-content-between">
+        <div class="d-flex align-items-center flex-grow-1">
+          <div class="now-playing-cover me-3 bg-secondary d-flex align-items-center justify-content-center">
+            <i class="bi bi-music-note text-muted"></i>
+          </div>
+          <div class="flex-grow-1">
+            <div class="now-playing-title text-truncate">
+              rnatural Parody by The Hillywood Show
+            </div>
+          </div>
+        </div>
+        <div class="d-flex align-items-center gap-3">
+          <button class="btn btn-link text-white p-0">
+            <i class="bi bi-laptop"></i>
+          </button>
+          <button class="btn btn-link text-white p-0">
+            <i class="bi bi-heart"></i>
+          </button>
+          <button class="btn btn-link text-white p-0">
+            <i class="bi bi-play-fill fs-4"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Navigazione -->
+      <nav class="bottom-nav d-flex">
+        <a href="homepage2.html" class="nav-item text-center flex-fill py-2 text-decoration-none text-muted">
+          <div><i class="bi bi-house-door-fill"></i></div>
+          <small>Home</small>
+        </a>
+        <a href="search.html" class="nav-item text-center flex-fill py-2 text-decoration-none text-white">
+          <div><i class="bi bi-search"></i></div>
+          <small>Cerca</small>
+        </a>
+        <a href="libreria.html" class="nav-item text-center flex-fill py-2 text-decoration-none text-muted">
+          <div><i class="bi bi-list"></i></div>
+          <small>La tua libreria</small>
+        </a>
+      </nav>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLlGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+    <script src="scripts/search.js"></script>
+  </body>
+</html> 
