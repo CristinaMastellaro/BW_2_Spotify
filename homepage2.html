@@ -1,26 +1,136 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Bootstrap demo</title>
+    <title>Pinguini Tattici Nucleari - Spotify</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
       crossorigin="anonymous"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
-    />
+    <link rel="stylesheet" href="assets/css/circular-font.css" />
+    <link rel="stylesheet" href="assets/css/artist.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
   </head>
+  <body class="bg-dark text-white">
+    
+    <!-- Header con immagine artista -->
+    <header class="position-relative">
+      <div class="hero-section position-relative">
+        <div class="position-absolute top-0 start-0 p-3">
+          <button class="btn btn-link text-white p-0" onclick="history.back()">
+            <i class="bi bi-arrow-left fs-4"></i>
+          </button>
+        </div>
+        <div class="hero-gradient"></div>
+      </div>
+      
+      <!-- Informazioni artista -->
+      <div class="artist-info px-3 pb-3">
+        <h1 class="artist-name mb-1">Caricamento...</h1>
+        <p class="text-muted mb-3">Caricamento dati...</p>
+        
+        <!-- Pulsanti azioni -->
+        <div class="d-flex align-items-center justify-content-between">
+          <button class="btn btn-outline-light btn-sm rounded-pill px-3">
+            <i class="bi bi-check me-1"></i>Seguiti
+          </button>
+          <div class="d-flex align-items-center gap-3">
+            <button class="btn btn-link text-white p-0">
+              <i class="bi bi-three-dots fs-5"></i>
+            </button>
+            <button class="btn btn-link text-white p-0">
+              <i class="bi bi-shuffle fs-5"></i>
+            </button>
+            <button class="btn btn-success rounded-circle d-flex align-items-center justify-content-center play-btn">
+              <i class="bi bi-play-fill fs-4"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
 
-  <body>
+    <!-- Contenuto principale -->
+    <main class="px-3">
+      
+      <!-- Sezione "Brani che ti piacciono" -->
+      <div class="liked-songs mb-4">
+        <div class="d-flex align-items-center">
+          <div class="position-relative me-3">
+            <div class="liked-cover bg-success d-flex align-items-center justify-content-center">
+              <i class="bi bi-heart-fill text-white"></i>
+            </div>
+          </div>
+          <div>
+            <h6 class="mb-0">Brani che ti piacciono</h6>
+            <small class="text-muted">8 brani di Pinguini Tattici Nucleari</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sezione Popolari -->
+      <div class="popular-section">
+        <h5 class="mb-3">Popolari</h5>
+        
+        <div class="song-list">
+          <div class="text-center text-muted py-4">
+            <i class="bi bi-music-note-list fs-1 mb-2 d-block"></i>
+            <p>Caricamento brani popolari...</p>
+          </div>
+        </div>
+      </div>
+      
+    </main>
+
+    <!-- Player musicale -->
+    <footer class="player-footer position-fixed bottom-0 start-0 w-100 bg-dark border-top">
+      <div class="current-playing px-3 py-2 d-flex align-items-center justify-content-between">
+        <div class="d-flex align-items-center flex-grow-1">
+          <div class="now-playing-cover me-3 bg-secondary d-flex align-items-center justify-content-center">
+            <i class="bi bi-music-note text-muted"></i>
+          </div>
+          <div class="flex-grow-1">
+            <div class="now-playing-title text-truncate">Supernatural Parody by The Hillywood Show</div>
+          </div>
+        </div>
+        <div class="d-flex align-items-center gap-3">
+          <button class="btn btn-link text-white p-0">
+            <i class="bi bi-laptop"></i>
+          </button>
+          <button class="btn btn-link text-white p-0">
+            <i class="bi bi-heart"></i>
+          </button>
+          <button class="btn btn-link text-white p-0">
+            <i class="bi bi-play-fill fs-4"></i>
+          </button>
+        </div>
+      </div>
+      
+      <!-- Navigazione -->
+      <nav class="bottom-nav d-flex">
+        <a href="homepage.html" class="nav-item text-center flex-fill py-2 text-decoration-none text-muted">
+          <div><i class="bi bi-house-door"></i></div>
+          <small>Home</small>
+        </a>
+        <a href="#" class="nav-item text-center flex-fill py-2 text-decoration-none text-muted">
+          <div><i class="bi bi-search"></i></div>
+          <small>Cerca</small>
+        </a>
+        <a href="#" class="nav-item text-center flex-fill py-2 text-decoration-none text-muted">
+          <div><i class="bi bi-collection"></i></div>
+          <small>La tua libreria</small>
+        </a>
+      </nav>
+    </footer>
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
       crossorigin="anonymous"
     ></script>
+    <script src="scripts/artist.js"></script>
   </body>
 </html>
+
