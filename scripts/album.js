@@ -1,0 +1,61 @@
+const queryParams = new URLSearchParams(location.search);
+console.log("queryParams", queryParams);
+// const idAlbum = queryParams.split("/")[1];
+// const idAlbum = queryParams.split("/")[1];
+
+const endpoint = `https://striveschool-api.herokuapp.com/api/deezer/album/${idAlbum}`;
+
+// fetch(endpoint)
+fetch("https://striveschool-api.herokuapp.com/api/deezer/album/129682632")
+  .then((res) => {
+    console.log("Sto caricando");
+    if (res.ok) {
+      return res.json();
+    } else {
+      throw new Error("Non siamo riusciti a recuperare il json");
+    }
+  })
+  .then((dataAlbum) => {
+    // Inseriamo le varie cose
+
+    // Cover dell'album
+    document
+      .getElementsByClassName("card-img-top")[0]
+      .setAttribute("src", dataAlbum.cover_small);
+
+    // Informazioni dell'album
+    // Titolo album
+    document.getElementsByClassName("card-title")[0].innerText =
+      dataAlbum.title;
+
+    // Immagine dell'artista
+    document
+      .querySelector("h6.card-text img")
+      .setAttribute("src", dataAlbum.artist.picture_small);
+    // Nome dell'artista
+    document.querySelector("h6.card-text").innerText = dataAlbum.artist.name;
+    // Anno di rilascio dell'album
+    document.querySelector("p.card-text").innerText +=
+      dataAlbum.releaseData.split("-")[0];
+
+    // Info singole canzoni
+    dataAlbum.tracks.data.forEach((song) => {
+      // Aggiungere o meno il disclaimer per canzoni esplicite
+      let explicit = `<p> ${song.artist.name}</p>`;
+      if (song.explicit_lyrics) {
+        explicit = `<p><i class="fab fa-etsy"></i> ${song.artist.name}</p>`;
+      }
+
+      document.getElementsByClassName(
+        "section"
+      )[0].innerHTML = `<div class="infoSong d-flex justify-content-between">
+          <div class="song d-flex flex-column">
+            <h5>${song.title}</h5>
+            ${explicit}
+          </div>
+          <!--nome singolo e artista-->
+          <div class="point"><i class="fas fa-ellipsis-v"></i></div>
+        </div>`;
+    });
+  })
+  .catch((err) => console.log("Errore!", err));
