@@ -21,6 +21,11 @@ body {
   overflow-x: hidden;
 }
 
+/* === LAYOUT PRINCIPALE === */
+main {
+  padding-bottom: 200px; /* Spazio per music player separato + navigation bar */
+}
+
 /* === HERO SECTION === */
 .hero-section {
   height: 350px;
@@ -219,74 +224,127 @@ body {
   color: var(--spotify-white);
 }
 
-/* === PLAYER MUSICALE === */
+/* === PLAYER FOOTER === */
 .player-footer {
-  background-color: var(--spotify-darker) !important;
-  border-top: 1px solid var(--spotify-border) !important;
-  backdrop-filter: blur(10px);
-  z-index: 1000;
+  background-color: var(--spotify-gray) !important;
+  border: 1px solid var(--spotify-border) !important;
+  border-radius: 12px; /* Angoli tondi su tutti i lati */
+  position: fixed;
+  bottom: 120px; /* Più spazio dalla navigation bar */
+  left: 15px; /* Margine dai lati */
+  right: 15px; /* Margine dai lati */
+  z-index: 1001; /* Z-index più alto della navigation */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Ombra per separazione visiva */
 }
 
 .current-playing {
-  min-height: 72px;
+  background-color: var(--spotify-gray);
+  border-radius: 12px; /* Angoli tondi su tutti i lati */
+  padding: 15px 20px; /* Padding ancora più aumentato */
 }
 
 .now-playing-cover {
-  width: 48px;
-  height: 48px;
-  border-radius: 4px;
-  background-color: var(--spotify-light-gray);
-  font-size: 0.9rem;
+  width: 56px; /* Dimensioni ancora più aumentate */
+  height: 56px; /* Dimensioni ancora più aumentate */
+  border-radius: 8px; /* Border radius ancora più aumentato */
+  background-color: var(--spotify-light-gray) !important;
 }
 
 .now-playing-title {
-  font-size: 0.9rem;
+  font-size: 18px; /* Font ancora più aumentato */
+  color: var(--spotify-white);
   font-weight: 400;
-  color: var(--spotify-white);
-  max-width: 200px;
 }
 
-.current-playing .btn-link {
-  color: var(--spotify-text-gray);
-  font-size: 1.1rem;
-  transition: color 0.2s ease;
-}
-
-.current-playing .btn-link:hover {
-  color: var(--spotify-white);
-}
-
-/* === NAVIGAZIONE BOTTOM === */
+/* === BOTTOM NAVIGATION === */
 .bottom-nav {
-  background-color: var(--spotify-darker);
-  border-top: 1px solid var(--spotify-border);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.6) 60%, rgba(0, 0, 0, 0.3) 90%, transparent 100%) !important; /* Gradiente più trasparente */
+  backdrop-filter: blur(10px); /* Blur più leggero */
+  -webkit-backdrop-filter: blur(10px); /* Supporto Safari */
+  border-top: none; /* Nessun bordo superiore */
+  padding: 12px 0 25px 0; /* Padding aumentato per navbar più grande */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Z-index sotto il music player */
+  height: 100px; /* Altezza aumentata per navbar più grande */
 }
 
 .nav-item {
-  color: var(--spotify-text-gray) !important;
-  transition: color 0.2s ease;
-  padding: 12px 8px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 15px !important; /* Padding aumentato */
+  transition: all 0.2s ease;
+  border-radius: 0; /* Nessun border radius */
+  position: relative;
+  z-index: 2;
+  color: var(--spotify-text-gray) !important; /* Colore grigio di default */
 }
 
 .nav-item:hover {
-  color: var(--spotify-white) !important;
+  text-decoration: none !important;
+  color: var(--spotify-white) !important; /* Bianco su hover */
 }
 
 .nav-item.active {
-  color: var(--spotify-white) !important;
+  color: var(--spotify-white) !important; /* Bianco per attivo */
 }
 
 .nav-item i {
-  font-size: 1.2rem;
-  margin-bottom: 4px;
+  font-size: 28px; /* Icone più grandi */
+  margin-bottom: 6px; /* Margine aumentato */
+  line-height: 1;
 }
 
 .nav-item small {
-  font-size: 0.7rem;
-  font-weight: 500;
+  font-size: 13px; /* Font leggermente più grande */
+  font-weight: 400; /* Font weight normale */
+  margin-top: 0; /* Nessun margine aggiuntivo */
+  line-height: 1;
+  letter-spacing: 0.5px; /* Leggero spacing */
 }
 
 /* === RESPONSIVE === */
+/* Mobile Small (fino a 375px) */
+@media (max-width: 375px) {
+  .artist-name {
+    font-size: 1.5rem;
+    line-height: 1.2;
+  }
+  
+  .hero-section {
+    height: 250px;
+  }
+  
+  .play-btn {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .liked-cover {
+    width: 45px;
+    height: 45px;
+    font-size: 1rem;
+  }
+  
+  .nav-item i {
+    font-size: 1.3rem;
+  }
+  
+  .nav-item small {
+    font-size: 0.65rem;
+  }
+  
+  main {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+}
+
+/* Mobile (fino a 576px) */
 @media (max-width: 576px) {
   .artist-name {
     font-size: 1.8rem;
@@ -304,6 +362,189 @@ body {
   .liked-cover {
     width: 48px;
     height: 48px;
+    font-size: 1.1rem;
+  }
+  
+  .artist-info {
+    padding: 15px;
+  }
+  
+  .liked-songs {
+    margin-top: 20px;
+    margin-bottom: 25px;
+  }
+  
+  .popular-section h5 {
+    font-size: 1.1rem;
+  }
+  
+  .song-title {
+    font-size: 0.9rem;
+  }
+  
+  .song-plays {
+    font-size: 0.8rem;
+  }
+  
+  .player-footer {
+    padding-bottom: env(safe-area-inset-bottom, 0);
+  }
+  
+  .bottom-nav {
+    padding-bottom: env(safe-area-inset-bottom, 10px);
+  }
+}
+
+/* Tablet Portrait (577px - 768px) */
+@media (min-width: 577px) and (max-width: 768px) {
+  .hero-section {
+    height: 350px;
+  }
+  
+  .artist-name {
+    font-size: 2.2rem;
+  }
+  
+  .play-btn {
+    width: 52px;
+    height: 52px;
+  }
+  
+  .liked-cover {
+    width: 52px;
+    height: 52px;
+  }
+  
+  main {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+  
+  .artist-info {
+    padding: 20px;
+  }
+}
+
+/* Tablet Landscape e Desktop Small (769px - 992px) */
+@media (min-width: 769px) and (max-width: 992px) {
+  #main-content {
+    margin-left: 300px;
+    width: calc(100% - 300px);
+  }
+  
+  #sidebar {
+    width: 300px;
+  }
+  
+  .hero-section {
+    height: 400px;
+  }
+  
+  .artist-name {
+    font-size: 2.5rem;
+  }
+  
+  main {
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+  }
+}
+
+/* Desktop Large (993px e oltre) */
+@media (min-width: 993px) {
+  #main-content {
+    margin-left: 350px;
+    width: calc(100% - 350px);
+  }
+  
+  #sidebar {
+    width: 350px;
+    padding: 25px;
+  }
+  
+  .hero-section {
+    height: 450px;
+  }
+  
+  .artist-name {
+    font-size: 3rem;
+  }
+  
+  .play-btn {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .liked-cover {
+    width: 60px;
+    height: 60px;
+  }
+  
+  main {
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+  }
+  
+  .artist-info {
+    padding: 30px;
+  }
+  
+  .song-item {
+    padding: 12px 0;
+  }
+  
+  .song-title {
+    font-size: 1.1rem;
+  }
+}
+
+/* Ultra Wide Desktop (1400px e oltre) */
+@media (min-width: 1400px) {
+  #main-content {
+    margin-left: 400px;
+    width: calc(100% - 400px);
+  }
+  
+  #sidebar {
+    width: 400px;
+    padding: 30px;
+  }
+  
+  .hero-section {
+    height: 500px;
+  }
+  
+  .artist-name {
+    font-size: 3.5rem;
+  }
+  
+  main {
+    padding-left: 50px !important;
+    padding-right: 50px !important;
+  }
+}
+
+/* Landscape orientation su mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero-section {
+    height: 200px;
+  }
+  
+  .artist-name {
+    font-size: 1.5rem;
+  }
+  
+  .play-btn {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .artist-info {
+    padding: 10px 15px;
+  }
+  
+  .liked-songs {
+    margin: 15px 0;
   }
 }
 
