@@ -1,12 +1,11 @@
 const queryParams = new URLSearchParams(location.search);
 console.log("queryParams", queryParams);
 // const idAlbum = queryParams.split("/")[1];
-// const idAlbum = queryParams.split("/")[1];
 
-const endpoint = `https://striveschool-api.herokuapp.com/api/deezer/album/${idAlbum}`;
+// const endpoint = `https://striveschool-api.herokuapp.com/api/deezer/album/${idAlbum}`;
 
 // fetch(endpoint)
-fetch("https://striveschool-api.herokuapp.com/api/deezer/album/129682632")
+fetch("https://striveschool-api.herokuapp.com/api/deezer/album/75621062")
   .then((res) => {
     console.log("Sto caricando");
     if (res.ok) {
@@ -16,12 +15,13 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/album/129682632")
     }
   })
   .then((dataAlbum) => {
+    console.log("dataAlbum", dataAlbum);
     // Inseriamo le varie cose
 
     // Cover dell'album
     document
       .getElementsByClassName("card-img-top")[0]
-      .setAttribute("src", dataAlbum.cover_small);
+      .setAttribute("src", dataAlbum.cover_medium);
 
     // Informazioni dell'album
     // Titolo album
@@ -36,7 +36,8 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/album/129682632")
     document.querySelector("h6.card-text").innerText = dataAlbum.artist.name;
     // Anno di rilascio dell'album
     document.querySelector("p.card-text").innerText +=
-      dataAlbum.releaseData.split("-")[0];
+      //   dataAlbum["release_date"];
+      dataAlbum["release_date"].split("-")[0];
 
     // Info singole canzoni
     dataAlbum.tracks.data.forEach((song) => {
@@ -46,9 +47,9 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/album/129682632")
         explicit = `<p><i class="fab fa-etsy"></i> ${song.artist.name}</p>`;
       }
 
-      document.getElementsByClassName(
+      document.getElementsByTagName(
         "section"
-      )[0].innerHTML = `<div class="infoSong d-flex justify-content-between">
+      )[0].innerHTML += `<div class="infoSong d-flex justify-content-between">
           <div class="song d-flex flex-column">
             <h5>${song.title}</h5>
             ${explicit}
