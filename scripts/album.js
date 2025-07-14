@@ -27,13 +27,14 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/album/75621062")
     // Titolo album
     document.getElementsByClassName("card-title")[0].innerText =
       dataAlbum.title;
-
+    console.log(dataAlbum.artist.picture_small);
     // Immagine dell'artista
     document
-      .querySelector("h6.card-text img")
+      .querySelector("#artistImg")
       .setAttribute("src", dataAlbum.artist.picture_small);
+    console.log(dataAlbum.artist.picture_small);
     // Nome dell'artista
-    document.querySelector("h6.card-text").innerText = dataAlbum.artist.name;
+    document.querySelector("h6.card-text").innerText += dataAlbum.artist.name;
     // Anno di rilascio dell'album
     document.querySelector("p.card-text").innerText +=
       //   dataAlbum["release_date"];
@@ -50,7 +51,8 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/album/75621062")
       document.getElementById(
         "containerSongs"
       ).innerHTML += `<div class="infoSong d-flex justify-content-between">
-          <div class="song d-flex flex-column">
+          <div class="song d-flex flex-column ms-3">
+
             <h5 class="text-light">${song.title}</h5>
             ${explicit}
           </div>
