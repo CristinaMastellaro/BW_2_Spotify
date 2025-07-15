@@ -15,7 +15,7 @@
 body {
   background: linear-gradient(to bottom, #9c9c03 0%, #000000 30%) !important;
   color: var(--spotify-white) !important;
-  font-family: 'CircularStd', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: "CircularStd", -apple-system, BlinkMacSystemFont, sans-serif;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
@@ -257,34 +257,34 @@ main {
   .container {
     padding: 15px;
   }
-  
+
   .album-title {
     font-size: 1.4rem;
   }
-  
+
   .album-cover {
     max-width: 200px;
   }
-  
+
   .play-btn-album {
     width: 48px;
     height: 48px;
     font-size: 1.2rem;
   }
-  
+
   .control-btn {
     font-size: 1.3rem;
   }
-  
+
   .controls-section {
     margin: 20px 0;
     padding: 0 15px;
   }
-  
+
   .nav-icon-container i {
     font-size: 1.2rem;
   }
-  
+
   .nav-icon-container p {
     font-size: 0.65rem;
   }
@@ -295,47 +295,47 @@ main {
   .container {
     padding: 20px 15px;
   }
-  
+
   .album-title {
     font-size: 1.6rem;
   }
-  
+
   .album-cover {
     max-width: 220px;
   }
-  
+
   .controls-row {
     flex-direction: column;
     align-items: center;
     gap: 20px;
   }
-  
+
   .controls-left,
   .controls-right {
     order: 1;
   }
-  
+
   .play-btn-album {
     order: 2;
     width: 52px;
     height: 52px;
   }
-  
+
   .bottom-player {
     bottom: 70px;
     padding: 12px 15px;
   }
-  
+
   .current-song {
     flex-direction: column;
     gap: 10px;
     text-align: center;
   }
-  
+
   .player-controls {
     justify-content: center;
   }
-  
+
   .bottom-navbar {
     padding-bottom: env(safe-area-inset-bottom, 10px);
   }
@@ -346,26 +346,26 @@ main {
   .container {
     padding: 30px 25px;
   }
-  
+
   .album-title {
     font-size: 2rem;
   }
-  
+
   .album-cover {
     max-width: 280px;
   }
-  
+
   .play-btn-album {
     width: 60px;
     height: 60px;
     font-size: 1.6rem;
   }
-  
+
   .controls-section {
     margin: 40px 0;
     padding: 0 25px;
   }
-  
+
   .bottom-player {
     bottom: 75px;
     padding: 18px 25px;
@@ -380,43 +380,43 @@ main {
     align-items: flex-start;
     gap: 40px;
   }
-  
+
   .album-card {
     flex: 0 0 300px;
   }
-  
+
   .album-cover {
     max-width: 300px;
   }
-  
+
   .album-info {
     padding: 30px 0;
   }
-  
+
   .album-title {
     font-size: 2.5rem;
   }
-  
+
   .controls-section {
     flex: 1;
     margin: 0;
     padding: 30px 0;
   }
-  
+
   .play-btn-album {
     width: 64px;
     height: 64px;
     font-size: 1.8rem;
   }
-  
+
   .bottom-player {
     display: none; /* Nasconde il player su tablet e desktop */
   }
-  
+
   .bottom-navbar {
     display: none; /* Nasconde la navbar su tablet e desktop */
   }
-  
+
   main {
     padding-bottom: 50px;
   }
@@ -428,33 +428,33 @@ main {
     padding: 50px 40px;
     gap: 50px;
   }
-  
+
   .album-card {
     flex: 0 0 350px;
   }
-  
+
   .album-cover {
     max-width: 350px;
   }
-  
+
   .album-title {
     font-size: 3rem;
   }
-  
+
   .album-info {
     padding: 40px 0;
   }
-  
+
   .controls-section {
     padding: 40px 0;
   }
-  
+
   .play-btn-album {
     width: 70px;
     height: 70px;
     font-size: 2rem;
   }
-  
+
   .control-btn {
     font-size: 1.8rem;
   }
@@ -467,19 +467,19 @@ main {
     padding: 60px 50px;
     gap: 60px;
   }
-  
+
   .album-card {
     flex: 0 0 400px;
   }
-  
+
   .album-cover {
     max-width: 400px;
   }
-  
+
   .album-title {
     font-size: 3.5rem;
   }
-  
+
   .play-btn-album {
     width: 80px;
     height: 80px;
@@ -495,38 +495,38 @@ main {
     align-items: center;
     gap: 20px;
   }
-  
+
   .album-card {
     flex: 0 0 200px;
   }
-  
+
   .album-cover {
     max-width: 150px;
   }
-  
+
   .album-title {
     font-size: 1.4rem;
   }
-  
+
   .album-info {
     padding: 10px 0;
   }
-  
+
   .controls-section {
     margin: 15px 0;
     padding: 0 15px;
   }
-  
+
   .play-btn-album {
     width: 45px;
     height: 45px;
     font-size: 1.2rem;
   }
-  
+
   .control-btn {
     font-size: 1.3rem;
   }
-  
+
   main {
     padding-bottom: 200px; /* Spazio per music player separato + navigation bar */
   }
@@ -566,7 +566,13 @@ main {
 
 /* === BOTTOM NAVIGATION === */
 .bottom-nav {
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.6) 60%, rgba(0, 0, 0, 0.3) 90%, transparent 100%) !important; /* Gradiente più trasparente */
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.6) 60%,
+    rgba(0, 0, 0, 0.3) 90%,
+    transparent 100%
+  ) !important; /* Gradiente più trasparente */
   backdrop-filter: blur(10px); /* Blur più leggero */
   -webkit-backdrop-filter: blur(10px); /* Supporto Safari */
   border-top: none; /* Nessun bordo superiore */

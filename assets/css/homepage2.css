@@ -15,7 +15,7 @@
 body {
   background-color: var(--spotify-dark) !important;
   color: var(--spotify-white) !important;
-  font-family: 'CircularStd', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: "CircularStd", -apple-system, BlinkMacSystemFont, sans-serif;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
@@ -107,8 +107,7 @@ main {
   background-color: rgba(255, 255, 255, 0.15);
   transform: scale(1.02);
   transition: all 0.2s ease;
-  box-shadow: 0 4px 16px rgba(255, 255, 255, 0.1), 
-              0 2px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 16px rgba(255, 255, 255, 0.1), 0 2px 8px rgba(0, 0, 0, 0.3);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -117,8 +116,6 @@ main {
   text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
   filter: brightness(1.2);
 }
-
-
 
 /* === GRID COVERS (4 immagini) === */
 .spotify-grid-covers {
@@ -442,7 +439,13 @@ main {
 
 /* === BOTTOM NAVIGATION === */
 .bottom-nav {
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.6) 60%, rgba(0, 0, 0, 0.3) 90%, transparent 100%) !important; /* Gradiente più trasparente */
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.6) 60%,
+    rgba(0, 0, 0, 0.3) 90%,
+    transparent 100%
+  ) !important; /* Gradiente più trasparente */
   backdrop-filter: blur(10px); /* Blur più leggero */
   -webkit-backdrop-filter: blur(10px); /* Supporto Safari */
   border-top: none; /* Nessun bordo superiore */
@@ -489,4 +492,4 @@ main {
   margin-top: 0; /* Nessun margine aggiuntivo */
   line-height: 1;
   letter-spacing: 0.5px; /* Leggero spacing */
-} 
+}
