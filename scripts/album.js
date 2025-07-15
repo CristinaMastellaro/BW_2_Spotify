@@ -47,9 +47,14 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/album/75621062")
       dataAlbum["release_date"].split("-")[0];
     // Info singole canzoni
 
-    document.getElementById("nBrani").innerText = dataAlbum.nb_tracks;
+    document.getElementById("nBrani").innerText =
+      dataAlbum.nb_tracks + " brani,";
     document.getElementById("minutsBrani").innerText +=
-      " " + parseInt(dataAlbum.duration / 60) + " min";
+      " " +
+      parseInt(dataAlbum.duration / 60) +
+      " min " +
+      parseInt((dataAlbum.duration % 60) * 0.6) +
+      " sec";
 
     // Questa parte è per il mobile
     dataAlbum.tracks.data.forEach((song) => {

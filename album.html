@@ -19,17 +19,29 @@
     />
     <style>
       .main-content {
-        background: linear-gradient(to bottom, #9c9c03 0%, #000000 60%);
+        background: linear-gradient(to bottom, #9c9c03 0%, #000000 20%);
       }
-      /* 
+
       @media screen and (min-width: 1200px) {
-        .container {
+        .main-content > .container {
           background-color: #9c9c03;
         }
-      } */
+        .card-title {
+          font-size: 3em;
+        }
+      }
 
       .container {
         padding-top: 1em !important;
+      }
+
+      #arrowIcon {
+        background-color: black;
+        opacity: 0.5;
+      }
+
+      #arrowIcon i {
+        opacity: 1;
       }
 
       .card-title {
@@ -44,6 +56,13 @@
       #iconsContainer {
         margin-bottom: 1.5em;
         margin-right: 1em;
+        padding-top: 1em;
+      }
+
+      @media screen and (min-width: 1200px) {
+        /* #containerSongs {
+          opacity: 0.8;
+        } */
       }
 
       #iconsContainer > div > div:nth-of-type(1) {
@@ -506,21 +525,23 @@
                         <!--si vede solo con lg-->
                       </h6>
                     </div>
+                    <div class="text-light d-none d-lg-block">•</div>
                     <div>
                       <!--artista  album-->
                       <p
                         id="year"
-                        class="card-text text-secondary d-none d-lg-block mb-0"
+                        class="card-text text-white fw-light d-none d-lg-block mb-0"
                       ></p>
                       <!--si vede solo con lg-->
                       <!--anno album-->
                     </div>
+                    <div class="text-light d-none d-lg-block">•</div>
 
                     <!--artista  album-->
                     <div>
                       <p
                         id="albumWithYear"
-                        class="card-text text-secondary d-lg-none mb-0"
+                        class="text-secondary d-lg-none mb-0"
                       >
                         <!--si vede solo con mobile-->
                         Album -
@@ -528,7 +549,10 @@
                     </div>
                     <!--anno album-->
                     <div class="d-flex align-items-center">
-                      <p id="nBrani" class="d-none d-lg-block text-white mb-0">
+                      <p
+                        id="nBrani"
+                        class="d-none d-lg-block text-white fw-light mb-0"
+                      >
                         ,
                       </p>
                     </div>
@@ -536,10 +560,8 @@
                     <div class="d-flex">
                       <p
                         id="minutsBrani"
-                        class="d-none d-lg-block text-white mb-0"
-                      >
-                        •
-                      </p>
+                        class="d-none d-lg-block text-light opacity-75 fw-light mb-0"
+                      ></p>
                     </div>
 
                     <!-- minuti brani da sistemare con js-->
@@ -555,7 +577,7 @@
 
       <section id="containerSongs">
         <!--sezione canzoni-->
-        <div id="iconsContainer" class="d-lg-flex">
+        <div id="iconsContainer" class="d-lg-flex ps-lg-4 pt-4">
           <!--ho aggiunto d flex solo per lg  e messo il bottone verde per lg all'inizio -->
           <div
             class="d-flex justify-content-center align-items-center text-center ps-4 pt-2 d-none d-lg-block gap-5"
@@ -567,8 +589,8 @@
             "
           >
             <i
-              class="bi bi-play-fill d-flex align-items-center justify-content-center mt-1"
-              style="color: white; font-size: 15px"
+              class="bi bi-play-fill d-flex align-items-center justify-content-center mt-2"
+              style="font-size: 15px; color: black"
             ></i>
           </div>
           <div
@@ -576,12 +598,16 @@
           >
             <div class="d-flex justify-content-between">
               <i class="bi bi-heart text-white me-2"></i>
-              <i class="bi bi-arrow-down-circle text-secondary me-2"></i>
+              <i
+                class="bi bi-arrow-down-circle text-sm-secondary text-lg-light me-2"
+              ></i>
               <i
                 class="bi bi-three-dots-vertical text-secondary me-2 d-lg-none"
               ></i
               ><!--ho nascosto i dots vertical per lg-->
-              <i class="bi bi-three-dots d-none d-lg-block text-secondary"></i>
+              <i
+                class="bi bi-three-dots d-none d-lg-block text-sm-secondary text-lg-light"
+              ></i>
               <!--ho aggiunto i dots orizzontali solo per lg-->
             </div>
             <!--icone dx-->
