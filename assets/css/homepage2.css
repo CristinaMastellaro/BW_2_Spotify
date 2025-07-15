@@ -208,7 +208,12 @@ main {
 
 /* === FEATURED PLAYLIST (study and work space) === */
 .spotify-featured-playlist {
-  background-color: var(--spotify-gray);
+  background: #8a8888;
+  background: linear-gradient(
+    51deg,
+    rgba(138, 136, 136, 0.17) 0%,
+    rgba(145, 144, 144, 0.16) 100%
+  );
   border-radius: 12px; /* Border radius ancora più aumentato */
   padding: 32px; /* Padding aumentato per card più grande */
   margin: 32px 0; /* Margine aumentato per card più grande */
