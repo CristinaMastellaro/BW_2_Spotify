@@ -138,6 +138,12 @@
         content: counter(item) " "; /* Mostra solo il numero, senza punto */
         font-weight: bold;
       }
+
+      @media screen and (min-width: 1200px) {
+        .card-img-top {
+          width: 400px;
+        }
+      }
     </style>
   </head>
   <body class="bg-black text-white">
@@ -377,55 +383,93 @@
                 </div>
               </div>
               <!--fine div icone e login -->
-
-              <div class="row">
-                <div class="col d-flex">
-                  <div
-                    class="flex-lg-row card bg-transparent border-0 d-flex w-100"
-                  >
-                    <div class="d-flex d-flex justify-content-center me-4">
-                      <img
-                        src="..."
-                        class="card-img-top mt-4 d-block"
-                        style="max-width: 300px"
-                        alt="..."
-                      />
-                    </div>
+              <div class="container p-0">
+                <div class="row">
+                  <div class="col d-flex">
                     <div
-                      class="card-body d-flex flex-column justify-content-start mt-4 p-0"
+                      class="flex-lg-row card bg-transparent border-0 d-flex w-100"
                     >
-                      <p
-                        class="card-text text-secondary d-sm-none d-lg-block text-white"
+                      <div
+                        class="d-flex d-flex justify-content-center me-4 justify-content-lg-start"
                       >
-                        Album -
-                      </p>
-
-                      <h5 class="card-title text-white fw-semibold ms-lg-2">
-                        Card title
-                      </h5>
-                      <!--Gioventù bruciata-->
-                      <div class="d-flex align-items-center mb-2 gap-2">
                         <img
-                          id="artistImg"
-                          src=".."
-                          class="rounded-5"
-                          style="width: 30px"
+                          src="..."
+                          class="card-img-top mt-4 d-block"
+                          style="max-width: 300px"
+                          alt="..."
                         />
-
-                        <h6 class="card-text text-white"></h6>
                       </div>
 
-                      <!--artista  album-->
-                      <p class="card-text text-secondary d-lg-none">Album -</p>
-                      <!--anno album-->
+                      <div
+                        class="card-body d-flex flex-column justify-content-start justify-content-lg-end mt-4 p-0"
+                      >
+                        <p class="text-secondary d-none d-lg-block text-white">
+                          Album
+                        </p>
+
+                        <h5 class="card-title text-white fw-semibold ms-lg-2">
+                          Card title
+                        </h5>
+                        <!--Gioventù bruciata-->
+                        <div class="d-flex align-items-center mb-2 gap-2">
+                          <img
+                            id="artistImg"
+                            src=".."
+                            class="rounded-5"
+                            style="width: 30px"
+                          />
+                          <div class="flex">
+                            <h6 class="card-text text-white">
+                              <p class="d-none d-lg-block gap-1 m-0 p-0">•</p>
+                              <!--si vede solo con lg-->
+                            </h6>
+                          </div>
+                          <div>
+                            <!--artista  album-->
+                            <p
+                              id="year"
+                              class="card-text text-secondary d-none d-lg-block"
+                            ></p>
+                            <!--si vede solo con lg-->
+                            <!--anno album-->
+                          </div>
+
+                          <!--artista  album-->
+                          <div>
+                            <p
+                              id="albumWithYear"
+                              class="card-text text-secondary d-block d-lg-none"
+                            >
+                              <!--si vede solo con mobile-->
+                              Album -
+                            </p>
+                          </div>
+                          <!--anno album-->
+                          <div class="d-flex align-items-center">
+                            <p id="nBrani" class="d-none d-lg-block text-white">
+                              ,
+                            </p>
+                          </div>
+                          <!-- num brani da sistemare con js-->
+                          <div class="d-flex">
+                            <p
+                              id="minutsBrani"
+                              class="d-none d-lg-block text-white"
+                            >
+                              •
+                            </p>
+                          </div>
+
+                          <!-- minuti brani da sistemare con js-->
+                        </div>
+                      </div>
                     </div>
                   </div>
+                  <!--fine div col-->
                 </div>
-                <!--fine div col-->
+                <!--fine div row-->
               </div>
-              <!--fine div row-->
             </div>
-            <!--fine div container-->
 
             <section id="containerSongs">
               <!--sezione canzoni-->
@@ -494,24 +538,38 @@
           nome singolo e artista
           <div class="point"></div>
         </div> -->
-              <div class="container">
+              <div class="container d-none d-lg-block">
                 <!--inizio div container lg-->
                 <div class="row">
-                  <div class="d-flex justify-content-between">
+                  <div
+                    class="col d-flex justify-content-between mb-1 text-secondary"
+                  >
                     <div># TITOLO</div>
                     <div># RIPRODUZIONI</div>
                     <div><i class="bi bi-arrow-down-circle"></i></div>
                   </div>
+
                   <hr />
-                  <div class="col">
-                    <ol class="text-decoration-none">
-                      <li></li>
+                  <div class="col col-6 text-secondary" id="colSong">
+                    <ol class="ps-0 ms-0">
+                      <li class="ps-0 ms-0"></li>
                     </ol>
                   </div>
                   <!--fine col canzoni-->
-                  <div class="col"></div>
+                  <div class="col d-flex col-3 text-secondary" id="colRiprod">
+                    <ul class="list-unstyled ps-0 ms-3">
+                      <li class="ps-0 ms-0">1212121</li>
+                    </ul>
+                  </div>
                   <!--fine col riproduzioni-->
-                  <div class="col"></div>
+                  <div
+                    class="col d-flex col-3 justify-content-end text-secondary"
+                    id="colDownload"
+                  >
+                    <ul class="list-unstyled me-4">
+                      <li class="ps-0 ms-0">121212</li>
+                    </ul>
+                  </div>
                   <!--fine col download-->
                 </div>
                 <!--fine row lg -->

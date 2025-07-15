@@ -36,11 +36,13 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/album/75621062")
     // Nome dell'artista
     document.querySelector("h6.card-text").innerText += dataAlbum.artist.name;
     // Anno di rilascio dell'album
-    document.querySelector("p.card-text").innerText +=
+    document.getElementById("albumWithYear").innerText +=
       " " +
       //   dataAlbum["release_date"];
       dataAlbum["release_date"].split("-")[0];
 
+    document.getElementById("year").innerText +=
+      dataAlbum["release_date"].split("-")[0];
     // Info singole canzoni
     dataAlbum.tracks.data.forEach((song) => {
       // Aggiungere o meno il disclaimer per canzoni esplicite
