@@ -43,9 +43,9 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/album/75621062")
     // Info singole canzoni
     dataAlbum.tracks.data.forEach((song) => {
       // Aggiungere o meno il disclaimer per canzoni esplicite
-      let explicit = `<p class="text-gray"> ${song.artist.name}</p>`;
+      let explicit = `<p class="text-light"> ${song.artist.name}</p>`;
       if (song.explicit_lyrics) {
-        explicit = `<p class="text-gray"><i class="fab fa-etsy"></i> ${song.artist.name}</p>`;
+        explicit = `<p class="text-light"><i class="fab fa-etsy"></i> ${song.artist.name}</p>`;
       }
 
       document.getElementById(
