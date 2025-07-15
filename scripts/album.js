@@ -34,7 +34,9 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/album/75621062")
       .setAttribute("src", dataAlbum.artist.picture_small);
     console.log(dataAlbum.artist.picture_small);
     // Nome dell'artista
-    document.querySelector("h6.card-text").innerText += dataAlbum.artist.name;
+    document.querySelector(
+      "h6.card-text"
+    ).innerHTML = `<a href="../../artist.html/id=${dataAlbum.artist.id}" class="text-decoration-none text-light">${dataAlbum.artist.name}</a>`;
     // Anno di rilascio dell'album
     document.querySelector("p.card-text").innerText +=
       " " +
@@ -44,15 +46,15 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/album/75621062")
     // Info singole canzoni
     dataAlbum.tracks.data.forEach((song) => {
       // Aggiungere o meno il disclaimer per canzoni esplicite
-      let explicit = `<p class="text-secondary"> ${song.artist.name}</p>`;
+      let explicit = `<p class="text-secondary mb-0"> ${song.artist.name}</p>`;
       if (song.explicit_lyrics) {
-        explicit = `<p class="text-secondary"><i class="fab fa-etsy"></i> ${song.artist.name}</p>`;
+        explicit = `<p class="text-secondary mb-0"><i class="fab fa-etsy"></i> ${song.artist.name}</p>`;
       }
 
       document.getElementById(
         "containerSongs"
-      ).innerHTML += `<div class="infoSong d-flex justify-content-between px-2">
-          <div class="song d-flex flex-column ms-3">
+      ).innerHTML += `<div class="infoSong d-flex justify-content-between align-items-center px-2 playlist-item">
+          <div class="song d-flex flex-column ms-3 pt-1">
 
             <h5 class="text-light">${song.title}</h5>
             ${explicit}
