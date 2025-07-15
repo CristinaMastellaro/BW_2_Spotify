@@ -494,24 +494,38 @@ main {
   letter-spacing: 0.5px; /* Leggero spacing */
 }
 
+/* aggiunta parte Homepage */
+
 .main-Banner-Card {
   background: linear-gradient(
-    180deg,
-    rgba(91, 87, 115, 0.8) 0%,
-    rgba(40, 40, 40, 0.8) 50%,
+    200deg,
+    rgba(43, 42, 42, 0.8) 0%,
+    var(--spotify-dark) 100%,
     var(--spotify-dark) 100%
   );
   color: var(--spotify-white);
 }
 
 .main-Banner-Card-Cover {
-  width: 230px;
+  width: 220px;
 }
 
 .main-Banner-Card img {
   width: 100%;
+  min-width: 150px;
 }
 
 .dot-Button {
   color: var(--spotify-text-gray);
+}
+
+.hide-Annunci-Button {
+  color: #5a5a5a;
+  font-size: 10px;
+  font-weight: 700;
+  padding-right: 10px;
+  padding-left: 10px;
+  border: none;
+  background-color: rgba(43, 42, 42, 0.8);
+  white-space: nowrap;
 }
