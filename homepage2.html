@@ -192,9 +192,9 @@
             <main class="px-3 mt-4">
               <div class="container">
               
-                  <div class="main-Banner-Card card w-100 mb-3 rounded-0 d-flex flex-row p-2 d-none d-md-none d-lg-flex border-0">
-                    <div class="main-Banner-Card-Cover d-flex align-items-center ps-2">
-                      <img src="./assets/imgs/main/image-2.jpg" class="card-img-top img-fluid rounded-0" alt="Album Cover" />
+                  <div class="main-Banner-Card card w-100 mb-3 rounded-0 d-flex flex-row p-2">
+                    <div class="main-Banner-Card-Cover d-flex align-items-center">
+                      <img src="./assets/imgs/main/image-2.jpg" class="card-img-top img-fluid" alt="Album Cover" />
                     </div>
                     <div class="card-body flex-grow-1">
                       <p class="card-text">
@@ -202,7 +202,7 @@
                         <h3 class="fs-1 fw-bold">VIOLA (Feat. Salmo)</h3>
                         <small class="d-block mb-1">Fedez, Salmo</small>
                         <small class="d-block">Ascolta il nuovo singolo di Fedez e Salmo!</small>
-                        <div class="filter-buttons mb-0 mt-3">
+                        <div class="filter-buttons mb-0 mt-5">
                           <button
                             type="button"
                             class="btn filter-btn active rounded-pill"
@@ -212,14 +212,14 @@
                           <button type="button" class="btn filter-btn rounded-pill">
                             Salva
                           </button>
-                          <button type="button" class="dot-Button btn filter-btn border-0 ps-2 me-0 pe-0">
+                          <button type="button" class="dot-Button btn filter-btn border-0 ps-2">
                             <i class="bi bi-three-dots"></i>
                           </button>
                         </div>
                       </p>
                     </div>
                     <div class="pt-3">
-                      <button class="hide-Annunci-Button rounded-pill">NASCONDI ANNUNCI</button>
+                      <button class="rounded-pill">NASCONDI ANNUNCI</button>
                     </div>
                   </div>
                 
@@ -253,8 +253,9 @@
                   <!-- Playlist in due colonne: 3 sinistra, 3 destra -->
                   <div class="row">
                     <!-- Colonna sinistra -->
-                    <div class="col-sm-6 col-md-6 col-lg-4">
+                    
                       <!-- early stage emily syndrome -->
+                        <div class="col col-6 col-lg-4">
                       <div
                         class="spotify-playlist-item d-flex align-items-center mb-2"
                       >
@@ -286,7 +287,8 @@
                           </h6>
                         </div>
                       </div>
-
+                        </div>
+                      <div class="col col-6 col-lg-4">
                       <!-- saggio vibes -->
                       <div
                         class="spotify-playlist-item d-flex align-items-center mb-2"
@@ -317,8 +319,8 @@
                           <h6 class="spotify-title">saggio vibes 🎶🗣️🎧</h6>
                         </div>
                       </div>
-
-                      <!-- 2021 lol -->
+                  </div>
+                     <div class="col col-6 col-lg-4">
                       <div
                         class="spotify-playlist-item d-flex align-items-center mb-2"
                       >
@@ -348,11 +350,13 @@
                           <h6 class="spotify-title">2021 lol</h6>
                         </div>
                       </div>
+                    
                     </div>
 
                     <!-- Colonna destra -->
-                    <div class="col-sm-6 col-md-6 col-lg-4">
+                    
                       <!-- Be The Young -->
+                       <div class="col col-6 col-lg-4">
                       <div
                         class="spotify-playlist-item d-flex align-items-center mb-2"
                       >
@@ -382,8 +386,10 @@
                           <h6 class="spotify-title">Be The Young</h6>
                         </div>
                       </div>
+                    </div>
 
                       <!-- Brani che ti piacciono -->
+                       <div class="col col-6 col-lg-4">
                       <div
                         class="spotify-playlist-item d-flex align-items-center mb-2"
                       >
@@ -396,8 +402,10 @@
                           <h6 class="spotify-title">Brani che ti piacciono</h6>
                         </div>
                       </div>
+                       </div>
 
                       <!-- Deep Dive with Ali Abdaal -->
+                       <div class="col col-6 col-lg-4">
                       <div
                         class="spotify-playlist-item d-flex align-items-center mb-2"
                       >
@@ -414,103 +422,115 @@
                           </h6>
                         </div>
                       </div>
+                       </div>
                     </div>
                   </div>
 
                   <!-- Due card grandi in basso -->
 
                   <!-- Study and work space - playlist grande -->
-                  <div class="spotify-featured-playlist mt-4">
-                    <div class="spotify-large-cover-grid">
-                      <img
-                        src="assets/imgs/main/image-18.jpg"
-                        alt="Study 1"
-                        class="spotify-large-cover"
-                      />
-                      <img
-                        src="assets/imgs/main/image-19.jpg"
-                        alt="Study 2"
-                        class="spotify-large-cover"
-                      />
-                      <img
-                        src="assets/imgs/main/image-1.jpg"
-                        alt="Study 3"
-                        class="spotify-large-cover"
-                      />
-                      <img
-                        src="assets/imgs/main/image-2.jpg"
-                        alt="Study 4"
-                        class="spotify-large-cover"
-                      />
-                    </div>
-                    <div class="spotify-featured-info">
-                      <p class="spotify-featured-type">Playlist</p>
-                      <h5 class="spotify-featured-title">
-                        study and work space
-                      </h5>
+                  <div class="row">
+                    <div class="col col-12 col-md-4">
                       <div
-                        class="spotify-featured-controls d-flex justify-content-between align-items-center mt-2"
+                        class="spotify-featured-playlist card mt-4 d-flex flex-md-column"
                       >
-                        <div
-                          class="spotify-featured-actions d-flex align-items-center"
-                        >
-                          <i
-                            class="bi bi-heart-fill text-success me-3 fs-5"
-                          ></i>
-                          <i class="bi bi-three-dots me-4 text-white"></i>
+                        <div class="spotify-large-cover-grid mw-100">
+                          <img
+                            src="assets/imgs/main/image-18.jpg"
+                            alt="Study 1"
+                            class="spotify-large-cover"
+                          />
+                          <img
+                            src="assets/imgs/main/image-19.jpg"
+                            alt="Study 2"
+                            class="spotify-large-cover"
+                          />
+                          <img
+                            src="assets/imgs/main/image-1.jpg"
+                            alt="Study 3"
+                            class="spotify-large-cover"
+                          />
+                          <img
+                            src="assets/imgs/main/image-2.jpg"
+                            alt="Study 4"
+                            class="spotify-large-cover"
+                          />
                         </div>
-                        <span class="spotify-track-count text-white"
-                          >16 brani</span
-                        >
-                        <i
-                          class="bi bi-play-circle-fill spotify-play-btn text-success"
-                        ></i>
+                        <div class="spotify-featured-info w-100">
+                          <p class="spotify-featured-type">Playlist</p>
+                          <h5 class="spotify-featured-title">
+                            study and work space
+                          </h5>
+                          <div
+                            class="spotify-featured-controls d-flex justify-content-between align-items-center mt-2"
+                          >
+                            <div
+                              class="spotify-featured-actions d-flex align-items-center"
+                            >
+                              <i
+                                class="bi bi-heart-fill text-success me-3 fs-5"
+                              ></i>
+                              <i class="bi bi-three-dots me-4 text-white"></i>
+                            </div>
+                            <span class="spotify-track-count text-white"
+                              >16 brani</span
+                            >
+                            <i
+                              class="bi bi-play-circle-fill spotify-play-btn text-success"
+                            ></i>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
-
-                  <!-- Mix Indie - seconda card grande -->
-                  <div class="spotify-mix-playlist mt-3">
-                    <div class="spotify-mix-cover-grid">
-                      <img
-                        src="assets/imgs/main/image-3.jpg"
-                        alt="Mix 1"
-                        class="spotify-mix-cover-img"
-                      />
-                      <img
-                        src="assets/imgs/main/image-4.jpg"
-                        alt="Mix 2"
-                        class="spotify-mix-cover-img"
-                      />
-                      <img
-                        src="assets/imgs/main/image-5.jpg"
-                        alt="Mix 3"
-                        class="spotify-mix-cover-img"
-                      />
-                      <img
-                        src="assets/imgs/main/image-6.jpg"
-                        alt="Mix 4"
-                        class="spotify-mix-cover-img"
-                      />
-                    </div>
-                    <div class="spotify-mix-info">
-                      <p class="spotify-mix-type">Playlist</p>
-                      <h5 class="spotify-mix-title">Mix Indie</h5>
+                    <!-- Mix Indie - seconda card grande -->
+                    <div class="col col-12 col-md-4">
                       <div
-                        class="spotify-mix-controls d-flex justify-content-between align-items-center mt-2"
+                        class="spotify-featured-playlist card mt-4 d-flex flex-md-column"
                       >
-                        <div
-                          class="spotify-mix-actions d-flex align-items-center"
-                        >
-                          <i class="bi bi-heart text-muted me-3 fs-5"></i>
-                          <i class="bi bi-three-dots me-4 text-white"></i>
+                        <div class="spotify-large-cover-grid mw-100">
+                          <img
+                            src="assets/imgs/main/image-7.jpg"
+                            alt="Study 1"
+                            class="spotify-large-cover"
+                          />
+                          <img
+                            src="assets/imgs/main/image-8.jpg"
+                            alt="Study 2"
+                            class="spotify-large-cover"
+                          />
+                          <img
+                            src="assets/imgs/main/image-10.jpg"
+                            alt="Study 3"
+                            class="spotify-large-cover"
+                          />
+                          <img
+                            src="assets/imgs/main/image-3.jpg"
+                            alt="Study 4"
+                            class="spotify-large-cover"
+                          />
                         </div>
-                        <span class="spotify-track-count text-white"
-                          >Mix per te</span
-                        >
-                        <i
-                          class="bi bi-play-circle-fill spotify-play-btn text-success"
-                        ></i>
+                        <div class="spotify-featured-info w-100">
+                          <p class="spotify-featured-type">Playlist</p>
+                          <h5 class="spotify-featured-title">Mix Indie</h5>
+                          <div
+                            class="spotify-featured-controls d-flex justify-content-between align-items-center mt-2"
+                          >
+                            <div
+                              class="spotify-featured-actions d-flex align-items-center"
+                            >
+                              <i
+                                class="bi bi-heart-fill text-success me-3 fs-5"
+                              ></i>
+                              <i class="bi bi-three-dots me-4 text-white"></i>
+                            </div>
+                            <span class="spotify-track-count text-white"
+                              >16 brani</span
+                            >
+                            <i
+                              class="bi bi-play-circle-fill spotify-play-btn text-success"
+                            ></i>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
