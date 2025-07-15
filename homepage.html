@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Homepage</title>
+    <title>Homepage - Spotify</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -11,188 +11,286 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="assets/css/circular-font.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
-    />
+    <link rel="stylesheet" href="assets/css/artist.css" />
     <link rel="stylesheet" href="assets/css/homepage2.css" />
-    <style>
-      small {
-        color: text-dark-emphasis;
-      }
-
-      #navSection {
-        /* width: 20%; */
-        padding-left: 0.5em;
-        top: 10px;
-      }
-
-      #content {
-        /* width: 58%; */
-        /* margin-left: auto;
-        margin-right: auto; */
-        /* position: sticky;
-        top: 10px;
-        left: 20%;
-        right: 20%; */
-      }
-
-      #friendSection {
-        /* width: 20%; */
-        /* top: 10px;
-        position: fixed;
-        right: 0; */
-        height: 100%;
-        /* padding-right: 1em; */
-      }
-
-      #friendSection img {
-        width: 20px;
-        height: 20px;
-        border-radius: 20px;
-      }
-
-      #friendSection div div small {
-        font-size: 12px;
-      }
-    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
   </head>
   <body class="bg-dark text-white">
-    <!-- Contenuto principale -->
-    <main class="mt-4 position-relative d-flex w-100 justify-content-around">
-      <div class="row row-cols-1 row-cols-lg-3 w-100">
-        <!-- Questa sarà la parte sinistra -->
-        <div class="col col-lg-2 border d-none d-lg-block">
-          <section
-            class="position-sticky left-0 d-none d-lg-block"
-            id="navSection"
-          >
-            <div id="hideLeftNav">
-              <i class="bi bi-three-dots"></i>
-            </div>
-            <nav class="bottom-nav d-flex flex-column mb-3">
-              <a
-                href="homepage.html"
-                class="nav-item d-flex flex-fill align-items-center py-2 text-decoration-none text-muted"
-              >
-                <div><i class="me-3 bi bi-house-door"></i></div>
-                <small class="fw-bold">Home</small>
-              </a>
-              <a
-                href="#"
-                class="nav-item d-flex flex-fill align-items-center py-2 text-decoration-none text-muted"
-              >
-                <div><i class="me-3 bi bi-search"></i></div>
-                <small class="fw-bold">Cerca</small>
-              </a>
-              <a
-                href="#"
-                class="nav-item d-flex flex-fill align-items-center py-2 text-decoration-none text-muted"
-              >
-                <div><i class="me-3 bi bi-collection"></i></div>
-                <small class="fw-bold">La tua libreria</small>
-              </a>
-            </nav>
-            <div class="mb-3">
-              <nav class="bottom-nav d-flex flex-column">
-                <a
-                  href="homepage.html"
-                  class="nav-item d-flex flex-fill align-items-center py-2 text-decoration-none text-muted"
-                >
-                  <div><i class="me-3 bi bi-house-door"></i></div>
-                  <small class="fw-bold">Crea playlist</small>
-                </a>
-                <a
-                  href="#"
-                  class="nav-item d-flex flex-fill align-items-center py-2 text-decoration-none text-muted"
-                >
-                  <div><i class="me-3 bi bi-search"></i></div>
-                  <small class="fw-bold">Brani che ti piacciono</small>
-                </a>
-                <a
-                  href="#"
-                  class="nav-item d-flex flex-fill align-items-center py-2 text-decoration-none text-muted"
-                >
-                  <div><i class="me-3 bi bi-collection"></i></div>
-                  <small class="fw-bold">I tuoi episodi</small>
-                </a>
-              </nav>
-            </div>
-            <div
-              id="searchChronology"
-              class="d-flex flex-column ps-2"
-              data-bs-spy="scroll"
-            >
-              <p>
-                <a href="#" class="text-decoration-none text-dark-emphasis"
-                  ><small>early stage emily</small></a
-                >
-              </p>
-              <p>
-                <a href="#" class="text-decoration-none text-dark-emphasis"
-                  ><small>Be the young</small></a
-                >
-              </p>
-              <p>
-                <a href="#" class="text-decoration-none text-dark-emphasis"
-                  ><small>that's fucking mood</small></a
-                >
-              </p>
-              <p>
-                <a href="#" class="text-decoration-none text-dark-emphasis"
-                  ><small>2021 lol</small></a
-                >
-              </p>
-              <p>
-                <a href="#" class="text-decoration-none text-dark-emphasis"
-                  ><small>2021 lol</small></a
-                >
-              </p>
-              <p>
-                <a href="#" class="text-decoration-none text-dark-emphasis"
-                  ><small>2021 lol</small></a
-                >
-              </p>
-              <p>
-                <a href="#" class="text-decoration-none text-dark-emphasis"
-                  ><small>2021 lol</small></a
-                >
-              </p>
-              <p>
-                <a href="#" class="text-decoration-none text-dark-emphasis"
-                  ><small>2021 lol</small></a
-                >
-              </p>
-              <p>
-                <a href="#" class="text-decoration-none text-dark-emphasis"
-                  ><small>2021 lol</small></a
-                >
-              </p>
-              <p>
-                <a href="#" class="text-decoration-none text-dark-emphasis"
-                  ><small>2021 lol</small></a
-                >
-              </p>
-              <p>
-                <a href="#" class="text-decoration-none text-dark-emphasis"
-                  ><small>2021 lol</small></a
-                >
-              </p>
-              <p>
-                <a href="#" class="text-decoration-none text-dark-emphasis"
-                  ><small>2021 lol</small></a
-                >
-              </p>
-            </div>
-          </section>
+    
+    <!-- Layout Desktop - Barre Laterali -->
+    <div class="d-none d-lg-block desktop-layout">
+      <!-- Barra Sinistra -->
+      <section class="sidebar-left" id="navSection">
+        <div class="d-flex align-items-center" style="height: 40px;">
+          <i class="bi bi-three-dots text-white fs-5"></i>
         </div>
-        <!--  Qui andranno inseriti i contenuti delle pagine -->
-        <div class="col col-12 col-lg-8 border">
+        <nav class="main-nav d-flex flex-column gap-1">
+          <a
+            href="homepage2.html"
+            class="nav-item d-flex align-items-center py-1 text-decoration-none text-white align-self-start flex-row"
+          >
+            <i class="bi bi-house-door fs-5 me-4"></i>
+            <span class="fw-bold">Home</span>
+          </a>
+          <a
+            href="search.html"
+            class="nav-item d-flex align-items-center py-1 text-decoration-none text-white align-self-start flex-row"
+          >
+            <i class="bi bi-search fs-5 me-4"></i>
+            <span class="fw-bold">Cerca</span>
+          </a>
+          <a
+            href="libreria.html"
+            class="nav-item d-flex align-items-center py-1 text-decoration-none text-white align-self-start flex-row"
+          >
+            <i class="bi bi-collection fs-5 me-4"></i>
+            <span class="fw-bold">La tua libreria</span>
+          </a>
+        </nav>
+        <div style="height: 28px;"></div>
+        <nav class="secondary-nav d-flex flex-column gap-1 mb-4 align-items-start">
+          <a href="#" class="d-flex align-items-center text-decoration-none text-white py-1 mb-2">
+            <div class="d-flex align-items-center justify-content-center bg-secondary me-3 ms-2 py-1" style="width:32px; height:32px; border-radius:4px;">
+              <i class="bi bi-plus text-dark fs-5"></i>
+            </div>
+            <span class="fw-bold">Crea playlist</span>
+          </a>
+          <a href="#" class="d-flex align-items-center text-decoration-none text-white py-1 mb-2">
+            <div class="d-flex align-items-center justify-content-center me-3 ms-2" style="width:32px; height:32px; border-radius:4px; background: linear-gradient(135deg, #5f5fff, #a084e1);">
+              <i class="bi bi-heart-fill text-white fs-5"></i>
+            </div>
+            <span class="fw-bold">Brani che ti piacciono</span>
+          </a>
+          <a href="#" class="d-flex align-items-center text-decoration-none text-white py-1 mb-2">
+            <div class="d-flex align-items-center justify-content-center bg-success me-3 ms-2" style="width:32px; height:32px; border-radius:4px;">
+              <i class="bi bi-bookmark-fill text-white fs-5"></i>
+            </div>
+            <span class="fw-bold">I tuoi episodi</span>
+          </a>
+        </nav>
+
+          <div
+            id="searchChronology"
+            class="playlist-list flex-grow-1 d-none d-lg-block"
+            data-bs-spy="scroll"
+          >
+            <p>
+              <a href="#" class="text-decoration-none text-muted playlist-item">
+                <small>early stage emily syndrome (sett-ott 2022)</small>
+              </a>
+            </p>
+            <p>
+              <a href="#" class="text-decoration-none text-muted playlist-item">
+                <small>Be The Young</small>
+              </a>
+            </p>
+            <p>
+              <a href="#" class="text-decoration-none text-muted playlist-item">
+                <small>š†•čït. Kimiko (lug-ago 2022)</small>
+              </a>
+            </p>
+            <p>
+              <a href="#" class="text-decoration-none text-muted playlist-item">
+                <small>saggio vibes 🔱🇺🇸</small>
+              </a>
+            </p>
+            <p>
+              <a href="#" class="text-decoration-none text-muted playlist-item">
+                <small>main character energy (mag-giu 2022)</small>
+              </a>
+            </p>
+            <p>
+              <a href="#" class="text-decoration-none text-muted playlist-item">
+                <small>that fucking mood 🔥🖤</small>
+              </a>
+            </p>
+            <p>
+              <a href="#" class="text-decoration-none text-muted playlist-item">
+                <small>VEE, CARLOTTA E GIACOMO VANNO A BOSIO</small>
+              </a>
+            </p>
+            <p>
+              <a href="#" class="text-decoration-none text-muted playlist-item">
+                <small>An Emily Winchester kind of mood ✨🕯</small>
+              </a>
+            </p>
+            <p>
+              <a
+                href="#"
+                class="text-decoration-none text-muted playlist-item d-flex justify-content-between align-items-center"
+              >
+                <small>landing page (mar-apr 2022)</small>
+                <i class="bi bi-plus-circle"></i>
+              </a>
+            </p>
+            <p>
+              <a href="#" class="text-decoration-none text-muted playlist-item">
+                <small>2021 lol</small>
+              </a>
+            </p>
+            <p>
+              <a
+                href="#"
+                class="text-decoration-none text-muted playlist-item d-flex justify-content-between align-items-center"
+              >
+                <small>cosa cazzo vuoi dire questa affermazione (gen-fe...)</small>
+                <i class="bi bi-plus-circle"></i>
+              </a>
+            </p>
+            <p>
+              <a href="#" class="text-decoration-none text-muted playlist-item">
+                <small>honey and glass (nov-dic 2021)</small>
+              </a>
+            </p>
+            <p>
+              <a href="#" class="text-decoration-none text-muted playlist-item">
+                <small>(Revenge) Training Arc 🏃</small>
+              </a>
+            </p>
+            <p>
+              <a href="#" class="text-decoration-none text-muted playlist-item">
+                <small>Lidia 💛 Emily</small>
+              </a>
+            </p>
+            <p>
+              <a href="#" class="text-decoration-none text-muted playlist-item">
+                <small>minecraft e nintendo switch (sep-oct 2021)</small>
+              </a>
+            </p>
+            <p>
+              <a href="#" class="text-decoration-none text-muted playlist-item">
+                <small>silvana d'orba? i hardly know her (lug - ago 2021)</small>
+              </a>
+            </p>
+            <p>
+              <a
+                href="#"
+                class="text-decoration-none text-muted playlist-item d-flex justify-content-between align-items-center"
+              >
+                <small>Culo 2021</small>
+                <i class="bi bi-person-fill"></i>
+              </a>
+            </p>
+            <p>
+              <a href="#" class="text-decoration-none text-muted playlist-item">
+                <small>Frah Quintale Mix</small>
+              </a>
+            </p>
+            <p>
+              <a href="#" class="text-decoration-none text-muted playlist-item">
+                <small>Francesco Guccini Mix</small>
+              </a>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Barra Destra -->
+      <section class="sidebar-right d-none d-lg-block" id="friendSection">
+        <!-- User Profile Header -->
+        <div class="user-profile-header d-flex align-items-center justify-content-between mb-4 pb-3">
+          <div class="d-flex align-items-center">
+            <img 
+              src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=32&h=32&fit=crop&crop=face" 
+              alt="Lidia Nautilus" 
+              class="user-avatar me-2"
+            />
+            <span class="user-name">Lidia Nautilus</span>
+          </div>
+          <div class="dropdown">
+            <button class="btn btn-link text-muted p-0" data-bs-toggle="dropdown">
+              <i class="bi bi-chevron-down"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Friends Activity Header -->
+        <div class="activity-header d-flex justify-content-between align-items-center mb-3">
+          <h6 class="friends-title mb-0">Attività amici</h6>
+          <div class="header-actions d-flex align-items-center">
+            <button class="btn btn-link text-muted p-1 me-2" title="Trova amici">
+              <i class="bi bi-person-add"></i>
+            </button>
+            <button class="btn btn-link text-muted p-1" title="Chiudi">
+              <i class="bi bi-x-lg"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Lista amici -->
+        <div class="friends-list">
+          <!-- Charlie Hookham -->
+          <div class="friend-item d-flex align-items-center mb-3">
+            <img
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=32&h=32&fit=crop&crop=face"
+              alt="Charlie Hookham"
+              class="friend-avatar me-3"
+            />
+            <div class="friend-info flex-grow-1">
+              <div class="friend-name">Charlie Hookham</div>
+              <div class="friend-activity text-muted">
+                <small>In Camera • Yumi Zouma</small>
+              </div>
+              <div class="friend-album text-muted">
+                <small><i class="bi bi-disc"></i> EP III</small>
+              </div>
+            </div>
+            <div class="friend-time">
+              <small class="text-muted">4 ore</small>
+            </div>
+          </div>
+
+          <!-- lightdark02 -->
+          <div class="friend-item d-flex align-items-center mb-3">
+            <img
+              src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face"
+              alt="lightdark02"
+              class="friend-avatar me-3"
+            />
+            <div class="friend-info flex-grow-1">
+              <div class="friend-name">lightdark02</div>
+              <div class="friend-activity text-muted">
+                <small>Armed to Kill • Jade LeMac</small>
+              </div>
+              <div class="friend-album text-muted">
+                <small><i class="bi bi-heart-fill text-success"></i> Amato su Kill</small>
+              </div>
+            </div>
+            <div class="friend-time">
+              <small class="text-muted">8 ore</small>
+            </div>
+          </div>
+
+          <!-- Valeria Traverso -->
+          <div class="friend-item d-flex align-items-center mb-3">
+            <img
+              src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=32&h=32&fit=crop&crop=face"
+              alt="Valeria Traverso"
+              class="friend-avatar me-3"
+            />
+            <div class="friend-info flex-grow-1">
+              <div class="friend-name">Valeria Traverso</div>
+              <div class="friend-activity text-muted">
+                <small>Somebody to Love • Wej</small>
+              </div>
+              <div class="friend-album text-muted">
+                <small><i class="bi bi-music-note"></i> Taunt Badass mood</small>
+              </div>
+            </div>
+            <div class="friend-time">
+              <small class="text-muted">3 giorni</small>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Contenuto Principale -->
+    <div class="main-content bg-dark min-vh-100 d-flex flex-column pt-5">
           <section id="content" class="bg-dark">
-            <main class="px-3 mt-4">
+            <main>
               <div class="container">
-              
-                  <div class="main-Banner-Card card w-100 mb-3 rounded-0 d-flex flex-row px-2 border-0 d-none d-md-none d-lg-flex">
+                  <div class="main-Banner-Card card w-100 mb-3 rounded-0 d-flex flex-lg-row px-2 border-0 d-none d-md-none d-lg-flex">
                     <div class="main-Banner-Card-Cover d-flex align-items-center ps-2">
                       <img src="./assets/imgs/main/image-2.jpg" class="card-img-top img-fluid" alt="Album Cover" />
                     </div>
@@ -538,99 +636,115 @@
               </div>
             </main>
           </section>
-        </div>
-        <!-- Questa sarà la parte destra -->
-        <div class="col col-lg-2 border d-none d-lg-block">
-          <section id="friendSection" class="d-none d-lg-block">
-            <div class="my-2 d-flex justify-content-between">
-              <small class="fw-bold">Attività amici</small>
-              <div>
-                <i class="bi bi-person-add text-light-emphasis"></i>
-                <i class="bi bi-x-lg text-light-emphasis"></i>
-              </div>
-            </div>
-            <div>
-              <!-- Gli amici -->
-              <div class="d-flex justify-content-between">
-                <img
-                  src="https://app.pemb.io/img/fake_user_avatar.c6a57028.png"
-                  alt=""
-                  class="me-1"
-                />
-                <div class="d-flex flex-column">
-                  <small class="fw-bold text-dark-emphasis"
-                    >Charlie Hookham</small
-                  >
-                  <small class="text-dark-emphasis"
-                    >In camera ◦ Yumi Zouma</small
-                  >
-                  <small class="text-dark-emphasis"
-                    ><i class="bi bi-disc text-light me-1"></i>EP III</small
-                  >
-                </div>
-                <p class="mx-0">
-                  <small class="text-dark-emphasis">4 h</small>
-                </p>
-              </div>
-              <!-- </div> -->
-            </div>
-          </section>
-        </div>
       </div>
-    </main>
-
     <!-- Player musicale -->
-    <footer
-      class="player-footer position-fixed start-0 w-100 bg-dark border-top"
-    >
-      <div
-        class="current-playing px-3 py-2 d-flex align-items-center justify-content-between"
-      >
-        <div class="d-flex align-items-center flex-grow-1">
-          <div
-            class="now-playing-cover me-3 bg-secondary d-flex align-items-center justify-content-center"
-          >
-            <i class="bi bi-music-note text-muted"></i>
+    <footer class="player-footer position-fixed start-0 w-100 bg-dark border-top">
+      <!-- Player Desktop -->
+      <div class="d-none d-lg-block">
+        <div class="container-fluid h-100 d-flex align-items-center justify-content-between px-3">
+          <!-- Informazioni brano corrente -->
+          <div class="current-track d-flex align-items-center" style="width: 30%;">
+            <div class="track-image me-3">
+              <img src="https://via.placeholder.com/48x48/333/fff?text=♪" alt="Fat Funny Friend" class="rounded" style="width: 48px; height: 48px;">
+            </div>
+            <div class="track-info">
+              <div class="track-title text-white">Fat Funny Friend</div>
+              <div class="track-artist text-muted">Maddie Zahn</div>
+            </div>
+            <button class="btn btn-link text-muted p-0 ms-3">
+              <i class="bi bi-heart" style="font-size: 1rem;"></i>
+            </button>
           </div>
-          <div class="flex-grow-1">
-            <div class="now-playing-title text-truncate">
-              rnatural Parody by The Hillywoo
+
+          <!-- Controlli centrali -->
+          <div class="player-controls d-flex flex-column align-items-center" style="width: 40%;">
+            <div class="control-buttons d-flex align-items-center gap-3 mb-2">
+              <button class="btn btn-link text-muted p-0">
+                <i class="bi bi-shuffle" style="font-size: 0.9rem;"></i>
+              </button>
+              <button class="btn btn-link text-white p-0">
+                <i class="bi bi-skip-backward-fill" style="font-size: 1rem;"></i>
+              </button>
+              <button class="btn btn-success rounded-circle d-flex align-items-center justify-content-center" style="width: 32px; height: 32px;">
+                <i class="bi bi-play-fill" style="font-size: 1rem;"></i>
+              </button>
+              <button class="btn btn-link text-white p-0">
+                <i class="bi bi-skip-forward-fill" style="font-size: 1rem;"></i>
+              </button>
+              <button class="btn btn-link text-muted p-0">
+                <i class="bi bi-repeat" style="font-size: 0.9rem;"></i>
+              </button>
+            </div>
+            <div class="progress-container d-flex align-items-center w-100">
+              <span class="text-muted me-2" style="font-size: 0.75rem;">0:58</span>
+              <div class="progress flex-grow-1" style="height: 4px;">
+                <div class="progress-bar bg-white" role="progressbar" style="width: 30%"></div>
+              </div>
+              <span class="text-muted ms-2" style="font-size: 0.75rem;">3:20</span>
             </div>
           </div>
-        </div>
-        <div class="d-flex align-items-center gap-3">
-          <button class="btn btn-link text-white p-0">
-            <i class="bi bi-laptop"></i>
-          </button>
-          <button class="btn btn-link text-white p-0">
-            <i class="bi bi-heart"></i>
-          </button>
-          <button class="btn btn-link text-white p-0">
-            <i class="bi bi-play-fill fs-4"></i>
-          </button>
+
+          <!-- Controlli volume -->
+          <div class="volume-controls d-flex align-items-center justify-content-end gap-3" style="width: 30%;">
+            <button class="btn btn-link text-muted p-0">
+              <i class="bi bi-laptop" style="font-size: 1rem;"></i>
+            </button>
+            <button class="btn btn-link text-muted p-0">
+              <i class="bi bi-list-ul" style="font-size: 1rem;"></i>
+            </button>
+            <button class="btn btn-link text-muted p-0">
+              <i class="bi bi-volume-up-fill" style="font-size: 1rem;"></i>
+            </button>
+            <div class="volume-slider" style="width: 80px;">
+              <div class="progress" style="height: 4px;">
+                <div class="progress-bar bg-white" role="progressbar" style="width: 70%"></div>
+              </div>
+            </div>
+            <button class="btn btn-link text-muted p-0">
+              <i class="bi bi-arrows-angle-expand" style="font-size: 0.9rem;"></i>
+            </button>
+          </div>
         </div>
       </div>
 
-      <!-- Navigazione -->
-      <nav class="bottom-nav d-flex">
-        <a
-          href="homepage2.html"
-          class="nav-item text-center flex-fill py-2 text-decoration-none text-white"
-        >
+      <!-- Player Mobile (versione originale) -->
+      <div class="d-lg-none">
+        <div class="current-playing px-3 py-2 d-flex align-items-center justify-content-between">
+          <div class="d-flex align-items-center flex-grow-1">
+            <div class="now-playing-cover me-3 bg-secondary d-flex align-items-center justify-content-center">
+              <i class="bi bi-music-note text-muted"></i>
+            </div>
+            <div class="flex-grow-1">
+              <div class="now-playing-title text-truncate">
+                rnatural Parody by The Hillywood Show
+              </div>
+            </div>
+          </div>
+          <div class="d-flex align-items-center gap-3">
+            <button class="btn btn-link text-white p-0">
+              <i class="bi bi-laptop"></i>
+            </button>
+            <button class="btn btn-link text-white p-0">
+              <i class="bi bi-heart"></i>
+            </button>
+            <button class="btn btn-link text-white p-0">
+              <i class="bi bi-play-fill fs-4"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigazione mobile -->
+      <nav class="bottom-nav d-flex d-lg-none">
+        <a href="homepage2.html" class="nav-item text-center flex-fill py-2 text-decoration-none text-muted">
           <div><i class="bi bi-house-door-fill"></i></div>
           <small>Home</small>
         </a>
-        <a
-          href="search.html"
-          class="nav-item text-center flex-fill py-2 text-decoration-none text-muted"
-        >
+        <a href="search.html" class="nav-item text-center flex-fill py-2 text-decoration-none text-muted">
           <div><i class="bi bi-search"></i></div>
           <small>Cerca</small>
         </a>
-        <a
-          href="libreria.html"
-          class="nav-item text-center flex-fill py-2 text-decoration-none text-muted"
-        >
+        <a href="libreria.html" class="nav-item text-center flex-fill py-2 text-decoration-none text-white">
           <div><i class="bi bi-list"></i></div>
           <small>La tua libreria</small>
         </a>
@@ -639,8 +753,9 @@
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLlGRem5+R9g2FzA8ZGN954O5Q"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
       crossorigin="anonymous"
     ></script>
+    <script src="scripts/artist.js"></script>
   </body>
 </html>
