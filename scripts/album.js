@@ -45,7 +45,7 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/album/75621062")
       // Aggiungere o meno il disclaimer per canzoni esplicite
       let explicit = `<p class="text-light"> ${song.artist.name}</p>`;
       if (song.explicit_lyrics) {
-        explicit = `<p><i class="fab fa-etsy"></i> ${song.artist.name}</p>`;
+        explicit = `<p class="text-light"><i class="fab fa-etsy"></i> ${song.artist.name}</p>`;
       }
 
       document.getElementById(

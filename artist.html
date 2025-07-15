@@ -56,19 +56,21 @@
     <main class="px-3">
       
       <!-- Sezione "Brani che ti piacciono" -->
-      <div class="liked-songs mb-4">
-        <div class="d-flex align-items-center">
-          <div class="position-relative me-3">
-            <div class="liked-cover bg-success d-flex align-items-center justify-content-center">
-              <i class="bi bi-heart-fill text-white"></i>
+      <a href="album.html" class="text-decoration-none">
+        <div class="liked-songs mb-4">
+          <div class="d-flex align-items-center">
+            <div class="position-relative me-3">
+              <div class="liked-cover bg-success d-flex align-items-center justify-content-center">
+                <i class="bi bi-heart-fill text-white"></i>
+              </div>
+            </div>
+            <div>
+              <h6 class="mb-0 text-white">Brani che ti piacciono</h6>
+              <small class="text-muted">8 brani di Pinguini Tattici Nucleari</small>
             </div>
           </div>
-          <div>
-            <h6 class="mb-0">Brani che ti piacciono</h6>
-            <small class="text-muted">8 brani di Pinguini Tattici Nucleari</small>
-          </div>
         </div>
-      </div>
+      </a>
 
       <!-- Sezione Popolari -->
       <div class="popular-section">
@@ -85,14 +87,16 @@
     </main>
 
     <!-- Player musicale -->
-    <footer class="player-footer position-fixed bottom-0 start-0 w-100 bg-dark border-top">
+    <footer class="player-footer position-fixed start-0 w-100 bg-dark border-top">
       <div class="current-playing px-3 py-2 d-flex align-items-center justify-content-between">
         <div class="d-flex align-items-center flex-grow-1">
           <div class="now-playing-cover me-3 bg-secondary d-flex align-items-center justify-content-center">
             <i class="bi bi-music-note text-muted"></i>
           </div>
           <div class="flex-grow-1">
-            <div class="now-playing-title text-truncate">Supernatural Parody by The Hillywood Show</div>
+            <div class="now-playing-title text-truncate">
+              rnatural Parody by The Hillywood Show
+            </div>
           </div>
         </div>
         <div class="d-flex align-items-center gap-3">
@@ -107,19 +111,19 @@
           </button>
         </div>
       </div>
-      
+
       <!-- Navigazione -->
       <nav class="bottom-nav d-flex">
-        <a href="homepage.html" class="nav-item text-center flex-fill py-2 text-decoration-none text-muted">
-          <div><i class="bi bi-house-door"></i></div>
+        <a href="homepage2.html" class="nav-item text-center flex-fill py-2 text-decoration-none text-muted">
+          <div><i class="bi bi-house-door-fill"></i></div>
           <small>Home</small>
         </a>
-        <a href="#" class="nav-item text-center flex-fill py-2 text-decoration-none text-muted">
+        <a href="search.html" class="nav-item text-center flex-fill py-2 text-decoration-none text-muted">
           <div><i class="bi bi-search"></i></div>
           <small>Cerca</small>
         </a>
-        <a href="#" class="nav-item text-center flex-fill py-2 text-decoration-none text-muted">
-          <div><i class="bi bi-collection"></i></div>
+        <a href="libreria.html" class="nav-item text-center flex-fill py-2 text-decoration-none text-white">
+          <div><i class="bi bi-list"></i></div>
           <small>La tua libreria</small>
         </a>
       </nav>
