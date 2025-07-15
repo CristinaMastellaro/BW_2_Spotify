@@ -186,22 +186,7 @@
 
       <!-- Barra Destra -->
       <section class="sidebar-right d-none d-lg-block" id="friendSection">
-        <!-- User Profile Header -->
-        <div class="user-profile-header d-flex align-items-center justify-content-between mb-4 pb-3">
-          <div class="d-flex align-items-center">
-            <img 
-              src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=32&h=32&fit=crop&crop=face" 
-              alt="Lidia Nautilus" 
-              class="user-avatar me-2"
-            />
-            <span class="user-name">Lidia Nautilus</span>
-          </div>
-          <div class="dropdown">
-            <button class="btn btn-link text-muted p-0" data-bs-toggle="dropdown">
-              <i class="bi bi-chevron-down"></i>
-            </button>
-          </div>
-        </div>
+        
 
         <!-- Friends Activity Header -->
         <div class="activity-header d-flex justify-content-between align-items-center mb-3">
@@ -296,6 +281,15 @@
               <i class="bi bi-arrow-left fs-4"></i>
             </button>
           </div>
+          <div class="position-absolute end-0 top-0 p-3"><div class="d-flex align-items-center">
+            
+          </div><div class="d-none d-lg-flex align-items-center gap-2">
+            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=32&amp;h=32&amp;fit=crop&amp;crop=face" alt="Lidia Nautilus" class="user-avatar me-2">
+            <span class="user-name">Lidia Nautilus</span>
+            <button class="btn btn-link text-muted p-0" data-bs-toggle="dropdown">
+              <i class="bi bi-chevron-down"></i>
+            </button>
+          </div></div>
           <div class="hero-gradient"></div>
 
           <!-- Informazioni artista -->
@@ -546,6 +540,25 @@
             <button class="btn btn-link text-white p-0">
               <i class="bi bi-play-fill fs-4"></i>
             </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Player Mobile -->
+      <div class="custom-mobile-player d-lg-none">
+        <div class="cmp-row d-flex align-items-center justify-content-between px-3 py-2">
+          <div class="d-flex align-items-center flex-grow-1 overflow-hidden">
+            <div class="cmp-cover me-3 bg-secondary d-flex align-items-center justify-content-center rounded">
+              <img src="assets/imgs/search/pinguini.png" alt="cover" style="width:40px; height:40px; object-fit:cover; border-radius:6px;">
+            </div>
+            <div class="flex-grow-1 overflow-hidden">
+              <div class="cmp-title text-truncate text-white fw-semibold" style="font-size: 1rem;">Gioventù bruciata</div>
+              <div class="cmp-artist text-truncate text-secondary" style="font-size: 0.85rem;">Pinguini Tattici Nucleari</div>
+            </div>
+          </div>
+          <div class="d-flex align-items-center ms-2 gap-2 flex-shrink-0">
+            <button class="btn btn-link text-white p-0"><i class="bi bi-heart"></i></button>
+            <button class="btn btn-link text-white p-0"><i class="bi bi-play-fill fs-4"></i></button>
           </div>
         </div>
       </div>

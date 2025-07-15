@@ -503,10 +503,11 @@ main {
 
 .main-Banner-Card {
   background: linear-gradient(
-    200deg,
+    215deg,
     rgba(43, 42, 42, 0.8) 0%,
-    var(--spotify-dark) 100%,
-    var(--spotify-dark) 100%
+    var(--spotify-dark) 30%,
+    black 80%,
+    black 100%
   );
   color: var(--spotify-white);
 }
@@ -517,7 +518,7 @@ main {
 
 .main-Banner-Card img {
   width: 100%;
-  min-width: 150px;
+  min-width: 200px;
 }
 
 .dot-Button {
@@ -533,4 +534,16 @@ main {
   border: none;
   background-color: rgba(43, 42, 42, 0.8);
   white-space: nowrap;
+}
+
+.login-Dropdown {
+  background-color: black;
+}
+
+.dropdown-toggle {
+  color: var(--spotify-white);
+}
+
+.profile-Pic {
+  width: 40px;
 }
