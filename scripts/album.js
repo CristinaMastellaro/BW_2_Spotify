@@ -51,7 +51,7 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/album/75621062")
 
       document.getElementById(
         "containerSongs"
-      ).innerHTML += `<div class="infoSong d-flex justify-content-between px-2">
+      ).innerHTML += `<div class="infoSong d-flex justify-content-between px-2 d-block d-lg-none">
           <div class="song d-flex flex-column ms-3">
 
             <h5 class="text-light">${song.title}</h5>
