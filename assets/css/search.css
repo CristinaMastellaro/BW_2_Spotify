@@ -86,6 +86,12 @@ body {
   }
 }
 
+@media (min-width: 768px) and (max-width: 996px) {
+  .main-content {
+    margin-left: 0;
+  }
+}
+
 /* === HEADER RICERCA === */
 .search-header {
   margin-bottom: 40px;
