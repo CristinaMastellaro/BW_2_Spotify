@@ -83,3 +83,18 @@ function CreateTrackElement(track, position) {
   TrackDiv.className = "song-item d-flex align-items-center py-2"
   TrackDiv.style.cursor = "pointer"
 }
+
+// API
+document.addEventListener("DOMContentLoaded", function () {
+  fetch("https://striveschool-api.herokuapp.com/api/deezer/artist")
+    // Gestione del risultato
+    .then((response) => response.json())
+    .then((data) => {
+      // Gestisci i dati ricevuti dalla risposta
+      console.log(data)
+    })
+    // Gestione errore
+    .catch((error) => {
+      console.error("Errore nella chiamata API:", error)
+    })
+})
