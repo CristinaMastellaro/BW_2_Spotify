@@ -46,6 +46,12 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/album/75621062")
     document.getElementById("year").innerText +=
       dataAlbum["release_date"].split("-")[0];
     // Info singole canzoni
+
+    document.getElementById("nBrani").innerText = dataAlbum.nb_tracks;
+    document.getElementById("minutsBrani").innerText +=
+      " " + parseInt(dataAlbum.duration / 60) + " min";
+
+    // Questa parte è per il mobile
     dataAlbum.tracks.data.forEach((song) => {
       // Aggiungere o meno il disclaimer per canzoni esplicite
       let explicit = `<p class="text-secondary mb-0"> ${song.artist.name}</p>`;
@@ -65,6 +71,32 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/album/75621062")
           <!--nome singolo e artista-->
           <div class="point"><i class="bi bi-three-dots-vertical text-secondary"></i></div>
         </div>`;
+    });
+
+    // Questa parte è per il desktop
+    dataAlbum.tracks.data.forEach((song, i) => {
+      let explicit = `<p class="text-secondary mb-0"> ${song.artist.name}</p>`;
+      if (song.explicit_lyrics) {
+        explicit = `<p class="text-secondary mb-0"><i class="fab fa-etsy"></i> ${song.artist.name}</p>`;
+      }
+      document.querySelector(
+        "#colSong"
+      ).innerHTML += `<div class="ps-0 ms-0 mb-2 d-flex align-items-center gap-3">
+      <p>${i + 1}</p>
+      <div class="song d-flex flex-column pt-1">
+            <h5 class="text-light mb-0">${song.title}</h5>
+            ${explicit}
+          </div>
+          </div>`;
+
+      document.querySelector(
+        "#colRiprod ul"
+      ).innerHTML += `<li class="ps-0 ms-0"></li>`;
+      document.querySelector(
+        "#colDownload ul"
+      ).innerHTML += `<li class="ps-0 ms-0">${parseInt(
+        song.duration / 60
+      )}</li>`;
     });
   })
   .catch((err) => console.log("Errore!", err));
