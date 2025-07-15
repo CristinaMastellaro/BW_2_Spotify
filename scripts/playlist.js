@@ -58,43 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
         </div>`;
     }
 
-    // Se è la playlist dei brani che ti piacciono
-    const isLiked = queryParams.get('liked') === '1';
-    if (isLiked) {
-        if (titleEl) titleEl.innerText = 'Brani che ti piacciono';
-        if (coverEl) {
-            // Mostra un cuore grande come copertina
-            coverEl.style.background = 'linear-gradient(135deg, #450af5, #c4efd9)';
-            coverEl.style.display = 'flex';
-            coverEl.style.alignItems = 'center';
-            coverEl.style.justifyContent = 'center';
-            coverEl.style.borderRadius = '16px';
-            coverEl.style.width = '200px';
-            coverEl.style.height = '200px';
-            coverEl.src = '';
-            coverEl.alt = 'Cuore';
-            coverEl.outerHTML = `<div id="liked-cover" style="width:200px;height:200px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#450af5,#c4efd9);border-radius:16px;"><i class='bi bi-heart-fill' style='font-size:5rem;color:white;'></i></div>`;
-        }
-        if (creatorEl) creatorEl.innerText = 'La tua raccolta di brani preferiti';
-        if (container) {
-            container.innerHTML += [
-                { title: 'Preferita 1', artist: 'Artista X', explicit: false },
-                { title: 'Preferita 2', artist: 'Artista Y', explicit: true },
-                { title: 'Preferita 3', artist: 'Artista Z', explicit: false },
-            ].map(song => `
-                <div class="infoSong d-flex justify-content-between px-2 d-block d-lg-none">
-                    <div class="song d-flex flex-column ms-3">
-                        <h5 class="text-light">${song.title}</h5>
-                        <p class="text-secondary">${song.explicit ? '<i class=\'fab fa-etsy\'></i>' : ''} ${song.artist}</p>
-                    </div>
-                    <div class="point"><i class="bi bi-three-dots-vertical text-secondary"></i></div>
-                </div>
-            `).join('');
-        }
-        return;
-    }
-
-    // Gestione frecce di ritorno (mobile e desktop)
+    // Gestione frecce di ritorno (mobile e desktop) - DEVE ESSERE PRIMA DEL BLOCCO isLiked
     // Mobile
     const backBtnMobile = document.querySelector('.btn.btn-link.text-white.p-0');
     if (backBtnMobile) {
@@ -130,4 +94,40 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
+
+    // Se è la playlist dei brani che ti piacciono
+    const isLiked = queryParams.get('liked') === '1';
+    if (isLiked) {
+        if (titleEl) titleEl.innerText = 'Brani che ti piacciono';
+        if (coverEl) {
+            // Mostra un cuore grande come copertina
+            coverEl.style.background = 'linear-gradient(135deg, #450af5, #c4efd9)';
+            coverEl.style.display = 'flex';
+            coverEl.style.alignItems = 'center';
+            coverEl.style.justifyContent = 'center';
+            coverEl.style.borderRadius = '16px';
+            coverEl.style.width = '200px';
+            coverEl.style.height = '200px';
+            coverEl.src = '';
+            coverEl.alt = 'Cuore';
+            coverEl.outerHTML = `<div id="liked-cover" style="width:200px;height:200px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#450af5,#c4efd9);border-radius:16px;"><i class='bi bi-heart-fill' style='font-size:5rem;color:white;'></i></div>`;
+        }
+        if (creatorEl) creatorEl.innerText = 'La tua raccolta di brani preferiti';
+        if (container) {
+            container.innerHTML += [
+                { title: 'Preferita 1', artist: 'Artista X', explicit: false },
+                { title: 'Preferita 2', artist: 'Artista Y', explicit: true },
+                { title: 'Preferita 3', artist: 'Artista Z', explicit: false },
+            ].map(song => `
+                <div class="infoSong d-flex justify-content-between px-2 d-block d-lg-none">
+                    <div class="song d-flex flex-column ms-3">
+                        <h5 class="text-light">${song.title}</h5>
+                        <p class="text-secondary">${song.explicit ? '<i class=\'fab fa-etsy\'></i>' : ''} ${song.artist}</p>
+                    </div>
+                    <div class="point"><i class="bi bi-three-dots-vertical text-secondary"></i></div>
+                </div>
+            `).join('');
+        }
+        return;
+    }
 });
