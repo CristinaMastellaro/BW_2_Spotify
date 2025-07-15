@@ -145,6 +145,13 @@ body {
   }
 }
 
+@media (min-width: 992px) {
+  .main-content {
+    margin-left: 300px;
+    margin-right: 300px;
+  }
+}
+
 /* === STILI BARRE LATERALI === */
 .sidebar-left .nav-block {
   background-color: transparent;
@@ -1219,5 +1226,11 @@ main {
 @media (min-width: 577px) and (max-width: 992px) {
   .custom-mobile-player {
     bottom: 90px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .sidebar-left {
+    display: none !important;
   }
 }
