@@ -66,10 +66,12 @@
 
     <!-- Aggiungiamo le due barre laterali -->
     <!-- <main class="container my-4"> -->
-    <main class="mt-4 position-relative d-flex w-100 justify-content-around">
+    <main
+      class="mt-4 position-relative d-flex w-100 justify-content-around px-0"
+    >
       <div class="row row-cols-1 row-cols-lg-3 w-100">
         <!-- Questa sarà la parte sinistra -->
-        <div class="col col-lg-2 border d-none d-lg-block">
+        <div class="col col-lg-2 d-none d-lg-block">
           <section
             class="position-sticky left-0 d-none d-lg-block"
             id="navSection"
@@ -77,51 +79,95 @@
             <div id="hideLeftNav">
               <i class="bi bi-three-dots"></i>
             </div>
-            <nav class="bottom-nav d-flex flex-column mb-3">
+            <nav class="nav d-flex flex-column mb-3 align-items-start">
               <a
                 href="homepage.html"
                 class="nav-item d-flex flex-fill align-items-center py-2 text-decoration-none text-muted"
               >
-                <div><i class="me-3 bi bi-house-door"></i></div>
-                <small class="fw-bold">Home</small>
+                <div class="d-flex flex-row align-items-center">
+                  <i class="me-3 bi bi-house-door"></i>
+                  <small class="fw-bold">Home</small>
+                </div>
               </a>
               <a
                 href="#"
                 class="nav-item d-flex flex-fill align-items-center py-2 text-decoration-none text-muted"
               >
-                <div><i class="me-3 bi bi-search"></i></div>
-                <small class="fw-bold">Cerca</small>
+                <div class="d-flex flex-row align-items-center">
+                  <i class="me-3 bi bi-search"></i>
+                  <small class="fw-bold">Cerca</small>
+                </div>
               </a>
               <a
                 href="#"
                 class="nav-item d-flex flex-fill align-items-center py-2 text-decoration-none text-muted"
               >
-                <div><i class="me-3 bi bi-collection"></i></div>
-                <small class="fw-bold">La tua libreria</small>
+                <div class="d-flex flex-row align-items-center">
+                  <i class="me-3 bi bi-collection"></i>
+                  <small class="fw-bold">La tua libreria</small>
+                </div>
               </a>
             </nav>
             <div class="mb-3">
-              <nav class="bottom-nav d-flex flex-column">
+              <nav
+                class="nav d-flex flex-column align-items-start justify-content-center"
+              >
                 <a
                   href="homepage.html"
                   class="nav-item d-flex flex-fill align-items-center py-2 text-decoration-none text-muted"
                 >
-                  <div><i class="me-3 bi bi-house-door"></i></div>
-                  <small class="fw-bold">Crea playlist</small>
+                  <div class="d-flex flex-row align-items-center">
+                    <div class="position-relative me-3">
+                      <div
+                        style="height: 30px; width: 30px"
+                        class="bg-dark-subtle d-flex align-items-center justify-content-center rounded-1"
+                      >
+                        <i
+                          class="bi bi-plus-lg text-dark"
+                          style="transform: scale(0.7); height: 18px"
+                        ></i>
+                      </div>
+                    </div>
+                    <small class="fw-bold">Crea playlist</small>
+                  </div>
                 </a>
                 <a
                   href="#"
                   class="nav-item d-flex flex-fill align-items-center py-2 text-decoration-none text-muted"
                 >
-                  <div><i class="me-3 bi bi-search"></i></div>
-                  <small class="fw-bold">Brani che ti piacciono</small>
+                  <div class="d-flex flex-row align-items-center">
+                    <div class="position-relative me-3">
+                      <div
+                        style="height: 30px; width: 30px"
+                        class="liked-cover bg-success d-flex align-items-center justify-content-center"
+                      >
+                        <i
+                          class="bi bi-heart-fill text-white"
+                          style="transform: scale(0.5); height: 10px"
+                        ></i>
+                      </div>
+                    </div>
+                    <small class="fw-bold">Brani che ti piacciono</small>
+                  </div>
                 </a>
                 <a
                   href="#"
                   class="nav-item d-flex flex-fill align-items-center py-2 text-decoration-none text-muted"
                 >
-                  <div><i class="me-3 bi bi-collection"></i></div>
-                  <small class="fw-bold">I tuoi episodi</small>
+                  <div class="d-flex flex-row align-items-center">
+                    <div class="position-relative me-3">
+                      <div
+                        style="height: 30px; width: 30px"
+                        class="bg-success d-flex align-items-center justify-content-center rounded-1"
+                      >
+                        <i
+                          class="bi bi-bookmark-fill text-bg-success"
+                          style="transform: scale(0.4); height: 10px"
+                        ></i>
+                      </div>
+                    </div>
+                    <small class="fw-bold">I tuoi episodi</small>
+                  </div>
                 </a>
               </nav>
             </div>
@@ -194,7 +240,7 @@
           </section>
         </div>
         <!--  Qui andranno inseriti i contenuti delle pagine -->
-        <div class="col col-12 col-lg-8 border">
+        <div class="col col-12 col-lg-8">
           <section id="content" class="bg-dark">
             <main
               style="
@@ -298,7 +344,7 @@
           </section>
         </div>
         <!-- Questa sarà la parte destra -->
-        <div class="col col-lg-2 border d-none d-lg-block">
+        <div class="col col-lg-2 d-none d-lg-block">
           <section id="friendSection" class="d-none d-lg-block">
             <div class="my-2 d-flex justify-content-between">
               <small class="fw-bold">Attività amici</small>

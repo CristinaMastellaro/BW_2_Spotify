@@ -37,27 +37,28 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/album/75621062")
     document.querySelector("h6.card-text").innerText += dataAlbum.artist.name;
     // Anno di rilascio dell'album
     document.querySelector("p.card-text").innerText +=
+      " " +
       //   dataAlbum["release_date"];
       dataAlbum["release_date"].split("-")[0];
 
     // Info singole canzoni
     dataAlbum.tracks.data.forEach((song) => {
       // Aggiungere o meno il disclaimer per canzoni esplicite
-      let explicit = `<p class="text-light"> ${song.artist.name}</p>`;
+      let explicit = `<p class="text-secondary"> ${song.artist.name}</p>`;
       if (song.explicit_lyrics) {
-        explicit = `<p class="text-light"><i class="fab fa-etsy"></i> ${song.artist.name}</p>`;
+        explicit = `<p class="text-secondary"><i class="fab fa-etsy"></i> ${song.artist.name}</p>`;
       }
 
       document.getElementById(
         "containerSongs"
-      ).innerHTML += `<div class="infoSong d-flex justify-content-between">
+      ).innerHTML += `<div class="infoSong d-flex justify-content-between px-2">
           <div class="song d-flex flex-column ms-3">
 
             <h5 class="text-light">${song.title}</h5>
             ${explicit}
           </div>
           <!--nome singolo e artista-->
-          <div class="point"><i class="bi bi-three-dots-vertical text-white"></i></div>
+          <div class="point"><i class="bi bi-three-dots-vertical text-secondary"></i></div>
         </div>`;
     });
   })
