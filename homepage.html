@@ -286,40 +286,76 @@
     </div>
 
     <!-- Contenuto Principale -->
+     
     <div class="main-content bg-dark min-vh-100 d-flex flex-column pt-5">
           <section id="content" class="bg-dark">
             <main>
               <div class="container">
-                  <div class="main-Banner-Card card w-100 mb-3 rounded-0 d-flex flex-lg-row px-2 border-0 d-none d-md-none d-lg-flex">
-                    <div class="main-Banner-Card-Cover d-flex align-items-center ps-2">
-                      <img src="./assets/imgs/main/image-2.jpg" class="card-img-top img-fluid" alt="Album Cover" />
-                    </div>
-                    <div class="card-body flex-grow-1">
-                      <p class="card-text">
+                <!-- Inizio Carousel////////////////////////////// -->
+                 <div class="d-flex justify-content-start gap-0 mb-3 p-0">
+                <button class="carousel-control-prev position-static justify-content-start" type="button" data-bs-target="#bannerCarousel" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Precedente</span>
+                </button>
+              
+                <button class="carousel-control-next position-static  justify-content-start" type="button" data-bs-target="#bannerCarousel" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Successivo</span>
+                </button>
+              </div>
+                                <div id="bannerCarousel" class="carousel slide d-none d-lg-block" data-bs-ride="carousel">
+                 <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <div class="main-Banner-Card card w-100 mb-3 rounded-0 d-flex flex-lg-row px-2 border-0">
+                      <div class="main-Banner-Card-Cover d-flex align-items-center ps-2">
+                        <img src="./assets/imgs/main/image-2.jpg" class="card-img-top img-fluid" alt="Album Cover" />
+                      </div>
+                      <div class="card-body flex-grow-1">
                         <small>ALBUM</small>
                         <h3 class="fs-1 fw-bold">VIOLA (Feat. Salmo)</h3>
                         <small class="d-block mb-1">Fedez, Salmo</small>
                         <small class="d-block">Ascolta il nuovo singolo di Fedez e Salmo!</small>
                         <div class="filter-buttons mb-0 mt-3">
-                          <button
-                            type="button"
-                            class="btn filter-btn active rounded-pill"
-                          >
-                            Play
-                          </button>
-                          <button type="button" class="btn filter-btn rounded-pill">
-                            Salva
-                          </button>
+                          <button type="button" class="btn filter-btn active rounded-pill">Play</button>
+                          <button type="button" class="btn filter-btn rounded-pill">Salva</button>
                           <button type="button" class="dot-Button btn filter-btn border-0 ps-2 m-0 pe-0">
                             <i class="bi bi-three-dots"></i>
                           </button>
                         </div>
-                      </p>
-                    </div>
-                    <div class="pt-3">
-                      <button class="hide-Annunci-Button rounded-pill">NASCONDI ANNUNCI</button>
+                      </div>
+                      <div class="pt-3">
+                        <button class="hide-Annunci-Button rounded-pill">NASCONDI ANNUNCI</button>
+                      </div>
                     </div>
                   </div>
+                  <div class="carousel-item ">
+                    <div class="main-Banner-Card card w-100 mb-3 rounded-0 d-flex flex-lg-row px-2 border-0">
+                      <div class="main-Banner-Card-Cover d-flex align-items-center ps-2">
+                        <img src="./assets/imgs/main/image-2.jpg" class="card-img-top img-fluid" alt="Album Cover" />
+                      </div>
+                      <div class="card-body flex-grow-1">
+                        <small>ALBUM</small>
+                        <h3 class="fs-1 fw-bold">VIOLA (Feat. Salmo)</h3>
+                        <small class="d-block mb-1">Fedez, Salmo</small>
+                        <small class="d-block">Ascolta il nuovo singolo di Fedez e Salmo!</small>
+                        <div class="filter-buttons mb-0 mt-3">
+                          <button type="button" class="btn filter-btn active rounded-pill">Play</button>
+                          <button type="button" class="btn filter-btn rounded-pill">Salva</button>
+                          <button type="button" class="dot-Button btn filter-btn border-0 ps-2 m-0 pe-0">
+                            <i class="bi bi-three-dots"></i>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="pt-3">
+                        <button class="hide-Annunci-Button rounded-pill">NASCONDI ANNUNCI</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+<!-- FINE CAROUSEL/////////////////////////////////// -->
+
+              
                 
                 <!-- Header con Buonasera e icone -->
                 <div
