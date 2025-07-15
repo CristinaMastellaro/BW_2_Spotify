@@ -1184,7 +1184,7 @@ main {
   position: fixed;
   left: 0;
   right: 0;
-  bottom: 75px; /* via di mezzo: subito sopra la navbar, senza coprire i loghi */
+  bottom: 75px;
   z-index: 1100;
   background: linear-gradient(90deg, #232323 80%, #232323ee 100%);
   box-shadow: 0 -2px 16px 0 rgba(0, 0, 0, 0.18);
