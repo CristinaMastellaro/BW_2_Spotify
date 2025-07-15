@@ -54,7 +54,7 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/album/75621062")
       }
 
       document.getElementById(
-        "containerSongs"
+        "mobileSong"
       ).innerHTML += `<div class="infoSong d-flex justify-content-between align-items-center px-2 playlist-item">
           <div class="song d-flex flex-column ms-3 pt-1">
 
