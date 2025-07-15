@@ -1,4 +1,508 @@
 <!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pinguini Tattici Nucleari - Spotify</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="assets/css/circular-font.css" />
+    <link rel="stylesheet" href="assets/css/artist.css" />
+    <link rel="stylesheet" href="assets/css/album.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <style>
+      body {
+        background-color: black;
+      }
+      small {
+        color: text-dark-emphasis;
+      }
+
+      #navSection {
+        background-color: black;
+        padding-left: 0.5em;
+        top: 10px;
+      }
+
+      #content {
+        /* width: 58%; */
+        /* margin-left: auto;
+        margin-right: auto; */
+        /* position: sticky;
+        top: 10px;
+        left: 20%;
+        right: 20%; */
+      }
+
+      #friendSection {
+        background-color: black;
+        height: 100%;
+      }
+
+      #friendSection img {
+        width: 20px;
+        height: 20px;
+        border-radius: 20px;
+      }
+
+      #friendSection div div small {
+        font-size: 12px;
+      }
+
+      #content {
+        background: linear-gradient(to bottom, #9c9c03 0%, #000000 20%);
+        padding-left: 1em;
+        padding-right: 1em;
+      }
+
+      .container {
+        max-width: 100% !important;
+      }
+
+      .card-title {
+        font-size: 2.2em;
+      }
+
+      #containerSongs i {
+        transform: scale(1.5);
+        margin-right: 1.5em;
+      }
+
+      #iconsContainer {
+        margin-bottom: 1.5em;
+        margin-right: 1em;
+      }
+
+      #iconsContainer > div > div:nth-of-type(1) {
+        width: 120px;
+      }
+
+      #iconsContainer > div > div:nth-of-type(2) {
+        width: 90px;
+      }
+
+      .infoSong {
+        margin-bottom: 0.5em;
+      }
+
+      .infoSong h5 {
+        margin-bottom: 0;
+      }
+
+      .infoSong i {
+        font-size: 1.5em;
+        margin-right: 0.5em !important;
+      }
+    </style>
+  </head>
+  <body class="bg-black text-white">
+    <!-- Header con immagine artista -->
+
+    <!-- Aggiungiamo le due barre laterali -->
+    <!-- <main class="container my-4"> -->
+    <main
+      class="mt-4 position-relative d-flex w-100 justify-content-around px-0"
+    >
+      <div class="row row-cols-1 row-cols-lg-3 w-100">
+        <!-- Questa sarà la parte sinistra -->
+        <div class="col col-lg-2 d-none d-lg-block">
+          <section
+            class="position-sticky left-0 d-none d-lg-block"
+            id="navSection"
+          >
+            <div id="hideLeftNav">
+              <i class="bi bi-three-dots"></i>
+            </div>
+            <nav class="nav d-flex flex-column mb-3 align-items-start">
+              <a
+                href="homepage.html"
+                class="nav-item d-flex flex-fill align-items-center py-2 text-decoration-none text-muted"
+              >
+                <div class="d-flex flex-row align-items-center">
+                  <i class="me-3 bi bi-house-door"></i>
+                  <small class="fw-bold">Home</small>
+                </div>
+              </a>
+              <a
+                href="#"
+                class="nav-item d-flex flex-fill align-items-center py-2 text-decoration-none text-muted"
+              >
+                <div class="d-flex flex-row align-items-center">
+                  <i class="me-3 bi bi-search"></i>
+                  <small class="fw-bold">Cerca</small>
+                </div>
+              </a>
+              <a
+                href="#"
+                class="nav-item d-flex flex-fill align-items-center py-2 text-decoration-none text-muted"
+              >
+                <div class="d-flex flex-row align-items-center">
+                  <i class="me-3 bi bi-collection"></i>
+                  <small class="fw-bold">La tua libreria</small>
+                </div>
+              </a>
+            </nav>
+            <div class="mb-3">
+              <nav
+                class="nav d-flex flex-column align-items-start justify-content-center"
+              >
+                <a
+                  href="homepage.html"
+                  class="nav-item d-flex flex-fill align-items-center py-2 text-decoration-none text-muted"
+                >
+                  <div class="d-flex flex-row align-items-center">
+                    <div class="position-relative me-3">
+                      <div
+                        style="height: 30px; width: 30px"
+                        class="bg-dark-subtle d-flex align-items-center justify-content-center rounded-1"
+                      >
+                        <i
+                          class="bi bi-plus-lg text-dark"
+                          style="transform: scale(0.7); height: 18px"
+                        ></i>
+                      </div>
+                    </div>
+                    <small class="fw-bold">Crea playlist</small>
+                  </div>
+                </a>
+                <a
+                  href="#"
+                  class="nav-item d-flex flex-fill align-items-center py-2 text-decoration-none text-muted"
+                >
+                  <div class="d-flex flex-row align-items-center">
+                    <div class="position-relative me-3">
+                      <div
+                        style="height: 30px; width: 30px"
+                        class="liked-cover bg-success d-flex align-items-center justify-content-center"
+                      >
+                        <i
+                          class="bi bi-heart-fill text-white"
+                          style="transform: scale(0.5); height: 10px"
+                        ></i>
+                      </div>
+                    </div>
+                    <small class="fw-bold">Brani che ti piacciono</small>
+                  </div>
+                </a>
+                <a
+                  href="#"
+                  class="nav-item d-flex flex-fill align-items-center py-2 text-decoration-none text-muted"
+                >
+                  <div class="d-flex flex-row align-items-center">
+                    <div class="position-relative me-3">
+                      <div
+                        style="height: 30px; width: 30px"
+                        class="bg-success d-flex align-items-center justify-content-center rounded-1"
+                      >
+                        <i
+                          class="bi bi-bookmark-fill text-bg-success"
+                          style="transform: scale(0.4); height: 10px"
+                        ></i>
+                      </div>
+                    </div>
+                    <small class="fw-bold">I tuoi episodi</small>
+                  </div>
+                </a>
+              </nav>
+            </div>
+            <div
+              id="searchChronology"
+              class="d-flex flex-column ps-2"
+              data-bs-spy="scroll"
+            >
+              <p>
+                <a href="#" class="text-decoration-none text-dark-emphasis"
+                  ><small>early stage emily</small></a
+                >
+              </p>
+              <p>
+                <a href="#" class="text-decoration-none text-dark-emphasis"
+                  ><small>Be the young</small></a
+                >
+              </p>
+              <p>
+                <a href="#" class="text-decoration-none text-dark-emphasis"
+                  ><small>that's fucking mood</small></a
+                >
+              </p>
+              <p>
+                <a href="#" class="text-decoration-none text-dark-emphasis"
+                  ><small>2021 lol</small></a
+                >
+              </p>
+              <p>
+                <a href="#" class="text-decoration-none text-dark-emphasis"
+                  ><small>2021 lol</small></a
+                >
+              </p>
+              <p>
+                <a href="#" class="text-decoration-none text-dark-emphasis"
+                  ><small>2021 lol</small></a
+                >
+              </p>
+              <p>
+                <a href="#" class="text-decoration-none text-dark-emphasis"
+                  ><small>2021 lol</small></a
+                >
+              </p>
+              <p>
+                <a href="#" class="text-decoration-none text-dark-emphasis"
+                  ><small>2021 lol</small></a
+                >
+              </p>
+              <p>
+                <a href="#" class="text-decoration-none text-dark-emphasis"
+                  ><small>2021 lol</small></a
+                >
+              </p>
+              <p>
+                <a href="#" class="text-decoration-none text-dark-emphasis"
+                  ><small>2021 lol</small></a
+                >
+              </p>
+              <p>
+                <a href="#" class="text-decoration-none text-dark-emphasis"
+                  ><small>2021 lol</small></a
+                >
+              </p>
+              <p>
+                <a href="#" class="text-decoration-none text-dark-emphasis"
+                  ><small>2021 lol</small></a
+                >
+              </p>
+            </div>
+          </section>
+        </div>
+        <!--  Qui andranno inseriti i contenuti delle pagine -->
+        <div class="col col-12 col-lg-8">
+          <section id="content" class="bg-dark">
+            <!-- Pulsante di ritorno -->
+            <div
+              class="position-absolute top-0 start-0 p-3"
+              style="z-index: 10"
+            >
+              <a href="artist.html" class="btn btn-link text-white p-0">
+                <i class="bi bi-arrow-left fs-4"></i>
+              </a>
+            </div>
+
+            <div class="container">
+              <div class="row">
+                <div class="col d-flex">
+                  <div class="card bg-transparent border-0 d-flex w-100">
+                    <div class="d-flex d-flex justify-content-center">
+                      <img
+                        src="..."
+                        class="card-img-top mt-4 d-block"
+                        style="max-width: 300px"
+                        alt="..."
+                      />
+                    </div>
+                    <div
+                      class="card-body d-flex flex-column justify-content-start my-3"
+                    >
+                      <h5 class="card-title text-white fw-semibold">
+                        Card title
+                      </h5>
+                      <!--Gioventù bruciata-->
+                      <div class="d-flex align-items-center mb-2 gap-2">
+                        <img
+                          id="artistImg"
+                          src=".."
+                          class="rounded-5"
+                          style="width: 30px"
+                        />
+
+                        <h6 class="card-text text-white"></h6>
+                      </div>
+
+                      <!--artista  album-->
+                      <p class="card-text text-secondary">Album -</p>
+                      <!--anno album-->
+                    </div>
+                  </div>
+                </div>
+                <!--fine div col-->
+              </div>
+              <!--fine div row-->
+            </div>
+            <!--fine div container-->
+
+            <section id="containerSongs">
+              <!--sezione canzoni-->
+              <div id="iconsContainer">
+                <div
+                  class="d-flex ms-3 justify-content-between px-2 align-items-center"
+                >
+                  <div class="d-flex justify-content-between">
+                    <i class="bi bi-heart text-white me-2"></i>
+                    <i class="bi bi-arrow-down-circle text-secondary me-2"></i>
+                    <i
+                      class="bi bi-three-dots-vertical text-secondary me-2"
+                    ></i>
+                  </div>
+                  <!--icone dx-->
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <i class="bi bi-shuffle me-2 text-secondary"></i>
+                    <div
+                      class="d-flex justify-content-center align-items-center text-center ps-4"
+                      style="
+                        background-color: #2d8c2d;
+                        border-radius: 50%;
+                        width: 42px;
+                        height: 42px;
+                      "
+                    >
+                      <i
+                        class="bi bi-play-fill"
+                        style="color: white; font-size: 15px"
+                      ></i>
+                    </div>
+                  </div>
+                  <!--incone sx-->
+                </div>
+              </div>
+              <!--finw div incone-->
+
+              <!-- <div class="infoSong">
+          <div class="song">"
+            <h5>Titolo canzone</h5>
+            <p>Nome dell'artista</p>
+          </div>
+          nome singolo e artista
+          <div class="point"></div>
+        </div> -->
+            </section>
+
+            <nav
+              class="navbar navbar-expand-lg bg-black border-bottom border-body"
+              data-bs-theme="dark"
+            >
+              <div class="container-fluid justify-content-evenly"></div>
+            </nav>
+          </section>
+        </div>
+        <!-- Questa sarà la parte destra -->
+        <div class="col col-lg-2 d-none d-lg-block">
+          <section id="friendSection" class="d-none d-lg-block">
+            <div class="my-2 d-flex justify-content-between">
+              <small class="fw-bold">Attività amici</small>
+              <div>
+                <i class="bi bi-person-add text-light-emphasis"></i>
+                <i class="bi bi-x-lg text-light-emphasis"></i>
+              </div>
+            </div>
+            <div>
+              <!-- Gli amici -->
+              <div class="d-flex justify-content-between">
+                <img
+                  src="https://app.pemb.io/img/fake_user_avatar.c6a57028.png"
+                  alt=""
+                  class="me-1"
+                />
+                <div class="d-flex flex-column">
+                  <small class="fw-bold text-dark-emphasis"
+                    >Charlie Hookham</small
+                  >
+                  <small class="text-dark-emphasis"
+                    >In camera ◦ Yumi Zouma</small
+                  >
+                  <small class="text-dark-emphasis"
+                    ><i class="bi bi-disc text-light me-1"></i>EP III</small
+                  >
+                </div>
+                <p class="mx-0">
+                  <small class="text-dark-emphasis">4 h</small>
+                </p>
+              </div>
+              <!-- </div> -->
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+    <!-- Player musicale -->
+    <footer
+      class="player-footer position-fixed bottom-0 start-0 w-100 bg-dark border-top"
+    >
+      <div
+        class="current-playing px-3 py-2 d-flex align-items-center justify-content-between"
+      >
+        <div class="d-flex align-items-center flex-grow-1">
+          <div
+            class="now-playing-cover me-3 bg-secondary d-flex align-items-center justify-content-center"
+          >
+            <i class="bi bi-music-note text-muted"></i>
+          </div>
+          <div class="flex-grow-1">
+            <div class="now-playing-title text-truncate">
+              Supernatural Parody by The Hillywood Show
+            </div>
+          </div>
+        </div>
+        <div class="d-flex align-items-center gap-3">
+          <button class="btn btn-link text-white p-0">
+            <i class="bi bi-laptop"></i>
+          </button>
+          <button class="btn btn-link text-white p-0">
+            <i class="bi bi-heart"></i>
+          </button>
+          <button class="btn btn-link text-white p-0">
+            <i class="bi bi-play-fill fs-4"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Navigazione -->
+      <nav class="bottom-nav d-flex d-lg-none">
+        <a
+          href="homepage.html"
+          class="nav-item text-center flex-fill py-2 text-decoration-none text-muted"
+        >
+          <div><i class="bi bi-house-door"></i></div>
+          <small>Home</small>
+        </a>
+        <a
+          href="#"
+          class="nav-item text-center flex-fill py-2 text-decoration-none text-muted"
+        >
+          <div><i class="bi bi-search"></i></div>
+          <small>Cerca</small>
+        </a>
+        <a
+          href="#"
+          class="nav-item text-center flex-fill py-2 text-decoration-none text-muted"
+        >
+          <div><i class="bi bi-collection"></i></div>
+          <small>La tua libreria</small>
+        </a>
+      </nav>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+    <script src="scripts/artist.js"></script>
+    <script src="./scripts/album.js"></script>
+  </body>
+</html>
+
+<!-- <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -65,7 +569,7 @@
 
   <body>
     <main>
-      <!-- Pulsante di ritorno -->
+      Pulsante di ritorno
       <div class="position-absolute top-0 start-0 p-3" style="z-index: 10">
         <a href="artist.html" class="btn btn-link text-white p-0">
           <i class="bi bi-arrow-left fs-4"></i>
@@ -88,7 +592,7 @@
                 class="card-body d-flex flex-column justify-content-start my-3"
               >
                 <h5 class="card-title text-white fw-semibold">Card title</h5>
-                <!--Gioventù bruciata-->
+                Gioventù bruciata
                 <div class="d-flex align-items-center mb-2 gap-2">
                   <img
                     id="artistImg"
@@ -100,20 +604,20 @@
                   <h6 class="card-text text-white"></h6>
                 </div>
 
-                <!--artista  album-->
+                artista  album
                 <p class="card-text text-secondary">Album -</p>
-                <!--anno album-->
+                anno album
               </div>
             </div>
           </div>
-          <!--fine div col-->
+          fine div col
         </div>
-        <!--fine div row-->
+        fine div row
       </div>
-      <!--fine div container-->
+      fine div container
 
       <section id="containerSongs">
-        <!--sezione canzoni-->
+        sezione canzoni
         <div id="iconsContainer">
           <div
             class="d-flex ms-3 justify-content-between px-2 align-items-center"
@@ -123,7 +627,7 @@
               <i class="bi bi-arrow-down-circle text-secondary me-2"></i>
               <i class="bi bi-three-dots-vertical text-secondary me-2"></i>
             </div>
-            <!--icone dx-->
+            icone dx
             <div class="d-flex justify-content-between align-items-center">
               <i class="bi bi-shuffle me-2 text-secondary"></i>
               <div
@@ -141,19 +645,19 @@
                 ></i>
               </div>
             </div>
-            <!--incone sx-->
+            incone sx
           </div>
         </div>
-        <!--finw div incone-->
+        finw div incone
 
-        <!-- <div class="infoSong">
+        <div class="infoSong">
           <div class="song">"
             <h5>Titolo canzone</h5>
             <p>Nome dell'artista</p>
           </div>
           nome singolo e artista
           <div class="point"></div>
-        </div> -->
+        </div>
       </section>
 
       <nav
@@ -164,7 +668,7 @@
       </nav>
     </main>
 
-    <!-- Player musicale -->
+    Player musicale
     <footer
       class="player-footer position-fixed start-0 w-100 bg-dark border-top"
     >
@@ -196,7 +700,7 @@
         </div>
       </div>
 
-      <!-- Navigazione -->
+      Navigazione
       <nav class="bottom-nav d-flex">
         <a
           href="homepage2.html"
@@ -229,4 +733,4 @@
 
     <script src="./scripts/album.js"></script>
   </body>
-</html>
+</html> -->
