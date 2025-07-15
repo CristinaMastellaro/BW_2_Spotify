@@ -123,6 +123,21 @@
           bottom: 0;
         }
       }
+
+      ol {
+        list-style-type: none; /* Rimuove numerazione */
+        counter-reset: item;
+      }
+
+      ol li {
+        counter-increment: item;
+        margin-bottom: 5px;
+      }
+
+      ol li::before {
+        content: counter(item) " "; /* Mostra solo il numero, senza punto */
+        font-weight: bold;
+      }
     </style>
   </head>
   <body class="bg-black text-white">
@@ -479,10 +494,35 @@
           nome singolo e artista
           <div class="point"></div>
         </div> -->
+              <div class="container">
+                <!--inizio div container lg-->
+                <div class="row">
+                  <div class="d-flex justify-content-between">
+                    <div># TITOLO</div>
+                    <div># RIPRODUZIONI</div>
+                    <div><i class="bi bi-arrow-down-circle"></i></div>
+                  </div>
+                  <hr />
+                  <div class="col">
+                    <ol class="text-decoration-none">
+                      <li></li>
+                    </ol>
+                  </div>
+                  <!--fine col canzoni-->
+                  <div class="col"></div>
+                  <!--fine col riproduzioni-->
+                  <div class="col"></div>
+                  <!--fine col download-->
+                </div>
+                <!--fine row lg -->
+              </div>
+              <!-- fine div container lg-->
             </section>
           </section>
         </div>
+
         <!-- Questa sarà la parte destra -->
+
         <div class="col col-lg-2 d-none d-lg-block">
           <section id="friendSection" class="d-none d-lg-block">
             <div class="my-2 d-flex justify-content-between">
