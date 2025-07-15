@@ -208,12 +208,7 @@ main {
 
 /* === FEATURED PLAYLIST (study and work space) === */
 .spotify-featured-playlist {
-  background: #8a8888;
-  background: linear-gradient(
-    304deg,
-    rgba(138, 136, 136, 0.17) 0%,
-    rgba(145, 144, 144, 0.16) 100%
-  );
+  background-color: var(--spotify-gray);
   border-radius: 12px; /* Border radius ancora più aumentato */
   padding: 32px; /* Padding aumentato per card più grande */
   margin: 32px 0; /* Margine aumentato per card più grande */
@@ -497,4 +492,26 @@ main {
   margin-top: 0; /* Nessun margine aggiuntivo */
   line-height: 1;
   letter-spacing: 0.5px; /* Leggero spacing */
+}
+
+.main-Banner-Card {
+  background: linear-gradient(
+    180deg,
+    rgba(91, 87, 115, 0.8) 0%,
+    rgba(40, 40, 40, 0.8) 50%,
+    var(--spotify-dark) 100%
+  );
+  color: var(--spotify-white);
+}
+
+.main-Banner-Card-Cover {
+  width: 230px;
+}
+
+.main-Banner-Card img {
+  width: 100%;
+}
+
+.dot-Button {
+  color: var(--spotify-text-gray);
 }
