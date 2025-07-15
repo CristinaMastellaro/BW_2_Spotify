@@ -26,52 +26,43 @@
         <nav class="main-nav d-flex flex-column gap-1">
           <a
             href="homepage2.html"
-            class="nav-item d-flex align-items-center py-1 text-decoration-none text-white"
+            class="nav-item d-flex align-items-center py-1 text-decoration-none text-white align-self-start flex-row"
           >
-            <i class="bi bi-house-door fs-5 me-3"></i>
+            <i class="bi bi-house-door fs-5 me-4"></i>
             <span class="fw-bold">Home</span>
           </a>
           <a
             href="search.html"
-            class="nav-item d-flex align-items-center py-1 text-decoration-none text-white"
+            class="nav-item d-flex align-items-center py-1 text-decoration-none text-white align-self-start flex-row"
           >
-            <i class="bi bi-search fs-5 me-3"></i>
+            <i class="bi bi-search fs-5 me-4"></i>
             <span class="fw-bold">Cerca</span>
           </a>
           <a
             href="libreria.html"
-            class="nav-item d-flex align-items-center py-1 text-decoration-none text-white"
+            class="nav-item d-flex align-items-center py-1 text-decoration-none text-white align-self-start flex-row"
           >
-            <i class="bi bi-collection fs-5 me-3"></i>
+            <i class="bi bi-collection fs-5 me-4"></i>
             <span class="fw-bold">La tua libreria</span>
           </a>
         </nav>
         <div style="height: 28px;"></div>
-        <nav class="secondary-nav d-flex flex-column gap-1 mb-4">
-          <a
-            href="#"
-            class="nav-item d-flex align-items-center py-1 text-decoration-none text-white"
-          >
-            <div class="icon-box me-3" style="background-color: #b3b3b3; width: 32px; height: 32px; border-radius: 4px; display: flex; align-items: center; justify-content: center;">
-              <i class="bi bi-plus" style="color: #121212; font-size: 1.2rem;"></i>
+        <nav class="secondary-nav d-flex flex-column gap-1 mb-4 align-items-start">
+          <a href="#" class="d-flex align-items-center text-decoration-none text-white py-1 mb-2">
+            <div class="d-flex align-items-center justify-content-center bg-secondary me-3 ms-2 py-1" style="width:32px; height:32px; border-radius:4px;">
+              <i class="bi bi-plus text-dark fs-5"></i>
             </div>
             <span class="fw-bold">Crea playlist</span>
           </a>
-          <a
-            href="#"
-            class="nav-item d-flex align-items-center py-1 text-decoration-none text-white"
-          >
-            <div class="icon-box liked-songs me-3" style="background: linear-gradient(135deg, #5f5fff, #a084e1); width: 32px; height: 32px; border-radius: 4px; display: flex; align-items: center; justify-content: center;">
-              <i class="bi bi-heart-fill" style="color: #fff; font-size: 1.2rem;"></i>
+          <a href="#" class="d-flex align-items-center text-decoration-none text-white py-1 mb-2">
+            <div class="d-flex align-items-center justify-content-center me-3 ms-2" style="width:32px; height:32px; border-radius:4px; background: linear-gradient(135deg, #5f5fff, #a084e1);">
+              <i class="bi bi-heart-fill text-white fs-5"></i>
             </div>
             <span class="fw-bold">Brani che ti piacciono</span>
           </a>
-          <a
-            href="#"
-            class="nav-item d-flex align-items-center py-1 text-decoration-none text-white"
-          >
-            <div class="icon-box your-episodes me-3" style="background-color: #158a5c; width: 32px; height: 32px; border-radius: 4px; display: flex; align-items: center; justify-content: center;">
-              <i class="bi bi-bookmark-fill" style="color: #fff; font-size: 1.2rem;"></i>
+          <a href="#" class="d-flex align-items-center text-decoration-none text-white py-1 mb-2">
+            <div class="d-flex align-items-center justify-content-center bg-success me-3 ms-2" style="width:32px; height:32px; border-radius:4px;">
+              <i class="bi bi-bookmark-fill text-white fs-5"></i>
             </div>
             <span class="fw-bold">I tuoi episodi</span>
           </a>
@@ -296,7 +287,7 @@
     </div>
 
     <!-- Contenuto Principale -->
-    <div class="main-content">
+    <div class="main-content min-vh-100 d-flex flex-column">
       <!-- Header con immagine artista -->
       <header class="position-relative">
         <div class="hero-section position-relative d-flex align-items-end">
@@ -320,26 +311,11 @@
       </header>
 
       <!-- Contenuto principale -->
-      <main class="px-3 py-4">
-        <!-- Pulsanti azioni -->
-        <div class="d-flex align-items-center mb-4">
-          <button
-            class="btn btn-success rounded-circle d-flex align-items-center justify-content-center play-btn me-4"
-          >
-            <i class="bi bi-play-fill fs-2"></i>
-          </button>
-          <button class="btn btn-outline-light btn-sm rounded-pill px-3 py-1">
-            FOLLOWING
-          </button>
-          <button class="btn btn-link text-white p-0 ms-4">
-            <i class="bi bi-three-dots fs-4"></i>
-          </button>
-        </div>
-
-        <div class="row">
+      <main class="px-3 py-4 flex-grow-1 d-flex flex-column">
+        <div class="row flex-grow-1 h-100">
           <!-- Colonna sinistra - Popolari -->
-          <div class="col-md-7">
-            <div class="popular-section">
+          <div class="col-md-7 d-flex flex-column h-100">
+            <div class="popular-section flex-grow-1 d-flex flex-column">
               <h5 class="mb-3">Popolari</h5>
               
               <div class="song-list">
@@ -353,10 +329,10 @@
                     <div class="song-title">Ocean Avenue</div>
                   </div>
                   <div class="song-plays me-3">
-                    <small class="text-muted">276.616.912</small>
+                    <small class="text-secondary">276.616.912</small>
                   </div>
                   <div class="song-duration me-3">
-                    <small class="text-muted">3:18</small>
+                    <small class="text-secondary">3:18</small>
                   </div>
                   <button class="btn btn-link text-muted p-0">
                     <i class="bi bi-three-dots"></i>
@@ -373,10 +349,10 @@
                     <div class="song-title">Only One</div>
                   </div>
                   <div class="song-plays me-3">
-                    <small class="text-muted">98.839.244</small>
+                    <small class="text-secondary">98.839.244</small>
                   </div>
                   <div class="song-duration me-3">
-                    <small class="text-muted">4:17</small>
+                    <small class="text-secondary">4:17</small>
                   </div>
                   <button class="btn btn-link text-muted p-0">
                     <i class="bi bi-three-dots"></i>
@@ -393,10 +369,10 @@
                     <div class="song-title">Breathing</div>
                   </div>
                   <div class="song-plays me-3">
-                    <small class="text-muted">52.308.097</small>
+                    <small class="text-secondary">52.308.097</small>
                   </div>
                   <div class="song-duration me-3">
-                    <small class="text-muted">3:38</small>
+                    <small class="text-secondary">3:38</small>
                   </div>
                   <button class="btn btn-link text-muted p-0">
                     <i class="bi bi-three-dots"></i>
@@ -413,10 +389,10 @@
                     <div class="song-title">Lights And Sounds</div>
                   </div>
                   <div class="song-plays me-3">
-                    <small class="text-muted">48.278.178</small>
+                    <small class="text-secondary">48.278.178</small>
                   </div>
                   <div class="song-duration me-3">
-                    <small class="text-muted">3:28</small>
+                    <small class="text-secondary">3:28</small>
                   </div>
                   <button class="btn btn-link text-muted p-0">
                     <i class="bi bi-three-dots"></i>
@@ -433,10 +409,10 @@
                     <div class="song-title">Way Away</div>
                   </div>
                   <div class="song-plays me-3">
-                    <small class="text-muted">43.836.579</small>
+                    <small class="text-secondary">43.836.579</small>
                   </div>
                   <div class="song-duration me-3">
-                    <small class="text-muted">3:22</small>
+                    <small class="text-secondary">3:22</small>
                   </div>
                   <button class="btn btn-link text-muted p-0">
                     <i class="bi bi-three-dots"></i>
@@ -453,8 +429,8 @@
           </div>
 
           <!-- Colonna destra - Brani che ti piacciono -->
-          <div class="col-md-5">
-            <div class="liked-section">
+          <div class="col-md-5 d-flex flex-column h-100">
+            <div class="liked-section flex-grow-1 d-flex flex-column">
               <h5 class="mb-3">Brani che ti piacciono</h5>
               
               <a href="album.html" class="text-decoration-none">
@@ -467,7 +443,7 @@
                   </div>
                   <div class="flex-grow-1">
                     <div class="liked-title text-white">Hai messo Mi piace a 11 brani</div>
-                    <small class="text-muted">Di Yellowcard</small>
+                    <small class="text-secondary">Di Yellowcard</small>
                   </div>
                 </div>
               </a>
