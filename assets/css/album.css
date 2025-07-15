@@ -13,7 +13,6 @@
 
 /* === RESET E BASE === */
 body {
-  background: linear-gradient(to bottom, #9c9c03 0%, #000000 30%) !important;
   color: var(--spotify-white) !important;
   font-family: 'CircularStd', -apple-system, BlinkMacSystemFont, sans-serif;
   margin: 0;
