@@ -85,39 +85,54 @@ document.addEventListener('DOMContentLoaded', function () {
         if (!isLiked) tracks = shuffleArray(tracks);
         const tracksList = document.createElement('div');
         tracksList.className = 'playlist-tracks-list';
+        // Determina se siamo su mobile o desktop
+        const isMobile = window.innerWidth < 992;
         tracks.forEach((track, idx) => {
             const liked = isTrackLiked(track.id);
             const audioId = `audio-preview-${track.id}`;
-            tracksList.innerHTML += `
-            <div class="song-item d-flex align-items-center gap-3 py-2 border-bottom border-dark flex-wrap flex-lg-nowrap">
-                <div class="song-number text-secondary d-none d-lg-block" style="width:32px;">${idx + 1}</div>
-                <div class="song-cover"><img src="${track.album?.cover_medium || track.cover || ''}" alt="cover" style="width:48px;height:48px;border-radius:6px;object-fit:cover;"></div>
-                <div class="song-details flex-grow-1">
-                    <div class="song-title fw-semibold text-white">${track.title || '-'}</div>
-                    <div class="song-artist text-secondary small">${track.artist?.name || track.artist || '-'}</div>
+            // Prendo id e nome artista
+            const artistId = track.artist?.id;
+            const artistName = track.artist?.name || track.artist || '-';
+            console.log('ARTISTA TRACCIA:', track.artist); // DEBUG
+            if (isMobile) {
+                // MOBILE: visualizzazione a tabella ordinata
+                tracksList.innerHTML += `
+                <div class="song-item d-flex align-items-center py-2 border-bottom border-dark w-100" style="gap:0.7rem;">
+                    <div class="song-number text-secondary" style="width:24px;text-align:right;">${idx + 1}</div>
+                    <div class="song-cover" style="width:44px;"><img src="${track.album?.cover_medium || track.cover || ''}" alt="cover" style="width:40px;height:40px;border-radius:6px;object-fit:cover;"></div>
+                    <div class="song-details flex-grow-1 d-flex flex-column justify-content-center" style="min-width:0;">
+                        <div class="song-title fw-semibold text-white text-truncate" style="font-size:1rem;">${track.title || '-'}</div>
+                        <div class="song-artist text-secondary small text-truncate${artistId ? ' artist-link' : ''}" ${artistId ? `data-artist-id=\"${artistId}\" style=\"font-size:0.93rem; cursor:pointer; text-decoration:underline;\"` : 'style="font-size:0.93rem;"'}>${artistName}</div>
+                    </div>
+                    <div class="song-duration text-secondary ms-2" style="width:40px;text-align:right;font-size:0.97rem;">${formatDuration(track.duration)}</div>
+                    <div class="song-menu flex-shrink-0 ms-2">
+                        <button class="btn btn-link p-0 text-secondary" tabindex="-1" aria-label="Menu brano">
+                            <i class="bi bi-three-dots-vertical"></i>
+                        </button>
+                    </div>
                 </div>
-                <!-- Play solo desktop -->
-                <div class="song-play-btn mx-2 d-none d-lg-block" style="width:120px;">
-                    <button class="spotify-inline-play-btn" data-audio-id="${audioId}" title="Play preview">
-                        <i class="bi bi-play-fill"></i>
-                    </button>
-                    <audio id="${audioId}" src="${track.preview || ''}"></audio>
-                </div>
-                <div class="song-plays text-secondary d-none d-lg-block" style="width:80px;text-align:right;">${formatPlays(track.rank)}</div>
-                <div class="song-duration text-secondary d-none d-lg-block" style="width:60px;text-align:right;">${formatDuration(track.duration)}</div>
-                <!-- Mobile info bar -->
-                <div class="song-info-bar d-flex d-lg-none">
-                    <div class="song-play-btn mx-1">
+                `;
+            } else {
+                // DESKTOP: pulsante play in colonna dedicata, colonne riproduzioni e durata
+                tracksList.innerHTML += `
+                <div class="song-item d-flex align-items-center gap-3 py-2 border-bottom border-dark flex-nowrap">
+                    <div class="song-number text-secondary" style="width:32px;">${idx + 1}</div>
+                    <div class="song-cover"><img src="${track.album?.cover_medium || track.cover || ''}" alt="cover" style="width:48px;height:48px;border-radius:6px;object-fit:cover;"></div>
+                    <div class="song-details flex-grow-1">
+                        <div class="song-title fw-semibold text-white">${track.title || '-'}</div>
+                        <div class="song-artist text-secondary small${artistId ? ' artist-link' : ''}" ${artistId ? `data-artist-id=\"${artistId}\" style=\"cursor:pointer; text-decoration:underline;\"` : ''}>${artistName}</div>
+                    </div>
+                    <div class="song-play-btn mx-2" style="width:120px;">
                         <button class="spotify-inline-play-btn" data-audio-id="${audioId}" title="Play preview">
                             <i class="bi bi-play-fill"></i>
                         </button>
                         <audio id="${audioId}" src="${track.preview || ''}"></audio>
                     </div>
-                    <div class="song-plays mx-1 text-secondary">${formatPlays(track.rank)}</div>
-                    <div class="song-duration ms-auto mx-1 text-secondary">${formatDuration(track.duration)}</div>
+                    <div class="song-plays text-secondary" style="width:80px;text-align:right;">${formatPlays(track.rank)}</div>
+                    <div class="song-duration text-secondary" style="width:60px;text-align:right;">${formatDuration(track.duration)}</div>
                 </div>
-            </div>
-            `;
+                `;
+            }
         });
         container.appendChild(tracksList);
         // Gestione play/pausa preview (ripristinata):
@@ -238,6 +253,15 @@ document.addEventListener('DOMContentLoaded', function () {
                         duration: track.duration
                     });
                     this.querySelector('i').className = 'bi bi-heart-fill text-danger';
+                }
+            });
+        });
+        // Gestione click sugli artisti
+        container.querySelectorAll('.artist-link').forEach(el => {
+            el.addEventListener('click', function(e) {
+                const artistId = this.getAttribute('data-artist-id');
+                if (artistId) {
+                    window.location.href = `artist.html?id=${artistId}`;
                 }
             });
         });
