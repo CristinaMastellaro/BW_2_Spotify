@@ -276,6 +276,8 @@ body {
     color: #b3b3b3;
 }
 
+
+
 /* === PLAYER FOOTER === */
 .player-footer {
   background-color: var(--spotify-gray) !important;
@@ -358,81 +360,3 @@ body {
   line-height: 1;
   letter-spacing: 0.5px; /* Leggero spacing */
 }
-
-/* Responsive */
-@media (max-width: 480px) {
-    .header h1 {
-        font-size: 20px;
-    }
-    
-    .filter-pills {
-        padding-bottom: 8px;
-    }
-    
-    .pill {
-        padding: 6px 12px;
-        font-size: 13px;
-    }
-    
-    .library-item {
-        padding: 10px 6px;
-        gap: 14px;
-    }
-    
-    .item-cover {
-        width: 56px;
-        height: 56px;
-    }
-    
-    .item-title {
-        font-size: 17px;
-    }
-    
-    .item-subtitle {
-        font-size: 14px;
-    }
-    
-    .play-icon {
-        width: 28px;
-        height: 28px;
-    }
-    
-    .play-icon i {
-        font-size: 18px;
-    }
-}
-
-/* Loading states */
-.loading {
-    opacity: 0.6;
-    pointer-events: none;
-}
-
-/* Animation per scroll smooth */
-html {
-    scroll-behavior: smooth;
-}
-
-/* Effetti hover migliorati */
-.library-item:active {
-    transform: scale(0.98);
-    transition: transform 0.1s ease;
-}
-
-.pill:active {
-    transform: scale(0.95);
-    transition: transform 0.1s ease;
-}
-
-.icon-btn:active,
-.control-btn:active {
-    transform: scale(0.9);
-    transition: transform 0.1s ease;
-}
-
-/* Nascondere navbar bottom su desktop */
-@media (min-width: 768px) {
-  .bottom-nav {
-    display: none !important;
-  }
-} 
