@@ -192,7 +192,7 @@ body {
 
 .library-item {
   display: flex;
-  align-items: center;
+
   gap: 16px;
   padding: 12px 8px;
   border-radius: 4px;
