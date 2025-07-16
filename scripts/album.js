@@ -1,11 +1,12 @@
 const queryParams = new URLSearchParams(location.search);
 console.log("queryParams", queryParams);
-// const idAlbum = queryParams.split("/")[1];
+const idAlbum = queryParams.get("id");
+console.log("idAlbum", idAlbum);
 
-// const endpoint = `https://striveschool-api.herokuapp.com/api/deezer/album/${idAlbum}`;
+const endpoint = `https://striveschool-api.herokuapp.com/api/deezer/album/${idAlbum}`;
 
-// fetch(endpoint)
-fetch("https://striveschool-api.herokuapp.com/api/deezer/album/75621062")
+fetch(endpoint)
+  // fetch("https://striveschool-api.herokuapp.com/api/deezer/album/75621062")
   .then((res) => {
     console.log("Sto caricando");
     if (res.ok) {
