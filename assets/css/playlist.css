@@ -534,3 +534,29 @@ body {
   color: #fff;
   pointer-events: none;
 }
+
+/* === BRANI CHE TI PIACCIONO COVER === */
+.spotify-liked-cover {
+  width: 232px;
+  height: 232px;
+  background: linear-gradient(135deg, #4f46e5, #7c3aed, #a855f7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  transition: all 0.2s ease;
+}
+@media (max-width: 991px) {
+  .spotify-liked-cover {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+}
+.spotify-liked-cover i {
+  font-size: 80px;
+  color: white;
+}

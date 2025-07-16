@@ -11,7 +11,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Popola immagine copertina (mock)
     const coverEl = document.querySelector('.card-img-top');
-    if (coverEl) coverEl.setAttribute('src', 'assets/imgs/main/image-1.jpg');
+    const coverContainer = document.querySelector('.playlist-cover-container');
+    if (playlistName.toLowerCase() === 'brani che ti piacciono' && coverContainer) {
+        // Rimuovi eventuale immagine esistente
+        if (coverEl) coverEl.remove();
+        // Inserisci il cuore come in homepage
+        const likedDiv = document.createElement('div');
+        likedDiv.className = 'spotify-liked-cover';
+        likedDiv.style.marginTop = '1rem';
+        likedDiv.innerHTML = '<i class="bi bi-heart-fill"></i>';
+        coverContainer.appendChild(likedDiv);
+    } else if (coverEl) {
+        coverEl.setAttribute('src', 'assets/imgs/main/image-1.jpg');
+    }
 
     // Popola creatore (mock)
     const creatorEl = document.querySelector('.card-body h6.card-text');
