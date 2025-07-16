@@ -613,3 +613,114 @@ main {
   line-height: 1;
   letter-spacing: 0.5px; /* Leggero spacing */
 }
+.main-content {
+        background: linear-gradient(to bottom, #9c9c03 0%, #000000 20%);
+      }
+
+      @media screen and (min-width: 1200px) {
+        .main-content > .container {
+          background-color: rgba(156, 156, 3, 1);
+        }
+
+        #containerSongs {
+          background: linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 1) 92%,
+            rgb(118, 118, 0) 100%
+          );
+        }
+
+        .card-title {
+          font-size: 3em;
+        }
+      }
+
+      .container {
+        padding-top: 1em !important;
+      }
+
+      #arrowIcon {
+        background-color: black;
+        opacity: 0.5;
+      }
+
+      #arrowIcon i {
+        opacity: 1;
+      }
+
+      .card-title {
+        font-size: 2.2em;
+      }
+
+      #containerSongs i {
+        transform: scale(1.5);
+        margin-right: 1.5em;
+      }
+
+      #iconsContainer {
+        margin-bottom: 1.5em;
+        margin-right: 1em;
+      }
+
+      @media screen and (min-width: 1200px) {
+        /* #containerSongs {
+          opacity: 0.8;
+        } */
+        #iconsContainer {
+          padding-top: 1em;
+        }
+      }
+
+      #iconsContainer > div > div:nth-of-type(1) {
+        width: 120px;
+      }
+
+      #iconsContainer > div > div:nth-of-type(2) {
+        width: 90px;
+      }
+
+      .point i,
+      #iconsContainer i {
+        cursor: pointer;
+      }
+
+      .point i:hover,
+      #iconsContainer i:hover:not(:nth-of-type(1)) {
+        color: white !important;
+      }
+
+      .song {
+        cursor: pointer;
+      }
+
+      .infoSong {
+        margin-bottom: 0.5em;
+      }
+
+      .infoSong h5 {
+        margin-bottom: 0;
+      }
+
+      .infoSong i {
+        font-size: 1.5em;
+        margin-right: 0.5em !important;
+      }
+
+      #containerSongDesktop h5 {
+        font-size: 1em;
+      }
+
+      footer .bottom-nav {
+        height: 80px;
+        padding-bottom: 1em;
+      }
+
+      .player-footer {
+        bottom: 90px;
+      }
+
+      @media screen and (min-width: 992px) {
+        .player-footer {
+          bottom: 0;
+        }
+      }
