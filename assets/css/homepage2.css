@@ -556,3 +556,9 @@ main {
 .main-Banner-Title {
   font-size: 4em;
 }
+.mobilePlayer {
+  bottom: 98px;
+  width: 98%;
+  margin-left: auto;
+  margin-right: auto;
+}
