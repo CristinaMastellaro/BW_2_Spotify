@@ -434,6 +434,7 @@ main {
   height: 56px; /* Dimensioni ancora più aumentate */
   border-radius: 8px; /* Border radius ancora più aumentato */
   background-color: var(--spotify-light-gray) !important;
+  min-width: 56px;
 }
 
 .now-playing-title {
