@@ -310,11 +310,13 @@
     </div>
 
     <!-- Contenuto Principale -->
-    <div class="main-content bg-dark min-vh-100 d-flex flex-column pt-5">
+    <div
+      class="main-content bg-dark min-vh-100 d-flex flex-column pt-5 mx-auto"
+    >
       <section id="content" class="bg-dark">
         <main>
           <div class="container">
-            <div class="pb-5 d-none d-md-none d-lg-flex justify-content-end">
+            <div class="pb-1 d-none d-md-none d-lg-flex justify-content-end">
               <div class="login-Dropdown btn-group rounded-pill p-1">
                 <div class="profile-Pic">
                   <img
@@ -329,7 +331,7 @@
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
-                  Stefano Casasola
+                  Stefano Casas.
                 </button>
                 <ul class="dropdown-menu">
                   <li>
@@ -357,7 +359,7 @@
                 data-bs-slide="prev"
               >
                 <span
-                  class="carousel-control-prev-icon"
+                  class="carousel-control-prev-icon rounded-circle d-none d-md-none d-lg-inline"
                   aria-hidden="true"
                 ></span>
                 <span class="visually-hidden">Precedente</span>
@@ -370,7 +372,7 @@
                 data-bs-slide="next"
               >
                 <span
-                  class="carousel-control-next-icon"
+                  class="carousel-control-next-icon rounded-circle d-none d-md-none d-lg-inline"
                   aria-hidden="true"
                 ></span>
                 <span class="visually-hidden">Successivo</span>
@@ -387,7 +389,7 @@
                     class="main-Banner-Card card w-100 mb-3 rounded-0 d-flex flex-lg-row px-2 border-0"
                   >
                     <div
-                      class="main-Banner-Card-Cover d-flex align-items-center ps-2"
+                      class="main-Banner-Card-Cover d-flex align-items-center ps-2 py-3"
                     >
                       <img
                         src="./assets/imgs/main/image-2.jpg"
@@ -397,7 +399,9 @@
                     </div>
                     <div class="card-body flex-grow-1">
                       <small>ALBUM</small>
-                      <h3 class="fs-1 fw-bold">VIOLA (Feat. Salmo)</h3>
+                      <h3 class="main-Banner-Title fw-bold mt-3">
+                        VIOLA (Feat. Salmo)
+                      </h3>
                       <small class="d-block mb-1">Fedez, Salmo</small>
                       <small class="d-block"
                         >Ascolta il nuovo singolo di Fedez e Salmo!</small
@@ -435,7 +439,7 @@
                     class="main-Banner-Card card w-100 mb-3 rounded-0 d-flex flex-lg-row px-2 border-0"
                   >
                     <div
-                      class="main-Banner-Card-Cover d-flex align-items-center ps-2"
+                      class="main-Banner-Card-Cover d-flex align-items-center ps-2 py-3"
                     >
                       <img
                         src="./assets/imgs/main/image-2.jpg"
@@ -445,7 +449,9 @@
                     </div>
                     <div class="card-body flex-grow-1">
                       <small>ALBUM</small>
-                      <h3 class="fs-1 fw-bold">VIOLA (Feat. Salmo)</h3>
+                      <h3 class="main-Banner-Title fw-bold mt-3">
+                        VIOLA (Feat. Salmo)
+                      </h3>
                       <small class="d-block mb-1">Fedez, Salmo</small>
                       <small class="d-block"
                         >Ascolta il nuovo singolo di Fedez e Salmo!</small
@@ -484,10 +490,10 @@
 
             <!-- Header con Buonasera e icone -->
             <div
-              class="header-section d-flex flex-row justify-content-between align-items-center mb-3"
+              class="header-section d-flex flex-row justify-content-between align-items-center mb-3 mt-1"
             >
-              <h2 class="greeting m-0"><b>Buonasera</b></h2>
-              <div class="header-icons">
+              <h2 class="greeting ms-1"><b>Buonasera</b></h2>
+              <div class="header-icons d-lg-none">
                 <i class="bi bi-bell"></i>
                 <i class="bi bi-clock-history"></i>
                 <i class="bi bi-gear"></i>
@@ -495,11 +501,17 @@
             </div>
 
             <!-- Filtri Musica/Podcast -->
-            <div class="filter-buttons mb-4">
-              <button type="button" class="btn filter-btn active rounded-pill">
+            <div class="filter-buttons d-md-none d-sm-inline">
+              <button
+                type="button"
+                class="btn fs-6 filter-btn p-0 ms-3 border-0 mb-4"
+              >
                 Musica
               </button>
-              <button type="button" class="btn filter-btn rounded-pill">
+              <button
+                type="button"
+                class="btn fs-6 filter-btn p-0 ms-3 border-0 mb-4"
+              >
                 Podcast e show
               </button>
             </div>
@@ -677,10 +689,13 @@
               </div>
             </div>
 
-            <!-- Due card grandi in basso -->
+            <!-- Tre card grandi in basso -->
 
             <!-- Study and work space - playlist grande -->
             <div class="row">
+              <h2 class="greeting fs-3 m-0 d-none d-lg-block">
+                <b>Altro di ciò che ti piace</b>
+              </h2>
               <div class="col col-12 col-md-4">
                 <div
                   class="spotify-featured-playlist card mt-4 d-flex flex-md-column"
@@ -730,6 +745,55 @@
                 </div>
               </div>
               <!-- Mix Indie - seconda card grande -->
+              <div class="col col-12 col-md-4">
+                <div
+                  class="spotify-featured-playlist card mt-4 d-flex flex-md-column"
+                >
+                  <div class="spotify-large-cover-grid mw-100">
+                    <img
+                      src="assets/imgs/main/image-7.jpg"
+                      alt="Study 1"
+                      class="spotify-large-cover"
+                    />
+                    <img
+                      src="assets/imgs/main/image-8.jpg"
+                      alt="Study 2"
+                      class="spotify-large-cover"
+                    />
+                    <img
+                      src="assets/imgs/main/image-10.jpg"
+                      alt="Study 3"
+                      class="spotify-large-cover"
+                    />
+                    <img
+                      src="assets/imgs/main/image-3.jpg"
+                      alt="Study 4"
+                      class="spotify-large-cover"
+                    />
+                  </div>
+                  <div class="spotify-featured-info w-100">
+                    <p class="spotify-featured-type">Playlist</p>
+                    <h5 class="spotify-featured-title">Mix Indie</h5>
+                    <div
+                      class="spotify-featured-controls d-flex justify-content-between align-items-center mt-2"
+                    >
+                      <div
+                        class="spotify-featured-actions d-flex align-items-center"
+                      >
+                        <i class="bi bi-heart-fill text-success me-3 fs-5"></i>
+                        <i class="bi bi-three-dots me-4 text-white"></i>
+                      </div>
+                      <span class="spotify-track-count text-white"
+                        >16 brani</span
+                      >
+                      <i
+                        class="bi bi-play-circle-fill spotify-play-btn text-success"
+                      ></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Mix Indie - terza card grande -->
               <div class="col col-12 col-md-4">
                 <div
                   class="spotify-featured-playlist card mt-4 d-flex flex-md-column"
