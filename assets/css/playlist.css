@@ -1,0 +1,379 @@
+/* === VARIABILI SPOTIFY === */
+:root {
+  --spotify-green: #1db954;
+  --spotify-green-hover: #1ed760;
+  --spotify-dark: #121212;
+  --spotify-darker: #000000;
+  --spotify-gray: #181818;
+  --spotify-light-gray: #282828;
+  --spotify-text-gray: #b3b3b3;
+  --spotify-white: #ffffff;
+  --spotify-border: #2a2a2a;
+}
+
+/* === LAYOUT PRINCIPALE === */
+body {
+  color: var(--spotify-white) !important;
+  font-family: "CircularStd", -apple-system, BlinkMacSystemFont, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* === PULSANTI DI NAVIGAZIONE (DESKTOP) === */
+@media (min-width: 992px) {
+  .btn-back-container {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    display: flex;
+    gap: 8px;
+  }
+
+  .btn-back {
+    background: rgba(0, 0, 0, 0.7);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    color: var(--spotify-white);
+    text-decoration: none;
+  }
+
+  .btn-back:hover {
+    background: rgba(0, 0, 0, 0.9);
+    color: var(--spotify-white);
+    transform: scale(1.05);
+  }
+
+  .btn-back i {
+    font-size: 1.2rem;
+  }
+
+  /* Nascondi frecce su mobile */
+  .btn-back-mobile {
+    display: none !important;
+  }
+}
+
+/* === CONTROLLI PLAYLIST (DESKTOP) === */
+@media (min-width: 992px) {
+  #iconsContainer {
+    margin: 30px 0;
+    padding: 0 20px;
+    display: flex !important;
+    align-items: center;
+    gap: 20px;
+  }
+
+  /* Pulsante Play principale */
+  .play-btn-main {
+    background-color: var(--spotify-green) !important;
+    border: none;
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--spotify-white);
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 16px rgba(29, 185, 84, 0.3);
+    cursor: pointer;
+  }
+
+  .play-btn-main:hover {
+    background-color: var(--spotify-green-hover) !important;
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(29, 185, 84, 0.4);
+  }
+
+  /* Controlli sinistra */
+  .controls-left {
+    display: flex !important;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .control-btn {
+    background: none;
+    border: none;
+    color: var(--spotify-text-gray);
+    font-size: 1.3rem;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 4px;
+  }
+
+  .control-btn:hover {
+    color: var(--spotify-white);
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.1);
+  }
+
+  /* Controlli destra */
+  .controls-right {
+    display: flex !important;
+    align-items: center;
+    gap: 16px;
+    margin-left: auto;
+  }
+
+  /* Pulsante shuffle */
+  .shuffle-btn {
+    background: none;
+    border: none;
+    color: var(--spotify-text-gray);
+    font-size: 1.3rem;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 4px;
+  }
+
+  .shuffle-btn:hover {
+    color: var(--spotify-white);
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.1);
+  }
+
+  .shuffle-btn.active {
+    color: var(--spotify-green);
+  }
+
+  /* Nascondi controlli mobile su desktop */
+  .controls-mobile {
+    display: none !important;
+  }
+}
+
+/* === HEADER PLAYLIST (DESKTOP) === */
+@media (min-width: 992px) {
+  .playlist-header {
+    padding: 40px 20px 20px;
+    background: linear-gradient(to bottom, #9c9c03 0%, #000000 20%);
+  }
+
+  .playlist-info {
+    display: flex;
+    align-items: flex-end;
+    gap: 24px;
+    margin-bottom: 30px;
+  }
+
+  .playlist-cover {
+    width: 232px;
+    height: 232px;
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    flex-shrink: 0;
+  }
+
+  .playlist-details {
+    flex-grow: 1;
+    padding-bottom: 20px;
+  }
+
+  .playlist-type {
+    color: var(--spotify-text-gray);
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+  }
+
+  .playlist-title {
+    font-size: 3rem;
+    font-weight: 900;
+    margin-bottom: 16px;
+    line-height: 1.1;
+  }
+
+  .playlist-creator {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+
+  .creator-avatar {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+  }
+
+  .creator-name {
+    color: var(--spotify-white);
+    font-size: 0.9rem;
+    text-decoration: none;
+  }
+
+  .creator-name:hover {
+    text-decoration: underline;
+  }
+
+  .playlist-stats {
+    color: var(--spotify-text-gray);
+    font-size: 0.9rem;
+  }
+}
+
+/* === TABELLA BRANI (DESKTOP) === */
+@media (min-width: 992px) {
+  .songs-table {
+    padding: 0 20px;
+  }
+
+  .songs-header {
+    display: grid;
+    grid-template-columns: 50px 1fr 1fr 100px;
+    gap: 16px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--spotify-border);
+    color: var(--spotify-text-gray);
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  .song-item {
+    display: grid;
+    grid-template-columns: 50px 1fr 1fr 100px;
+    gap: 16px;
+    padding: 12px 0;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+  }
+
+  .song-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .song-number {
+    color: var(--spotify-text-gray);
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .song-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .song-cover {
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    background: var(--spotify-light-gray);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .song-details {
+    flex-grow: 1;
+  }
+
+  .song-title {
+    color: var(--spotify-white);
+    font-size: 0.9rem;
+    margin-bottom: 4px;
+  }
+
+  .song-artist {
+    color: var(--spotify-text-gray);
+    font-size: 0.8rem;
+  }
+
+  .song-album {
+    color: var(--spotify-text-gray);
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .song-duration {
+    color: var(--spotify-text-gray);
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Pulsante play nascosto che appare al hover */
+  .song-play-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--spotify-white);
+    font-size: 1rem;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--spotify-green);
+    align-items: center;
+    justify-content: center;
+  }
+
+  .song-item:hover .song-play-btn {
+    display: flex;
+  }
+
+  .song-item:hover .song-number {
+    display: none;
+  }
+}
+
+/* === RESPONSIVE MOBILE === */
+@media (max-width: 991px) {
+  /* Nascondi controlli desktop su mobile */
+  .controls-desktop {
+    display: none !important;
+  }
+
+  /* Mostra controlli mobile */
+  .controls-mobile {
+    display: flex !important;
+  }
+}
+
+/* === UTILITY CLASSES === */
+.d-none-desktop {
+  display: none !important;
+}
+
+@media (min-width: 992px) {
+  .d-none-desktop {
+    display: block !important;
+  }
+}
+
+.d-block-desktop {
+  display: block !important;
+}
+
+@media (max-width: 991px) {
+  .d-block-desktop {
+    display: none !important;
+  }
+}
+
+#backButton {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+  z-index: 2;
+}
