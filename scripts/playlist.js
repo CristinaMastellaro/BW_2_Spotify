@@ -96,8 +96,16 @@ document.addEventListener("DOMContentLoaded", function () {
       const artistId = track.artist?.id;
       const artistName = track.artist?.name || track.artist || "-";
       console.log("ARTISTA TRACCIA:", track.artist); // DEBUG
-      const mobileContainer = document.getElementById("mobileContainer");
-      const desktopContainer = document.getElementById("desktopContainer");
+
+      //   const mobileContainer = document.getElementById("mobileContainer");
+      //   const desktopContainer = document.getElementById("desktopContainer");
+
+      const containerSongsContainer = document.getElementById("containerSongs");
+
+      const mobileContainer = document.createElement("div");
+      mobileContainer.classList.add("d-lg-none");
+      const desktopContainer = document.createElement("div");
+      desktopContainer.classList.add("d-none", "d-lg-block");
 
       //   if (isMobile) {
       // MOBILE: visualizzazione a tabella ordinata
@@ -196,6 +204,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     )}</div>
                 </div>
                 `;
+      containerSongsContainer.appendChild(mobileContainer);
+      containerSongsContainer.appendChild(desktopContainer);
       //   }
     });
     container.appendChild(tracksList);
