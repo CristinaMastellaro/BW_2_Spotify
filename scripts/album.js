@@ -95,6 +95,11 @@ fetch(endpoint)
         seconds += "0";
       }
       // class="col col-3 d-flex flex-row justify-content-between mb-1 text-secondary gap-2"
+      const numeroCasuale = Math.floor(Math.random() * 10000000);
+
+      //document.querySelector("#colRiprod ul").innerHTML += `
+      //<li class="ps-0 ms-0">${numeroCasuale}</li>`;
+
       document.getElementById("containerSongDesktop").innerHTML += `<div
                     class="playlist-item d-flex row mb-2 text-secondary gap-2 flex-nowrap colSong"
                   >
@@ -106,7 +111,7 @@ fetch(endpoint)
           </div></div>
           
                     </div>
-                    <div class="col col-3 px-0"># 13356325</div>
+                    <div class="col col-3 px-0 d-flex justify-content-end">${numeroCasuale}</div>
                     <div class="col col-3 px-0 d-flex justify-content-end pe-3">${parseInt(
                       song.duration / 60
                     )}:${seconds}</div>
@@ -146,6 +151,8 @@ Your browser does not support the audio element.
       //   ).innerHTML += `<li class="ps-0 ms-0">${parseInt(
       //     song.duration / 60
       //   )}:${parseInt((song.duration % 60) * 0.6)}</li>`;
+      //
     });
   })
+
   .catch((err) => console.log("Errore!", err));
