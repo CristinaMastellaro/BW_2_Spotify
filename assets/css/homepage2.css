@@ -440,6 +440,10 @@ main {
   font-size: 18px; /* Font ancora più aumentato */
   color: var(--spotify-white);
   font-weight: 400;
+  white-space: wrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
 }
 
 /* === BOTTOM NAVIGATION === */
@@ -559,6 +563,4 @@ main {
 .mobilePlayer {
   bottom: 98px;
   width: 98%;
-  margin-left: auto;
-  margin-right: auto;
 }
