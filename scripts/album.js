@@ -1,11 +1,12 @@
 const queryParams = new URLSearchParams(location.search);
 console.log("queryParams", queryParams);
-// const idAlbum = queryParams.split("/")[1];
+const idAlbum = queryParams.get("id");
+console.log("idAlbum", idAlbum);
 
-// const endpoint = `https://striveschool-api.herokuapp.com/api/deezer/album/${idAlbum}`;
+const endpoint = `https://striveschool-api.herokuapp.com/api/deezer/album/${idAlbum}`;
 
-// fetch(endpoint)
-fetch("https://striveschool-api.herokuapp.com/api/deezer/album/75621062")
+fetch(endpoint)
+  // fetch("https://striveschool-api.herokuapp.com/api/deezer/album/75621062")
   .then((res) => {
     console.log("Sto caricando");
     if (res.ok) {
@@ -82,7 +83,16 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/album/75621062")
       if (song.explicit_lyrics) {
         explicit = `<p class="text-secondary mb-0"><i class="fab fa-etsy"></i> ${song.artist.name}</p>`;
       }
+      let seconds = parseInt((song.duration % 60) * 0.6).toString();
+      if (seconds.length !== 2) {
+        seconds += "0";
+      }
       // class="col col-3 d-flex flex-row justify-content-between mb-1 text-secondary gap-2"
+      const numeroCasuale = Math.floor(Math.random() * 10000000);
+
+      //document.querySelector("#colRiprod ul").innerHTML += `
+      //<li class="ps-0 ms-0">${numeroCasuale}</li>`;
+
       document.getElementById("containerSongDesktop").innerHTML += `<div
                     class="playlist-item d-flex row mb-2 text-secondary gap-2 flex-nowrap" id="colSong"
                   >
@@ -92,12 +102,14 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/album/75621062")
             <h5 class="text-light mb-0">${song.title}</h5>
             ${explicit}
           </div></div>
+          
                     </div>
-                    <div class="col col-3 px-0"># 13356325</div>
+                    <div class="col col-3 px-0 d-flex justify-content-end">${numeroCasuale}</div>
                     <div class="col col-3 px-0 d-flex justify-content-end pe-3">${parseInt(
                       song.duration / 60
-                    )}:${parseInt((song.duration % 60) * 0.6)}</div>
+                    )}:${seconds}</div>
                   </div>`;
+
       //   document.querySelector(
       //     "#colSong"
       //   ).innerHTML += `<div class="ps-0 ms-0 mb-2 d-flex align-items-center gap-3">
@@ -116,6 +128,8 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/album/75621062")
       //   ).innerHTML += `<li class="ps-0 ms-0">${parseInt(
       //     song.duration / 60
       //   )}:${parseInt((song.duration % 60) * 0.6)}</li>`;
+      //
     });
   })
+
   .catch((err) => console.log("Errore!", err));
