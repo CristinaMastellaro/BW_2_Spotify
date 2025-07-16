@@ -82,6 +82,10 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/album/75621062")
       if (song.explicit_lyrics) {
         explicit = `<p class="text-secondary mb-0"><i class="fab fa-etsy"></i> ${song.artist.name}</p>`;
       }
+      let seconds = parseInt((song.duration % 60) * 0.6).toString();
+      if (seconds.length !== 2) {
+        seconds += "0";
+      }
       // class="col col-3 d-flex flex-row justify-content-between mb-1 text-secondary gap-2"
       document.getElementById("containerSongDesktop").innerHTML += `<div
                     class="playlist-item d-flex row mb-2 text-secondary gap-2 flex-nowrap" id="colSong"
@@ -96,7 +100,7 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/album/75621062")
                     <div class="col col-3 px-0"># 13356325</div>
                     <div class="col col-3 px-0 d-flex justify-content-end pe-3">${parseInt(
                       song.duration / 60
-                    )}:${parseInt((song.duration % 60) * 0.6)}</div>
+                    )}:${seconds}</div>
                   </div>`;
       //   document.querySelector(
       //     "#colSong"
