@@ -1,7 +1,12 @@
 // Gestione click sulle playlist nella libreria
 
 document.addEventListener('DOMContentLoaded', function () {
-    console.log('Libreria.js caricato');
+  // Carica la traccia salvata dal PlayerManager se disponibile
+  if (window.playerManager) {
+    window.playerManager.loadSavedTrack();
+  }
+  
+  console.log('Libreria.js caricato');
     
     document.querySelectorAll('.library-item').forEach(function(item, index) {
         // Prendi il tipo (Playlist/Album/Artista)

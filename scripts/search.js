@@ -1,6 +1,10 @@
 // Gestione click sulle playlist nella pagina search
 
 document.addEventListener("DOMContentLoaded", function () {
+  // Carica la traccia salvata dal PlayerManager se disponibile
+  if (window.playerManager) {
+    window.playerManager.loadSavedTrack();
+  }
   // Gestione click sulle playlist nella sidebar
   document.querySelectorAll(".playlist-item").forEach(function (item) {
     item.addEventListener("click", function (e) {
@@ -43,7 +47,7 @@ const showResults = (endpointToUse) => {
       }
     })
     .then((resultsSearch) => {
-      console.log;
+      console.log(resultsSearch);
       let maxLength;
       if (resultsSearch.data.length < 4) {
         maxLength = resultsSearch.data.length;
@@ -61,10 +65,10 @@ const showResults = (endpointToUse) => {
         }
 
         let seconds = parseInt(
-          (resultsSearch.data[i].duration % 60) * 0.6
+          (resultsSearch.data[i].duration % 60)
         ).toString();
         if (seconds.length !== 2) {
-          seconds += "0";
+          seconds = seconds.padStart(2, '0');
         }
 
         braniSection.innerHTML += `<div
@@ -186,7 +190,7 @@ const showResults = (endpointToUse) => {
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   let queryParametersSearch = document.getElementById("search").value;
-  let endpointToUse = endpoint + queryParametersSearch.split(" ").join("");
+  let endpointToUse = endpoint + encodeURIComponent(queryParametersSearch);
   console.log("endpointToUse", endpointToUse);
   sectionSfoglia.style.display = "none";
   sectionsearchResults.classList.remove("d-none");

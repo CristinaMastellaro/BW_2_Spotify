@@ -1,3 +1,10 @@
+// Carica la traccia salvata dal PlayerManager se disponibile
+document.addEventListener('DOMContentLoaded', function() {
+  if (window.playerManager) {
+    window.playerManager.loadSavedTrack();
+  }
+});
+
 const queryParams = new URLSearchParams(location.search);
 console.log("queryParams", queryParams);
 const idAlbum = queryParams.get("id");
@@ -37,7 +44,7 @@ fetch(endpoint)
     // Nome dell'artista
     document.querySelector(
       "h6.card-text"
-    ).innerHTML = `<a href="../../artist.html/id=${dataAlbum.artist.id}" class="text-decoration-none text-light">${dataAlbum.artist.name}</a>`;
+    ).innerHTML = `<a href="artist.html?id=${dataAlbum.artist.id}" class="text-decoration-none text-light">${dataAlbum.artist.name}</a>`;
     // Anno di rilascio dell'album
     document.getElementById("albumWithYear").innerText +=
       " " +
@@ -54,7 +61,7 @@ fetch(endpoint)
       " " +
       parseInt(dataAlbum.duration / 60) +
       " min " +
-      parseInt((dataAlbum.duration % 60) * 0.6) +
+      parseInt(dataAlbum.duration % 60) +
       " sec";
 
     // Questa parte è per il mobile
@@ -79,8 +86,22 @@ fetch(endpoint)
       console.log("infoSongClasses[i]", infoSongClasses[i]);
       infoSongClasses[i].addEventListener("click", () => {
         console.log("Hai premuto");
-        let audio = new Audio(`${song.preview}`);
-        audio.play();
+        if (window.playerManager) {
+          const track = {
+            id: song.id,
+            title: song.title,
+            artist: {
+              name: song.artist.name
+            },
+            album: {
+              cover_medium: dataAlbum.cover_medium
+            },
+            preview: song.preview,
+            duration: song.duration
+          };
+          const audio = new Audio(song.preview);
+          window.playerManager.playTrack(track, audio);
+        }
       });
     });
 
@@ -90,9 +111,9 @@ fetch(endpoint)
       if (song.explicit_lyrics) {
         explicit = `<p class="text-secondary mb-0"><i class="fab fa-etsy"></i> ${song.artist.name}</p>`;
       }
-      let seconds = parseInt((song.duration % 60) * 0.6).toString();
+      let seconds = parseInt((song.duration % 60)).toString();
       if (seconds.length !== 2) {
-        seconds += "0";
+        seconds = seconds.padStart(2, '0');
       }
       // class="col col-3 d-flex flex-row justify-content-between mb-1 text-secondary gap-2"
       const numeroCasuale = Math.floor(Math.random() * 10000000);
@@ -126,7 +147,21 @@ Your browser does not support the audio element.
       colSongClasses[i].addEventListener("click", () => {
         console.log("colSongClasses[i]", colSongClasses[i]);
         console.log("Hai premuto");
-        audioTag[i].play();
+        if (window.playerManager) {
+          const track = {
+            id: song.id,
+            title: song.title,
+            artist: {
+              name: song.artist.name
+            },
+            album: {
+              cover_medium: dataAlbum.cover_medium
+            },
+            preview: song.preview,
+            duration: song.duration
+          };
+          window.playerManager.playTrack(track, audioTag[i]);
+        }
       });
       //                     <audio autoplay>
       //   <source src="${song.preview}" type="audio/mpeg">

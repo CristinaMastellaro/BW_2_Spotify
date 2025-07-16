@@ -1,6 +1,10 @@
 // Gestione click sulle playlist nella homepage
 
 document.addEventListener('DOMContentLoaded', function () {
+  // Carica la traccia salvata dal PlayerManager se disponibile
+  if (window.playerManager) {
+    window.playerManager.loadSavedTrack();
+  }
     // Sidebar: playlist testuali
     document.querySelectorAll('.playlist-item').forEach(function(item) {
         item.addEventListener('click', function(e) {

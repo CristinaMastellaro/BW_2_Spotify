@@ -84,6 +84,7 @@ async function loadArtistTopTracks(artistId, fallbackName = null, triedGlobalSea
     data.data.forEach((track, idx) => {
       const songDiv = document.createElement("div");
       songDiv.className = "song-item d-flex align-items-center py-2";
+      songDiv.style.cursor = "pointer";
       songDiv.innerHTML = `
         <div class="song-number me-3 text-center">${idx + 1}</div>
         <div class="song-cover me-3 bg-secondary d-flex align-items-center justify-content-center">
@@ -102,6 +103,15 @@ async function loadArtistTopTracks(artistId, fallbackName = null, triedGlobalSea
           <i class="bi bi-three-dots"></i>
         </button>
       `;
+      
+      // Aggiungi event listener per il click
+      songDiv.addEventListener("click", () => {
+        if (window.playerManager && track.preview) {
+          const audio = new Audio(track.preview);
+          window.playerManager.playTrack(track, audio);
+        }
+      });
+      
       songListEl.appendChild(songDiv);
     });
   } catch (e) {
@@ -154,6 +164,7 @@ async function loadArtistTracksByGlobalSearch(artistName) {
     tracksToShow.forEach((track, idx) => {
       const songDiv = document.createElement("div");
       songDiv.className = "song-item d-flex align-items-center py-2";
+      songDiv.style.cursor = "pointer";
       songDiv.innerHTML = `
         <div class="song-number me-3 text-center">${idx + 1}</div>
         <div class="song-cover me-3 bg-secondary d-flex align-items-center justify-content-center">
@@ -172,12 +183,28 @@ async function loadArtistTracksByGlobalSearch(artistName) {
           <i class="bi bi-three-dots"></i>
         </button>
       `;
+      
+      // Aggiungi event listener per il click
+      songDiv.addEventListener("click", () => {
+        if (window.playerManager && track.preview) {
+          const audio = new Audio(track.preview);
+          window.playerManager.playTrack(track, audio);
+        }
+      });
+      
       songListEl.appendChild(songDiv);
     });
   } catch (e) {
     if (songListEl) songListEl.innerHTML = '<div class="text-danger">Errore nel caricamento delle canzoni</div>';
   }
 }
+
+// Carica la traccia salvata dal PlayerManager se disponibile
+document.addEventListener('DOMContentLoaded', function() {
+  if (window.playerManager) {
+    window.playerManager.loadSavedTrack();
+  }
+});
 
 // API
 // Caricamento dati all'avvio
