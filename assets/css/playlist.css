@@ -14,7 +14,7 @@
 /* === LAYOUT PRINCIPALE === */
 body {
   color: var(--spotify-white) !important;
-  font-family: 'CircularStd', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: "CircularStd", -apple-system, BlinkMacSystemFont, sans-serif;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
@@ -478,4 +478,16 @@ body {
   .d-block-desktop {
     display: none !important;
   }
-} 
+}
+
+#backButton {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+  z-index: 2;
+}
