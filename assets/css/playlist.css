@@ -343,6 +343,120 @@ body {
   .controls-mobile {
     display: flex !important;
   }
+
+  .song-item {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.3rem !important;
+    padding: 1rem 0.7rem !important;
+    border-radius: 12px;
+    background: #181818;
+    margin-bottom: 1.2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    border: 1px solid #232323;
+  }
+  .song-cover {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 0.4rem;
+  }
+  .song-cover img {
+    width: 56px !important;
+    height: 56px !important;
+    border-radius: 8px;
+    margin-right: 0.7rem;
+  }
+  .song-details {
+    width: 100%;
+    margin-bottom: 0.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+  }
+  .song-title {
+    font-size: 1.08rem;
+    font-weight: 600;
+    margin-bottom: 0.1rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 95vw;
+    white-space: normal;
+    line-height: 1.2;
+    min-height: 2.4em;
+  }
+  .song-artist {
+    font-size: 0.97rem;
+    color: #b3b3b3;
+    margin-bottom: 0.2rem;
+  }
+  /* --- NUOVO BLOCCO: barra info ordinata --- */
+  .song-info-bar {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin-top: 0.2rem;
+  }
+  .song-play-btn,
+  .song-like-btn,
+  .song-plays,
+  .song-duration {
+    margin-bottom: 0 !important;
+    width: auto !important;
+    text-align: center !important;
+    flex: 1 1 0;
+    min-width: 0;
+  }
+  .song-like-btn .btn {
+    font-size: 1.5rem;
+    padding: 0.2rem 0.5rem;
+  }
+  .song-plays, .song-duration {
+    font-size: 0.95rem;
+    color: #b3b3b3;
+    white-space: nowrap;
+  }
+  .playlist-tracks-header {
+    display: none !important;
+  }
+}
+
+@media (max-width: 991px) {
+  .song-info-bar {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin-top: 0.2rem;
+    padding: 0.2rem 0;
+  }
+  .song-play-btn {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.3rem;
+  }
+  .spotify-inline-play-btn {
+    width: 48px;
+    height: 48px;
+    font-size: 2rem;
+    min-width: 48px;
+    min-height: 48px;
+    margin: 0 0.2rem;
+  }
+  .spotify-inline-play-btn .bi {
+    font-size: 2.1rem;
+    margin-left: 2px;
+  }
 }
 
 /* === UTILITY CLASSES === */
@@ -376,4 +490,47 @@ body {
   justify-content: center;
   transition: background-color 0.2s ease;
   z-index: 2;
+}
+
+/* Pulsante play custom Spotify - solo cerchio verde, nessun ovale */
+.spotify-play-btn-custom {
+  background: #1DB954;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: box-shadow 0.2s, background 0.2s;
+  box-shadow: 0 2px 8px rgba(30,30,30,0.08);
+  color: #fff;
+  font-size: 1.4rem;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  min-width: 0;
+}
+
+/* Colonna play: nessun background, nessun ovale, solo centratura */
+.song-play-btn {
+  width: 120px !important;
+  min-width: 120px !important;
+  max-width: 120px !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  background: transparent !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+}
+
+.spotify-play-btn-custom:hover, .spotify-play-btn-custom:focus {
+  background: #1ed760;
+  box-shadow: 0 4px 16px rgba(30,30,30,0.18);
+}
+.spotify-play-btn-custom i {
+  font-size: 1.5rem;
+  color: #fff;
+  pointer-events: none;
 }
