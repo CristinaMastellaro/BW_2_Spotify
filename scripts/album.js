@@ -96,12 +96,14 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/album/75621062")
             <h5 class="text-light mb-0">${song.title}</h5>
             ${explicit}
           </div></div>
+          
                     </div>
                     <div class="col col-3 px-0"># 13356325</div>
                     <div class="col col-3 px-0 d-flex justify-content-end pe-3">${parseInt(
                       song.duration / 60
                     )}:${seconds}</div>
                   </div>`;
+
       //   document.querySelector(
       //     "#colSong"
       //   ).innerHTML += `<div class="ps-0 ms-0 mb-2 d-flex align-items-center gap-3">
