@@ -58,7 +58,7 @@ fetch(endpoint)
       " sec";
 
     // Questa parte è per il mobile
-    dataAlbum.tracks.data.forEach((song) => {
+    dataAlbum.tracks.data.forEach((song, i) => {
       // Aggiungere o meno il disclaimer per canzoni esplicite
       let explicit = `<p class="text-secondary mb-0"> ${song.artist.name}</p>`;
       if (song.explicit_lyrics) {
@@ -75,6 +75,13 @@ fetch(endpoint)
           <!--nome singolo e artista-->
           <div class="point"><i class="bi bi-three-dots-vertical text-secondary"></i></div>
         </div>`;
+      const infoSongClasses = document.getElementsByClassName("infoSong");
+      console.log("infoSongClasses[i]", infoSongClasses[i]);
+      infoSongClasses[i].addEventListener("click", () => {
+        console.log("Hai premuto");
+        let audio = new Audio(`${song.preview}`);
+        audio.play();
+      });
     });
 
     // Questa parte è per il desktop
@@ -89,7 +96,7 @@ fetch(endpoint)
       }
       // class="col col-3 d-flex flex-row justify-content-between mb-1 text-secondary gap-2"
       document.getElementById("containerSongDesktop").innerHTML += `<div
-                    class="playlist-item d-flex row mb-2 text-secondary gap-2 flex-nowrap" id="colSong"
+                    class="playlist-item d-flex row mb-2 text-secondary gap-2 flex-nowrap colSong"
                   >
                     <div class="d-flex gap-2 col col-6 px-0 align-items-center gap-3">
                       <div>${i + 1}</div>
@@ -103,7 +110,23 @@ fetch(endpoint)
                     <div class="col col-3 px-0 d-flex justify-content-end pe-3">${parseInt(
                       song.duration / 60
                     )}:${seconds}</div>
-                  </div>`;
+                    <audio>
+  <source src="${song.preview}" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+                    </div>`;
+
+      const colSongClasses = document.getElementsByClassName("colSong");
+      const audioTag = document.getElementsByTagName("audio");
+      colSongClasses[i].addEventListener("click", () => {
+        console.log("colSongClasses[i]", colSongClasses[i]);
+        console.log("Hai premuto");
+        audioTag[i].play();
+      });
+      //                     <audio autoplay>
+      //   <source src="${song.preview}" type="audio/mpeg">
+      // Your browser does not support the audio element.
+      // </audio>
 
       //   document.querySelector(
       //     "#colSong"
