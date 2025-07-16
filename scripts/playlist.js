@@ -123,10 +123,43 @@ document.addEventListener('DOMContentLoaded', function () {
         // Gestione play/pausa preview (ripristinata):
         let currentAudio = null;
         let currentBtn = null;
+        // --- PLAYER FOOTER ---
+        // Selettori player footer
+        const playerFooter = document.querySelector('footer.player-footer');
+        const playerImg = playerFooter?.querySelector('.current-track img');
+        const playerTitle = playerFooter?.querySelector('.track-title');
+        const playerArtist = playerFooter?.querySelector('.track-artist');
+        const playerPlayBtn = playerFooter?.querySelector('.player-controls .btn-success');
+        const playerProgressBar = playerFooter?.querySelector('.progress-bar');
+        const playerTimeCurrent = playerFooter?.querySelector('.progress-container span.text-muted');
+        const playerTimeTotal = playerFooter?.querySelector('.progress-container span.text-secondary');
+        let playerInterval = null;
+        let playerAudio = null;
+        // --- END PLAYER FOOTER ---
         container.querySelectorAll('.spotify-inline-play-btn').forEach(btn => {
             btn.addEventListener('click', function() {
                 const audioId = this.getAttribute('data-audio-id');
                 const audio = document.getElementById(audioId);
+                // --- PLAYER FOOTER LOGIC ---
+                // Trova la traccia associata
+                const songItem = this.closest('.song-item');
+                const coverImg = songItem?.querySelector('.song-cover img')?.src || '';
+                const title = songItem?.querySelector('.song-title')?.innerText || '-';
+                const artist = songItem?.querySelector('.song-artist')?.innerText || '-';
+                // Aggiorna player footer
+                if (playerImg) playerImg.src = coverImg;
+                if (playerTitle) playerTitle.innerText = title;
+                if (playerArtist) playerArtist.innerText = artist;
+                if (playerTimeCurrent) playerTimeCurrent.innerText = '0:00';
+                if (playerTimeTotal) playerTimeTotal.innerText = audio?.duration ? formatDuration(Math.floor(audio.duration)) : '0:30';
+                if (playerProgressBar) playerProgressBar.style.width = '0%';
+                // Gestione audio player footer
+                if (playerAudio && playerAudio !== audio) {
+                    playerAudio.pause();
+                    playerAudio.currentTime = 0;
+                }
+                playerAudio = audio;
+                // --- END PLAYER FOOTER LOGIC ---
                 if (!audio) return;
                 // Se sto già riproducendo questa preview
                 if (currentAudio && currentAudio !== audio) {
@@ -141,16 +174,43 @@ document.addEventListener('DOMContentLoaded', function () {
                     this.querySelector('i').className = 'bi bi-pause-fill';
                     currentAudio = audio;
                     currentBtn = this;
+                    // --- ANIMAZIONE BARRA PLAYER FOOTER ---
+                    if (playerInterval) clearInterval(playerInterval);
+                    playerInterval = setInterval(() => {
+                        if (playerAudio && playerAudio.duration) {
+                            const percent = (playerAudio.currentTime / playerAudio.duration) * 100;
+                            if (playerProgressBar) playerProgressBar.style.width = percent + '%';
+                            if (playerTimeCurrent) playerTimeCurrent.innerText = formatDuration(Math.floor(playerAudio.currentTime));
+                            if (playerTimeTotal) playerTimeTotal.innerText = formatDuration(Math.floor(playerAudio.duration));
+                        }
+                    }, 100);
+                    // Cambia bottone play footer
+                    if (playerPlayBtn) playerPlayBtn.querySelector('i').className = 'bi bi-pause-fill';
                 } else {
                     audio.pause();
                     audio.currentTime = 0;
                     this.querySelector('i').className = 'bi bi-play-fill';
+                    // Reset barra player footer
+                    if (playerProgressBar) playerProgressBar.style.width = '0%';
+                    if (playerTimeCurrent) playerTimeCurrent.innerText = '0:00';
+                    if (playerInterval) {
+                        clearInterval(playerInterval);
+                        playerInterval = null;
+                    }
+                    if (playerPlayBtn) playerPlayBtn.querySelector('i').className = 'bi bi-play-fill';
                     currentAudio = null;
                     currentBtn = null;
                 }
-                // Quando la preview finisce, torna l'icona play
+                // Quando la preview finisce, torna l'icona play e resetta la barra
                 audio.onended = () => {
                     this.querySelector('i').className = 'bi bi-play-fill';
+                    if (playerProgressBar) playerProgressBar.style.width = '0%';
+                    if (playerTimeCurrent) playerTimeCurrent.innerText = '0:00';
+                    if (playerInterval) {
+                        clearInterval(playerInterval);
+                        playerInterval = null;
+                    }
+                    if (playerPlayBtn) playerPlayBtn.querySelector('i').className = 'bi bi-play-fill';
                     currentAudio = null;
                     currentBtn = null;
                 };
