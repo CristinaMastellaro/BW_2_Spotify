@@ -491,3 +491,46 @@ body {
   transition: background-color 0.2s ease;
   z-index: 2;
 }
+
+/* Pulsante play custom Spotify - solo cerchio verde, nessun ovale */
+.spotify-play-btn-custom {
+  background: #1DB954;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: box-shadow 0.2s, background 0.2s;
+  box-shadow: 0 2px 8px rgba(30,30,30,0.08);
+  color: #fff;
+  font-size: 1.4rem;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  min-width: 0;
+}
+
+/* Colonna play: nessun background, nessun ovale, solo centratura */
+.song-play-btn {
+  width: 120px !important;
+  min-width: 120px !important;
+  max-width: 120px !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  background: transparent !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+}
+
+.spotify-play-btn-custom:hover, .spotify-play-btn-custom:focus {
+  background: #1ed760;
+  box-shadow: 0 4px 16px rgba(30,30,30,0.18);
+}
+.spotify-play-btn-custom i {
+  font-size: 1.5rem;
+  color: #fff;
+  pointer-events: none;
+}

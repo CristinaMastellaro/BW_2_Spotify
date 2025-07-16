@@ -82,12 +82,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Funzione per renderizzare la lista delle tracce (usata sia per fetch che per liked)
     function renderTracks(tracks, container) {
-        // Mescola le tracce per renderle casuali (solo se non sono i preferiti)
         if (!isLiked) tracks = shuffleArray(tracks);
         const tracksList = document.createElement('div');
         tracksList.className = 'playlist-tracks-list';
         tracks.forEach((track, idx) => {
             const liked = isTrackLiked(track.id);
+            const audioId = `audio-preview-${track.id}`;
             tracksList.innerHTML += `
             <div class="song-item d-flex align-items-center gap-3 py-2 border-bottom border-dark flex-wrap flex-lg-nowrap">
                 <div class="song-number text-secondary d-none d-lg-block" style="width:32px;">${idx + 1}</div>
@@ -96,34 +96,91 @@ document.addEventListener('DOMContentLoaded', function () {
                     <div class="song-title fw-semibold text-white">${track.title || '-'}</div>
                     <div class="song-artist text-secondary small">${track.artist?.name || track.artist || '-'}</div>
                 </div>
-                <!-- Barra info ordinata per mobile -->
-                <div class="song-info-bar d-flex d-lg-none">
-                    <div class="song-play-btn mx-1">
-                        <audio controls src="${track.preview || ''}" style="width:90px;max-width:100%;"></audio>
-                    </div>
-                    <div class="song-like-btn mx-1">
-                        <button class="btn btn-link p-0 like-btn" data-track-id="${track.id}" title="Aggiungi ai preferiti">
-                            <i class="bi ${liked ? 'bi-heart-fill text-danger' : 'bi-heart'}"></i>
-                        </button>
-                    </div>
-                    <div class="song-plays mx-1 text-secondary">${formatPlays(track.rank)}</div>
-                    <div class="song-duration mx-1 text-secondary">${formatDuration(track.duration)}</div>
-                </div>
-                <!-- Barra info desktop -->
-                <div class="song-play-btn mx-2 d-none d-lg-block">
-                    <audio controls src="${track.preview || ''}" style="width:120px;max-width:100%;"></audio>
-                </div>
-                <div class="song-like-btn mx-2 d-none d-lg-block">
-                    <button class="btn btn-link p-0 like-btn" data-track-id="${track.id}" title="Aggiungi ai preferiti">
-                        <i class="bi ${liked ? 'bi-heart-fill text-danger' : 'bi-heart'}"></i>
+                <!-- Play solo desktop -->
+                <div class="song-play-btn mx-2 d-none d-lg-block" style="width:120px;">
+                    <button class="spotify-inline-play-btn" data-audio-id="${audioId}" title="Play preview">
+                        <i class="bi bi-play-fill"></i>
                     </button>
+                    <audio id="${audioId}" src="${track.preview || ''}"></audio>
                 </div>
                 <div class="song-plays text-secondary d-none d-lg-block" style="width:80px;text-align:right;">${formatPlays(track.rank)}</div>
                 <div class="song-duration text-secondary d-none d-lg-block" style="width:60px;text-align:right;">${formatDuration(track.duration)}</div>
+                <!-- Mobile info bar -->
+                <div class="song-info-bar d-flex d-lg-none">
+                    <div class="song-play-btn mx-1">
+                        <button class="spotify-inline-play-btn" data-audio-id="${audioId}" title="Play preview">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
+                        <audio id="${audioId}" src="${track.preview || ''}"></audio>
+                    </div>
+                    <div class="song-plays mx-1 text-secondary">${formatPlays(track.rank)}</div>
+                    <div class="song-duration ms-auto mx-1 text-secondary">${formatDuration(track.duration)}</div>
+                </div>
             </div>
             `;
         });
         container.appendChild(tracksList);
+        // Gestione play/pausa preview (ripristinata):
+        let currentAudio = null;
+        let currentBtn = null;
+        container.querySelectorAll('.spotify-inline-play-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const audioId = this.getAttribute('data-audio-id');
+                const audio = document.getElementById(audioId);
+                if (!audio) return;
+                // Se sto già riproducendo questa preview
+                if (currentAudio && currentAudio !== audio) {
+                    currentAudio.pause();
+                    currentAudio.currentTime = 0;
+                    if (currentBtn) {
+                        currentBtn.querySelector('i').className = 'bi bi-play-fill';
+                    }
+                }
+                if (audio.paused) {
+                    audio.play();
+                    this.querySelector('i').className = 'bi bi-pause-fill';
+                    currentAudio = audio;
+                    currentBtn = this;
+                } else {
+                    audio.pause();
+                    audio.currentTime = 0;
+                    this.querySelector('i').className = 'bi bi-play-fill';
+                    currentAudio = null;
+                    currentBtn = null;
+                }
+                // Quando la preview finisce, torna l'icona play
+                audio.onended = () => {
+                    this.querySelector('i').className = 'bi bi-play-fill';
+                    currentAudio = null;
+                    currentBtn = null;
+                };
+            });
+        });
+        // Event listener per i cuori
+        container.querySelectorAll('.like-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const trackId = this.getAttribute('data-track-id');
+                const track = tracks.find(t => t.id == trackId);
+                if (!track) return;
+                if (isTrackLiked(track.id)) {
+                    removeTrackFromLiked(track.id);
+                    this.querySelector('i').className = 'bi bi-heart';
+                    this.querySelector('i').classList.remove('text-danger');
+                } else {
+                    // Salva solo i dati essenziali per i preferiti
+                    addTrackToLiked({
+                        id: track.id,
+                        title: track.title,
+                        artist: track.artist?.name || '-',
+                        album: { cover_medium: track.album?.cover_medium || '' },
+                        preview: track.preview,
+                        rank: track.rank,
+                        duration: track.duration
+                    });
+                    this.querySelector('i').className = 'bi bi-heart-fill text-danger';
+                }
+            });
+        });
     }
 
     // Funzione per caricare le canzoni della playlist
@@ -143,7 +200,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <div style="width:32px;">#</div>
             <div style="width:48px;"></div>
             <div class="flex-grow-1">Titolo</div>
-            <div style="width:120px;">Play</div>
+            <div style="width:120px;text-align:center;"></div>
             <div style="width:80px;text-align:right;">Riproduzioni</div>
             <div style="width:60px;text-align:right;">Durata</div>
         `;
