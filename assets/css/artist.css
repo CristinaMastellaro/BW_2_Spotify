@@ -545,8 +545,9 @@ main {
 .hero-section {
   min-height: 340px;
   background-color: #555;
-  background-size: cover;
-  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-y: center;
 }
 
 .hero-gradient {
