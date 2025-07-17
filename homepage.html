@@ -35,7 +35,11 @@
     <div class="d-none d-lg-block desktop-layout">
       <!-- Barra Sinistra -->
       <section class="sidebar-left" id="navSection">
-        <div class="d-flex align-items-center" style="height: 40px">
+        <div
+          class="d-flex align-items-center"
+          id="closeLeftSide"
+          style="height: 40px; cursor: pointer"
+        >
           <i class="bi bi-three-dots text-white fs-5"></i>
         </div>
         <nav class="main-nav d-flex flex-column gap-1">
@@ -44,7 +48,7 @@
             class="nav-item active w-100 justify-content-start d-flex align-items-center py-1 text-decoration-none text-white align-self-start flex-row"
           >
             <i class="bi bi-house-door fs-5 me-4"></i>
-            <span class="fw-bold ">Home</span>
+            <span class="fw-bold">Home</span>
           </a>
           <a
             href="search.html"
@@ -242,7 +246,11 @@
             >
               <i class="bi bi-person-add"></i>
             </button>
-            <button class="btn btn-link text-muted p-1" title="Chiudi">
+            <button
+              class="btn btn-link text-muted p-1"
+              title="Chiudi"
+              id="chiudi"
+            >
               <i class="bi bi-x-lg"></i>
             </button>
           </div>
@@ -258,12 +266,32 @@
               class="friend-avatar me-3"
             />
             <div class="friend-info flex-grow-1">
-              <div class="friend-name"><a href="https://github.com/Davide-Mancini" class="text-reset text-decoration-none" target="_blank" rel="noopener noreferrer">Davide Mancini</a></div>
+              <div class="friend-name">
+                <a
+                  href="https://github.com/Davide-Mancini"
+                  class="text-reset text-decoration-none"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Davide Mancini</a
+                >
+              </div>
               <div class="friend-activity text-muted">
-                <small><a href="https://open.spotify.com/intl-it/track/0JaU1YsufxBrK8FTpcNzRL?si=e5823e2112544d60" class="link-light text-decoration-none" style="transition: color 0.2s;" target="_blank" rel="noopener noreferrer">Soul Of a Supertramp • Mezzosangue</a></small>
+                <small
+                  ><a
+                    href="https://open.spotify.com/intl-it/track/0JaU1YsufxBrK8FTpcNzRL?si=e5823e2112544d60"
+                    class="link-light text-decoration-none"
+                    style="transition: color 0.2s"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Soul Of a Supertramp • Mezzosangue</a
+                  ></small
+                >
               </div>
               <div class="friend-album text-muted">
-                <small><i class="bi bi-heart-fill text-success"></i>Davide-Mancini</small>
+                <small
+                  ><i class="bi bi-heart-fill text-success"></i
+                  >Davide-Mancini</small
+                >
               </div>
             </div>
             <div class="friend-time">
@@ -279,12 +307,32 @@
               class="friend-avatar me-3"
             />
             <div class="friend-info flex-grow-1">
-              <div class="friend-name"><a href="https://github.com/Porta048" class="text-reset text-decoration-none" target="_blank" rel="noopener noreferrer">Alessandro di Martino</a></div>
+              <div class="friend-name">
+                <a
+                  href="https://github.com/Porta048"
+                  class="text-reset text-decoration-none"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Alessandro di Martino</a
+                >
+              </div>
               <div class="friend-activity text-muted">
-                <small><a href="https://www.youtube.com/watch?v=lWLYkkNQkO0Hello" class="link-light text-decoration-none" style="transition: color 0.2s;" target="_blank" rel="noopener noreferrer"> Kitty • Mirko Fabbreschi</a></small>
+                <small
+                  ><a
+                    href="https://www.youtube.com/watch?v=lWLYkkNQkO0Hello"
+                    class="link-light text-decoration-none"
+                    style="transition: color 0.2s"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Kitty • Mirko Fabbreschi</a
+                  ></small
+                >
               </div>
               <div class="friend-album text-muted">
-                <small><i class="bi bi-heart-fill text-success"></i> Porta048</small>
+                <small
+                  ><i class="bi bi-heart-fill text-success"></i> Porta048</small
+                >
               </div>
             </div>
             <div class="friend-time">
@@ -300,14 +348,33 @@
               class="friend-avatar me-3"
             />
             <div class="friend-info flex-grow-1">
-              
-              <div class="friend-name"><a href="https://github.com/CristinaMastellaro" class="text-reset text-decoration-none" target="_blank" rel="noopener noreferrer">Cristina Mastellaro</a></div>
-              
+              <div class="friend-name">
+                <a
+                  href="https://github.com/CristinaMastellaro"
+                  class="text-reset text-decoration-none"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Cristina Mastellaro</a
+                >
+              </div>
+
               <div class="friend-activity text-muted">
-                <small><a href="https://open.spotify.com/intl-it/track/6CcJMwBtXByIz4zQLzFkKc?si=68eeb2299fa449ae" class="link-light text-decoration-none" style="transition: color 0.2s;" target="_blank" rel="noopener noreferrer">I love you • Billie Ellish</a></small>
+                <small
+                  ><a
+                    href="https://open.spotify.com/intl-it/track/6CcJMwBtXByIz4zQLzFkKc?si=68eeb2299fa449ae"
+                    class="link-light text-decoration-none"
+                    style="transition: color 0.2s"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >I love you • Billie Ellish</a
+                  ></small
+                >
               </div>
               <div class="friend-album text-muted">
-                <small><i class="bi bi-heart-fill text-success"></i> CristinaMastellaro</small>
+                <small
+                  ><i class="bi bi-heart-fill text-success"></i>
+                  CristinaMastellaro</small
+                >
               </div>
             </div>
             <div class="friend-time">
@@ -322,12 +389,33 @@
               class="friend-avatar me-3"
             />
             <div class="friend-info flex-grow-1">
-              <div class="friend-name"><a href="https://github.com/alessandraciccone" class="text-reset text-decoration-none" target="_blank" rel="noopener noreferrer">Alessandra Ciccone</a></div>
+              <div class="friend-name">
+                <a
+                  href="https://github.com/alessandraciccone"
+                  class="text-reset text-decoration-none"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Alessandra Ciccone</a
+                >
+              </div>
               <div class="friend-activity text-muted">
-                <small><a href="https://open.spotify.com/intl-it/track/1QbOvACeYanja5pbnJbAmk?si=c76adb397dc04bb9" class="link-light text-decoration-none" style="transition: color 0.2s;" target="_blank" rel="noopener noreferrer"> Take Me Home, Country Roads • John Denver</a></small>
+                <small
+                  ><a
+                    href="https://open.spotify.com/intl-it/track/1QbOvACeYanja5pbnJbAmk?si=c76adb397dc04bb9"
+                    class="link-light text-decoration-none"
+                    style="transition: color 0.2s"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Take Me Home, Country Roads • John Denver</a
+                  ></small
+                >
               </div>
               <div class="friend-album text-muted">
-                <small><i class="bi bi-heart-fill text-success"></i> alessandraciccone</small>
+                <small
+                  ><i class="bi bi-heart-fill text-success"></i>
+                  alessandraciccone</small
+                >
               </div>
             </div>
             <div class="friend-time">
@@ -342,12 +430,32 @@
               class="friend-avatar me-3"
             />
             <div class="friend-info flex-grow-1">
-              <div class="friend-name"><a href="https://github.com/Dade1991" class="text-reset text-decoration-none" target="_blank" rel="noopener noreferrer">Davide Braghi</a></div>
+              <div class="friend-name">
+                <a
+                  href="https://github.com/Dade1991"
+                  class="text-reset text-decoration-none"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Davide Braghi</a
+                >
+              </div>
               <div class="friend-activity text-muted">
-                <small><a href="https://open.spotify.com/intl-it/track/2NSw8SOcQ6EVLf1QZFMH1h?si=8cd68cf17dec434f" class="link-light text-decoration-none" style="transition: color 0.2s;" target="_blank" rel="noopener noreferrer"> Trash Metal Cassette • Dinosaur Pile-Up</a></small>
+                <small
+                  ><a
+                    href="https://open.spotify.com/intl-it/track/2NSw8SOcQ6EVLf1QZFMH1h?si=8cd68cf17dec434f"
+                    class="link-light text-decoration-none"
+                    style="transition: color 0.2s"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Trash Metal Cassette • Dinosaur Pile-Up</a
+                  ></small
+                >
               </div>
               <div class="friend-album text-muted">
-                <small><i class="bi bi-heart-fill text-success"></i> Dade1991</small>
+                <small
+                  ><i class="bi bi-heart-fill text-success"></i> Dade1991</small
+                >
               </div>
             </div>
             <div class="friend-time">
@@ -355,72 +463,104 @@
             </div>
           </div>
         </div>
-         <!-- Emiliano Massari -->
-         <div class="friend-item d-flex align-items-center mb-3">
+        <!-- Emiliano Massari -->
+        <div class="friend-item d-flex align-items-center mb-3">
           <img
             src="https://avatars.githubusercontent.com/u/158219820?v=4"
             alt="lightdark02"
             class="friend-avatar me-3"
           />
           <div class="friend-info flex-grow-1">
-            <div class="friend-name"><a href="https://github.com/epsyFRG" class="text-reset text-decoration-none" target="_blank" rel="noopener noreferrer">Emiliano Massari</a></div>
+            <div class="friend-name">
+              <a
+                href="https://github.com/epsyFRG"
+                class="text-reset text-decoration-none"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Emiliano Massari</a
+              >
+            </div>
             <div class="friend-activity text-muted">
-              <small><a href="https://www.youtube.com/watch?v=zuESv_zqMT8&list=RDzuESv_zqMT8&start_radio=1" class="link-light text-decoration-none" style="transition: color 0.2s;" target="_blank" rel="noopener noreferrer">Overtaken • One Piece</a></small>
+              <small
+                ><a
+                  href="https://www.youtube.com/watch?v=zuESv_zqMT8&list=RDzuESv_zqMT8&start_radio=1"
+                  class="link-light text-decoration-none"
+                  style="transition: color 0.2s"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Overtaken • One Piece</a
+                ></small
+              >
             </div>
             <div class="friend-album text-muted">
-              <small><i class="bi bi-heart-fill text-success"></i> epsyFRG</small>
+              <small
+                ><i class="bi bi-heart-fill text-success"></i> epsyFRG</small
+              >
             </div>
           </div>
           <div class="friend-time">
             <small class="text-muted">13 ore</small>
           </div>
         </div>
-      </div>
-        
-
-
       </section>
     </div>
 
     <!-- Contenuto Principale -->
     <div
-      class="main-content bg-dark min-vh-100 d-flex flex-column pt-5 mx-auto"
+      class="main-content bg-dark min-vh-100 d-flex flex-column pt-4 mx-auto"
     >
       <section id="content" class="bg-dark">
         <main>
           <div class="container">
-            <div class="pb-1 d-none d-md-none d-lg-flex justify-content-end">
-              <div class="login-Dropdown btn-group rounded-pill p-1">
-                <div class="profile-Pic">
-                  <img
-                    src="./assets/imgs/profile Pic/Stefano.png"
-                    class="rounded-circle w-100"
-                    alt="Profile Pic"
-                  />
-                </div>
-                <button
-                  class="btn dropdown-toggle"
-                  type="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
+            <div class="">
+              <div
+                class="pb-1 d-none d-md-none d-lg-flex justify-content-end d-flex align-items-center"
+              >
+                <div
+                  class="mb-2 bg-dark w-100 px-3 py-1 d-none"
+                  id="openLeftSide"
+                  style="cursor: pointer"
                 >
-                  Stefano Casas.
-                </button>
-                <ul class="dropdown-menu">
-                  <li>
-                    <a class="dropdown-item" href="#"
-                      >Gotta Catch 'em All OST</a
-                    >
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="#">Fuel - Metallica</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="#">
-                      Monkey Wrench - Foo Fighters
-                    </a>
-                  </li>
-                </ul>
+                  <i class="bi bi-three-dots fs-3"></i>
+                </div>
+                <div class="login-Dropdown btn-group rounded-pill p-1 me-3">
+                  <div class="profile-Pic">
+                    <img
+                      src="./assets/imgs/profile Pic/Stefano.png"
+                      class="rounded-circle w-100"
+                      alt="Profile Pic"
+                    />
+                  </div>
+                  <button
+                    class="btn dropdown-toggle"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Stefano Casas.
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a class="dropdown-item" href="#"
+                        >Gotta Catch 'em All OST</a
+                      >
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">Fuel - Metallica</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        Monkey Wrench - Foo Fighters
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <i
+                    class="bi bi-people-fill text-light d-none"
+                    id="iconFriends"
+                  ></i>
+                </div>
               </div>
             </div>
             <!-- Inizio Carousel////////////////////////////// -->
@@ -481,7 +621,11 @@
                       >
                       <div class="filter-buttons mb-0 mt-3">
                         <!-- Primo album: Persona -->
-                        <a class="btn filter-btn active rounded-pill" href="album.html?id=384842207">Play</a>
+                        <a
+                          class="btn filter-btn active rounded-pill"
+                          href="album.html?id=384842207"
+                          >Play</a
+                        >
                         <button
                           type="button"
                           class="btn filter-btn rounded-pill"
@@ -525,7 +669,11 @@
                       >
                       <div class="filter-buttons mb-0 mt-3">
                         <!-- Secondo album: Viola -->
-                        <a class="btn filter-btn active rounded-pill" href="album.html?id=137556512">Play</a>
+                        <a
+                          class="btn filter-btn active rounded-pill"
+                          href="album.html?id=137556512"
+                          >Play</a
+                        >
                         <button
                           type="button"
                           class="btn filter-btn rounded-pill"
@@ -569,7 +717,11 @@
                       >
                       <div class="filter-buttons mb-0 mt-3">
                         <!-- Terzo album: Superjazz -->
-                        <a class="btn filter-btn active rounded-pill" href="album.html?id=541686632">Play</a>
+                        <a
+                          class="btn filter-btn active rounded-pill"
+                          href="album.html?id=541686632"
+                          >Play</a
+                        >
                         <button
                           type="button"
                           class="btn filter-btn rounded-pill"
@@ -1071,22 +1223,21 @@
             >
               <i class="bi bi-music-note text-muted"></i>
             </div>
-            <div class="playerTextTruncate flex-grow-1 ">
-            <div class="now-playing-title ">
-              
+            <div class="playerTextTruncate flex-grow-1">
+              <div class="now-playing-title"></div>
             </div>
+
+            <div class="d-flex align-items-center gap-3">
+              <button class="btn btn-link text-white p-0">
+                <i class="bi bi-laptop"></i>
+              </button>
+              <button class="btn btn-link text-white p-0">
+                <i class="bi bi-heart"></i>
+              </button>
+              <button class="btn btn-link text-white p-0">
+                <i class="bi bi-play-fill fs-4"></i>
+              </button>
             </div>
-          
-          <div class="d-flex align-items-center gap-3">
-            <button class="btn btn-link text-white p-0">
-              <i class="bi bi-laptop"></i>
-            </button>
-            <button class="btn btn-link text-white p-0">
-              <i class="bi bi-heart"></i>
-            </button>
-            <button class="btn btn-link text-white p-0">
-              <i class="bi bi-play-fill fs-4"></i>
-            </button>
           </div>
         </div>
       </div>
