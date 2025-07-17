@@ -271,3 +271,80 @@ window.addEventListener("DOMContentLoaded", () => {
   const artistId = getArtistIdFromUrl();
   loadArtistData(artistId);
 });
+
+// Per chiudere la side destra degli amici
+const closeButton = document.getElementById("chiudi");
+const friendSection = document.getElementById("friendSection");
+const iconFriends = document.getElementById("iconFriends");
+const mainContentSection = document.getElementsByClassName("main-content")[0];
+
+mainContentSection.style.transition = "all 0.1s linear";
+
+let isFriendSideOpen = true;
+let isLeftSideOpen = true;
+
+closeButton.addEventListener("click", () => {
+  console.log("Chiudiamo questa sidebar destra");
+  friendSection.style.width = "0px";
+  friendSection.style.padding = "0px";
+  iconFriends.classList.remove("d-none");
+  mainContentSection.style.setProperty("margin-right", "0px", "important");
+  isFriendSideOpen = false;
+  if (isLeftSideOpen) {
+    mainContentSection.style.width = "calc(100% - 320px)";
+  } else {
+    mainContentSection.style.width = "100%";
+  }
+});
+
+// Per riaprire la side amici
+
+iconFriends.addEventListener("click", () => {
+  isFriendSideOpen = true;
+  friendSection.style.width = "320px";
+  friendSection.style.padding = "16px";
+  iconFriends.classList.add("d-none");
+  mainContentSection.style.marginRight = "320px";
+  if (isLeftSideOpen) {
+    mainContentSection.style.width = "calc(100% - 640px)";
+  } else {
+    mainContentSection.style.width = "calc(100% - 320px)";
+  }
+});
+
+// Per chiudere la side sinistra
+const closeLeftSide = document.getElementById("closeLeftSide");
+const openLeftSide = document.getElementById("openLeftSide");
+const navSection = document.getElementById("navSection");
+
+openLeftSide.style.transition = "all 0.1s linear";
+
+closeLeftSide.addEventListener("click", () => {
+  console.log("Chiudiamo questa sidebar sinistra");
+  navSection.style.setProperty("display", "none", "important");
+  navSection.style.padding = "0px";
+  openLeftSide.classList.remove("d-none");
+  mainContentSection.style.setProperty("margin-left", "0px", "important");
+  isLeftSideOpen = false;
+  if (isFriendSideOpen) {
+    mainContentSection.style.width = "calc(100% - 320px)";
+  } else {
+    mainContentSection.style.width = "100%";
+  }
+});
+
+// Per riaprire la side sinistra
+
+openLeftSide.addEventListener("click", () => {
+  console.log("Apriamo questa side sinistra");
+  isLeftSideOpen = true;
+  navSection.style.setProperty("display", "flex", "important");
+  navSection.style.padding = "16px";
+  openLeftSide.classList.add("d-none");
+  mainContentSection.style.marginLeft = "320px";
+  if (isFriendSideOpen) {
+    mainContentSection.style.width = "calc(100% - 640px)";
+  } else {
+    mainContentSection.style.width = "calc(100% - 320px)";
+  }
+});
