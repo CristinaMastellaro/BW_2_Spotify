@@ -1,5 +1,5 @@
 const API_BASE_URL =
-  "https://striveschool-api.herokuapp.com/api/deezer/artist/412"
+  "https://striveschool-api.herokuapp.com/api/deezer/artist/412";
 
 // Elementi DOM
 const artistNameEl = document.querySelector(".artist-name");
@@ -17,7 +17,9 @@ function getArtistIdFromUrl() {
 async function loadArtistData(artistId) {
   try {
     // Fetch dati artista
-    const res = await fetch(`https://striveschool-api.herokuapp.com/api/deezer/artist/${artistId}`);
+    const res = await fetch(
+      `https://striveschool-api.herokuapp.com/api/deezer/artist/${artistId}`
+    );
     if (!res.ok) throw new Error("Errore caricamento artista");
     const artist = await res.json();
     // Aggiorna titolo pagina
@@ -25,12 +27,16 @@ async function loadArtistData(artistId) {
     // Aggiorna nome artista
     if (artistNameEl) artistNameEl.textContent = artist.name;
     // Aggiorna ascoltatori mensili
-    if (artistListenersEl) artistListenersEl.textContent = `${artist.nb_fan.toLocaleString('it-IT')} ascoltatori mensili`;
+    if (artistListenersEl)
+      artistListenersEl.textContent = `${artist.nb_fan.toLocaleString(
+        "it-IT"
+      )} ascoltatori mensili`;
     // Aggiorna immagine artista come background
     if (heroSection && artist.picture_xl) {
       heroSection.style.backgroundImage = `url('${artist.picture_xl}')`;
       heroSection.style.backgroundSize = "cover";
-      heroSection.style.backgroundPosition = "center";
+      heroSection.style.backgroundPosition = "75% 25%";
+      heroSection.style.backgroundRepeat = "no-repeat";
     }
     // Carica le canzoni più popolari
     loadArtistTopTracks(artistId);
@@ -41,9 +47,15 @@ async function loadArtistData(artistId) {
 }
 
 // Funzione per caricare le top 5 canzoni dell'artista
-async function loadArtistTopTracks(artistId, fallbackName = null, triedGlobalSearch = false) {
+async function loadArtistTopTracks(
+  artistId,
+  fallbackName = null,
+  triedGlobalSearch = false
+) {
   try {
-    const res = await fetch(`https://striveschool-api.herokuapp.com/api/deezer/artist/${artistId}/top?limit=5`);
+    const res = await fetch(
+      `https://striveschool-api.herokuapp.com/api/deezer/artist/${artistId}/top?limit=5`
+    );
     if (!res.ok) throw new Error("Errore top tracks");
     const data = await res.json();
     if (songListEl) songListEl.innerHTML = "";
@@ -52,17 +64,25 @@ async function loadArtistTopTracks(artistId, fallbackName = null, triedGlobalSea
       if (fallbackName) {
         // Se già tentato fallback e non ancora provato la search globale, prova la search globale
         if (!triedGlobalSearch) {
-          await loadArtistTracksByGlobalSearch(fallbackName || artistNameEl?.textContent);
+          await loadArtistTracksByGlobalSearch(
+            fallbackName || artistNameEl?.textContent
+          );
           return;
         }
         // Già tentato tutto, mostra messaggio
-        if (songListEl) songListEl.innerHTML = '<div class="text-warning">Nessuna canzone trovata per questo artista. Prova con un altro artista.</div>';
+        if (songListEl)
+          songListEl.innerHTML =
+            '<div class="text-warning">Nessuna canzone trovata per questo artista. Prova con un altro artista.</div>';
         return;
       }
       // Prova a cercare artista per nome
       const artistName = artistNameEl ? artistNameEl.textContent : null;
       if (artistName) {
-        const searchRes = await fetch(`https://striveschool-api.herokuapp.com/api/deezer/search/artist?q=${encodeURIComponent(artistName)}`);
+        const searchRes = await fetch(
+          `https://striveschool-api.herokuapp.com/api/deezer/search/artist?q=${encodeURIComponent(
+            artistName
+          )}`
+        );
         if (searchRes.ok) {
           const searchData = await searchRes.json();
           if (searchData.data && searchData.data.length > 0) {
@@ -78,7 +98,9 @@ async function loadArtistTopTracks(artistId, fallbackName = null, triedGlobalSea
         await loadArtistTracksByGlobalSearch(artistName);
         return;
       }
-      if (songListEl) songListEl.innerHTML = '<div class="text-warning">Nessuna canzone trovata per questo artista. Prova con un altro artista.</div>';
+      if (songListEl)
+        songListEl.innerHTML =
+          '<div class="text-warning">Nessuna canzone trovata per questo artista. Prova con un altro artista.</div>';
       return;
     }
     data.data.forEach((track, idx) => {
@@ -88,22 +110,30 @@ async function loadArtistTopTracks(artistId, fallbackName = null, triedGlobalSea
       songDiv.innerHTML = `
         <div class="song-number me-3 text-center">${idx + 1}</div>
         <div class="song-cover me-3 bg-secondary d-flex align-items-center justify-content-center">
-          <img src="${track.album.cover_small}" alt="cover" style="width:40px;height:40px;object-fit:cover;border-radius:6px;">
+          <img src="${
+            track.album.cover_small
+          }" alt="cover" style="width:40px;height:40px;object-fit:cover;border-radius:6px;">
         </div>
         <div class="flex-grow-1">
           <div class="song-title">${track.title}</div>
         </div>
         <div class="song-plays me-3">
-          <small class="text-secondary">${track.rank.toLocaleString('it-IT')}</small>
+          <small class="text-secondary">${track.rank.toLocaleString(
+            "it-IT"
+          )}</small>
         </div>
         <div class="song-duration me-3">
-          <small class="text-secondary">${Math.floor(track.duration/60)}:${(track.duration%60).toString().padStart(2,'0')}</small>
+          <small class="text-secondary">${Math.floor(track.duration / 60)}:${(
+        track.duration % 60
+      )
+        .toString()
+        .padStart(2, "0")}</small>
         </div>
         <button class="btn btn-link text-muted p-0">
           <i class="bi bi-three-dots"></i>
         </button>
       `;
-      
+
       // Aggiungi event listener per il click
       songDiv.addEventListener("click", () => {
         if (window.playerManager && track.preview) {
@@ -111,7 +141,7 @@ async function loadArtistTopTracks(artistId, fallbackName = null, triedGlobalSea
           window.playerManager.playTrack(track, audio);
         }
       });
-      
+
       songListEl.appendChild(songDiv);
     });
   } catch (e) {
@@ -120,7 +150,11 @@ async function loadArtistTopTracks(artistId, fallbackName = null, triedGlobalSea
       const artistName = artistNameEl ? artistNameEl.textContent : null;
       if (artistName) {
         try {
-          const searchRes = await fetch(`https://striveschool-api.herokuapp.com/api/deezer/search/artist?q=${encodeURIComponent(artistName)}`);
+          const searchRes = await fetch(
+            `https://striveschool-api.herokuapp.com/api/deezer/search/artist?q=${encodeURIComponent(
+              artistName
+            )}`
+          );
           if (searchRes.ok) {
             const searchData = await searchRes.json();
             if (searchData.data && searchData.data.length > 0) {
@@ -138,7 +172,9 @@ async function loadArtistTopTracks(artistId, fallbackName = null, triedGlobalSea
       await loadArtistTracksByGlobalSearch(artistName);
       return;
     }
-    if (songListEl) songListEl.innerHTML = '<div class="text-danger">Errore nel caricamento delle canzoni</div>';
+    if (songListEl)
+      songListEl.innerHTML =
+        '<div class="text-danger">Errore nel caricamento delle canzoni</div>';
   }
 }
 
@@ -146,20 +182,31 @@ async function loadArtistTopTracks(artistId, fallbackName = null, triedGlobalSea
 async function loadArtistTracksByGlobalSearch(artistName) {
   if (!artistName) return;
   try {
-    const res = await fetch(`https://striveschool-api.herokuapp.com/api/deezer/search?q=${encodeURIComponent(artistName)}`);
-    if (!res.ok) throw new Error('Errore search globale');
+    const res = await fetch(
+      `https://striveschool-api.herokuapp.com/api/deezer/search?q=${encodeURIComponent(
+        artistName
+      )}`
+    );
+    if (!res.ok) throw new Error("Errore search globale");
     const data = await res.json();
     if (!data.data || data.data.length === 0) {
-      if (songListEl) songListEl.innerHTML = '<div class="text-warning">Nessuna canzone trovata per questo artista. Prova con un altro artista.</div>';
+      if (songListEl)
+        songListEl.innerHTML =
+          '<div class="text-warning">Nessuna canzone trovata per questo artista. Prova con un altro artista.</div>';
       return;
     }
     // Filtra per artista esatto (id o nome)
     const artistId = getArtistIdFromUrl();
-    const filtered = data.data.filter(track => {
+    const filtered = data.data.filter((track) => {
       // Match per id o per nome esatto (case insensitive)
-      return (track.artist && (track.artist.id == artistId || track.artist.name.toLowerCase() === artistName.toLowerCase()));
+      return (
+        track.artist &&
+        (track.artist.id == artistId ||
+          track.artist.name.toLowerCase() === artistName.toLowerCase())
+      );
     });
-    const tracksToShow = filtered.length > 0 ? filtered.slice(0, 5) : data.data.slice(0, 5);
+    const tracksToShow =
+      filtered.length > 0 ? filtered.slice(0, 5) : data.data.slice(0, 5);
     if (songListEl) songListEl.innerHTML = "";
     tracksToShow.forEach((track, idx) => {
       const songDiv = document.createElement("div");
@@ -168,22 +215,32 @@ async function loadArtistTracksByGlobalSearch(artistName) {
       songDiv.innerHTML = `
         <div class="song-number me-3 text-center">${idx + 1}</div>
         <div class="song-cover me-3 bg-secondary d-flex align-items-center justify-content-center">
-          <img src="${track.album.cover_small}" alt="cover" style="width:40px;height:40px;object-fit:cover;border-radius:6px;">
+          <img src="${
+            track.album.cover_small
+          }" alt="cover" style="width:40px;height:40px;object-fit:cover;border-radius:6px;">
         </div>
         <div class="flex-grow-1">
           <div class="song-title">${track.title}</div>
         </div>
         <div class="song-plays me-3">
-          <small class="text-secondary">${track.rank ? track.rank.toLocaleString('it-IT') : '-'}</small>
+          <small class="text-secondary">${
+            track.rank ? track.rank.toLocaleString("it-IT") : "-"
+          }</small>
         </div>
         <div class="song-duration me-3">
-          <small class="text-secondary">${track.duration ? Math.floor(track.duration/60) + ':' + (track.duration%60).toString().padStart(2,'0') : '-'}</small>
+          <small class="text-secondary">${
+            track.duration
+              ? Math.floor(track.duration / 60) +
+                ":" +
+                (track.duration % 60).toString().padStart(2, "0")
+              : "-"
+          }</small>
         </div>
         <button class="btn btn-link text-muted p-0">
           <i class="bi bi-three-dots"></i>
         </button>
       `;
-      
+
       // Aggiungi event listener per il click
       songDiv.addEventListener("click", () => {
         if (window.playerManager && track.preview) {
@@ -191,16 +248,18 @@ async function loadArtistTracksByGlobalSearch(artistName) {
           window.playerManager.playTrack(track, audio);
         }
       });
-      
+
       songListEl.appendChild(songDiv);
     });
   } catch (e) {
-    if (songListEl) songListEl.innerHTML = '<div class="text-danger">Errore nel caricamento delle canzoni</div>';
+    if (songListEl)
+      songListEl.innerHTML =
+        '<div class="text-danger">Errore nel caricamento delle canzoni</div>';
   }
 }
 
 // Carica la traccia salvata dal PlayerManager se disponibile
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener("DOMContentLoaded", function () {
   if (window.playerManager) {
     window.playerManager.loadSavedTrack();
   }
