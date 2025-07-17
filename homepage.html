@@ -512,592 +512,573 @@
       <section id="content" class="bg-dark">
         <main>
           <div class="container">
-            <div class="">
+            <div
+              class="pb-1 d-none d-md-none d-lg-flex justify-content-end d-flex align-items-center"
+            >
               <div
-                class="pb-1 d-none d-md-none d-lg-flex justify-content-end d-flex align-items-center"
+                class="mb-2 bg-dark w-100 px-3 py-1 d-none"
+                id="openLeftSide"
+                style="cursor: pointer"
               >
-                <div
-                  class="mb-2 bg-dark w-100 px-3 py-1 d-none"
-                  id="openLeftSide"
-                  style="cursor: pointer"
-                >
-                  <i class="bi bi-three-dots fs-3"></i>
+                <i class="bi bi-three-dots fs-3"></i>
+              </div>
+              <div class="login-Dropdown btn-group rounded-pill p-1 me-3">
+                <div class="profile-Pic">
+                  <img
+                    src="./assets/imgs/profile Pic/Stefano.png"
+                    class="rounded-circle w-100"
+                    alt="Profile Pic"
+                  />
                 </div>
-                <div class="login-Dropdown btn-group rounded-pill p-1 me-3">
-                  <div class="profile-Pic">
+                <button
+                  class="btn dropdown-toggle"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Stefano Casasola
+                </button>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="./profile.html">Profilo</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="./impostazioni.html"
+                      >Impostazioni</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#"> Cronologia Ascolto </a>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <i
+                  class="bi bi-people-fill text-light d-none"
+                  id="iconFriends"
+                ></i>
+              </div>
+            </div>
+          </div>
+          <!-- Inizio Carousel////////////////////////////// -->
+          <div class="d-flex justify-content-start gap-0 mb-3 p-0">
+            <button
+              class="carousel-control-prev position-static justify-content-start"
+              type="button"
+              data-bs-target="#bannerCarousel"
+              data-bs-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon rounded-circle d-none d-md-none d-lg-inline"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Precedente</span>
+            </button>
+
+            <button
+              class="carousel-control-next position-static justify-content-start"
+              type="button"
+              data-bs-target="#bannerCarousel"
+              data-bs-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon rounded-circle d-none d-md-none d-lg-inline"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Successivo</span>
+            </button>
+          </div>
+          <div
+            id="bannerCarousel"
+            class="carousel slide d-none d-lg-block"
+            data-bs-ride="carousel"
+          >
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div
+                  class="main-Banner-Card card w-100 mb-3 rounded-0 d-flex flex-lg-row px-2 border-0"
+                >
+                  <div
+                    class="main-Banner-Card-Cover d-flex align-items-center ps-2 py-3"
+                  >
                     <img
-                      src="./assets/imgs/profile Pic/Stefano.png"
-                      class="rounded-circle w-100"
-                      alt="Profile Pic"
+                      src="./assets/imgs/main/image-2.jpg"
+                      class="card-img-top img-fluid"
+                      alt="Album Cover"
                     />
                   </div>
-                  <button
-                    class="btn dropdown-toggle"
-                    type="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    Stefano Casas.
-                  </button>
-                  <ul class="dropdown-menu">
-                    <li>
-                      <a class="dropdown-item" href="#"
-                        >Gotta Catch 'em All OST</a
+                  <div class="card-body flex-grow-1">
+                    <small>ALBUM</small>
+                    <h3 class="main-Banner-Title fw-bold mt-3">
+                      VIOLA (Feat. Salmo)
+                    </h3>
+                    <small class="d-block mb-1">Fedez, Salmo</small>
+                    <small class="d-block"
+                      >Ascolta il nuovo singolo di Fedez e Salmo!</small
+                    >
+                    <div class="filter-buttons mb-0 mt-3">
+                      <!-- Primo album: Persona -->
+                      <a
+                        class="btn filter-btn active rounded-pill"
+                        href="album.html?id=384842207"
+                        >Play</a
                       >
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">Fuel - Metallica</a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">
-                        Monkey Wrench - Foo Fighters
-                      </a>
-                    </li>
-                  </ul>
+                      <button type="button" class="btn filter-btn rounded-pill">
+                        Salva
+                      </button>
+                      <button
+                        type="button"
+                        class="dot-Button btn filter-btn border-0 ps-2 m-0 pe-0"
+                      >
+                        <i class="bi bi-three-dots"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="pt-3">
+                    <button class="hide-Annunci-Button rounded-pill">
+                      NASCONDI ANNUNCI
+                    </button>
+                  </div>
                 </div>
-                <div>
-                  <i
-                    class="bi bi-people-fill text-light d-none"
-                    id="iconFriends"
-                  ></i>
+              </div>
+              <div class="carousel-item">
+                <div
+                  class="main-Banner-Card card w-100 mb-3 rounded-0 d-flex flex-lg-row px-2 border-0"
+                >
+                  <div
+                    class="main-Banner-Card-Cover d-flex align-items-center ps-2 py-3"
+                  >
+                    <img
+                      src="./assets/imgs/main/marra.png"
+                      class="card-img-top img-fluid"
+                      alt="Album Cover"
+                    />
+                  </div>
+                  <div class="card-body flex-grow-1">
+                    <small>ALBUM</small>
+                    <h3 class="main-Banner-Title fw-bold mt-3">Persona</h3>
+                    <small class="d-block mb-1">Marracash</small>
+                    <small class="d-block"
+                      >Ascolta il nuovo album di Marracash!</small
+                    >
+                    <div class="filter-buttons mb-0 mt-3">
+                      <!-- Secondo album: Viola -->
+                      <a
+                        class="btn filter-btn active rounded-pill"
+                        href="album.html?id=137556512"
+                        >Play</a
+                      >
+                      <button type="button" class="btn filter-btn rounded-pill">
+                        Salva
+                      </button>
+                      <button
+                        type="button"
+                        class="dot-Button btn filter-btn border-0 ps-2 m-0 pe-0"
+                      >
+                        <i class="bi bi-three-dots"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="pt-3">
+                    <button class="hide-Annunci-Button rounded-pill">
+                      NASCONDI ANNUNCI
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div
+                  class="main-Banner-Card card w-100 mb-3 rounded-0 d-flex flex-lg-row px-2 border-0"
+                >
+                  <div
+                    class="main-Banner-Card-Cover d-flex align-items-center ps-2"
+                  >
+                    <img
+                      src="./assets/imgs/main/magikaaaaarp.png"
+                      class="card-img-top img-fluid"
+                      alt="Album Cover"
+                    />
+                  </div>
+                  <div class="card-body flex-grow-1">
+                    <small>ALBUM</small>
+                    <h3 class="main-Banner-Title fw-bold mt-3">SUPERJAZZ</h3>
+                    <small class="d-block mb-1">magikAAAAArp</small>
+                    <small class="d-block"
+                      >Ascolta il nuovo album di magikAAAAArp!</small
+                    >
+                    <div class="filter-buttons mb-0 mt-3">
+                      <!-- Terzo album: Superjazz -->
+                      <a
+                        class="btn filter-btn active rounded-pill"
+                        href="album.html?id=541686632"
+                        >Play</a
+                      >
+                      <button type="button" class="btn filter-btn rounded-pill">
+                        Salva
+                      </button>
+                      <button
+                        type="button"
+                        class="dot-Button btn filter-btn border-0 ps-2 m-0 pe-0"
+                      >
+                        <i class="bi bi-three-dots"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="pt-3">
+                    <button class="hide-Annunci-Button rounded-pill">
+                      NASCONDI ANNUNCI
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
-            <!-- Inizio Carousel////////////////////////////// -->
-            <div class="d-flex justify-content-start gap-0 mb-3 p-0">
-              <button
-                class="carousel-control-prev position-static justify-content-start"
-                type="button"
-                data-bs-target="#bannerCarousel"
-                data-bs-slide="prev"
-              >
-                <span
-                  class="carousel-control-prev-icon rounded-circle d-none d-md-none d-lg-inline"
-                  aria-hidden="true"
-                ></span>
-                <span class="visually-hidden">Precedente</span>
-              </button>
+          </div>
+          <!-- FINE CAROUSEL/////////////////////////////////// -->
 
-              <button
-                class="carousel-control-next position-static justify-content-start"
-                type="button"
-                data-bs-target="#bannerCarousel"
-                data-bs-slide="next"
-              >
-                <span
-                  class="carousel-control-next-icon rounded-circle d-none d-md-none d-lg-inline"
-                  aria-hidden="true"
-                ></span>
-                <span class="visually-hidden">Successivo</span>
-              </button>
+          <!-- Header con Buonasera e icone -->
+          <div
+            class="header-section d-flex flex-row justify-content-between align-items-center mb-3 mt-1"
+          >
+            <h2 class="greeting ms-1"><b>Buonasera</b></h2>
+            <div class="header-icons d-lg-none">
+              <i class="bi bi-bell"></i>
+              <i class="bi bi-clock-history"></i>
+              <i class="bi bi-gear"></i>
             </div>
-            <div
-              id="bannerCarousel"
-              class="carousel slide d-none d-lg-block"
-              data-bs-ride="carousel"
+          </div>
+
+          <!-- Filtri Musica/Podcast -->
+          <div class="filter-buttons d-md-none d-sm-inline">
+            <button
+              type="button"
+              class="btn fs-6 filter-btn p-0 ms-3 border-0 mb-4"
             >
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <div
-                    class="main-Banner-Card card w-100 mb-3 rounded-0 d-flex flex-lg-row px-2 border-0"
-                  >
-                    <div
-                      class="main-Banner-Card-Cover d-flex align-items-center ps-2 py-3"
-                    >
-                      <img
-                        src="./assets/imgs/main/image-2.jpg"
-                        class="card-img-top img-fluid"
-                        alt="Album Cover"
-                      />
-                    </div>
-                    <div class="card-body flex-grow-1">
-                      <small>ALBUM</small>
-                      <h3 class="main-Banner-Title fw-bold mt-3">
-                        VIOLA (Feat. Salmo)
-                      </h3>
-                      <small class="d-block mb-1">Fedez, Salmo</small>
-                      <small class="d-block"
-                        >Ascolta il nuovo singolo di Fedez e Salmo!</small
-                      >
-                      <div class="filter-buttons mb-0 mt-3">
-                        <!-- Primo album: Persona -->
-                        <a
-                          class="btn filter-btn active rounded-pill"
-                          href="album.html?id=384842207"
-                          >Play</a
-                        >
-                        <button
-                          type="button"
-                          class="btn filter-btn rounded-pill"
-                        >
-                          Salva
-                        </button>
-                        <button
-                          type="button"
-                          class="dot-Button btn filter-btn border-0 ps-2 m-0 pe-0"
-                        >
-                          <i class="bi bi-three-dots"></i>
-                        </button>
-                      </div>
-                    </div>
-                    <div class="pt-3">
-                      <button class="hide-Annunci-Button rounded-pill">
-                        NASCONDI ANNUNCI
-                      </button>
-                    </div>
-                  </div>
-                </div>
-                <div class="carousel-item">
-                  <div
-                    class="main-Banner-Card card w-100 mb-3 rounded-0 d-flex flex-lg-row px-2 border-0"
-                  >
-                    <div
-                      class="main-Banner-Card-Cover d-flex align-items-center ps-2 py-3"
-                    >
-                      <img
-                        src="./assets/imgs/main/marra.png"
-                        class="card-img-top img-fluid"
-                        alt="Album Cover"
-                      />
-                    </div>
-                    <div class="card-body flex-grow-1">
-                      <small>ALBUM</small>
-                      <h3 class="main-Banner-Title fw-bold mt-3">Persona</h3>
-                      <small class="d-block mb-1">Marracash</small>
-                      <small class="d-block"
-                        >Ascolta il nuovo album di Marracash!</small
-                      >
-                      <div class="filter-buttons mb-0 mt-3">
-                        <!-- Secondo album: Viola -->
-                        <a
-                          class="btn filter-btn active rounded-pill"
-                          href="album.html?id=137556512"
-                          >Play</a
-                        >
-                        <button
-                          type="button"
-                          class="btn filter-btn rounded-pill"
-                        >
-                          Salva
-                        </button>
-                        <button
-                          type="button"
-                          class="dot-Button btn filter-btn border-0 ps-2 m-0 pe-0"
-                        >
-                          <i class="bi bi-three-dots"></i>
-                        </button>
-                      </div>
-                    </div>
-                    <div class="pt-3">
-                      <button class="hide-Annunci-Button rounded-pill">
-                        NASCONDI ANNUNCI
-                      </button>
-                    </div>
-                  </div>
-                </div>
-                <div class="carousel-item">
-                  <div
-                    class="main-Banner-Card card w-100 mb-3 rounded-0 d-flex flex-lg-row px-2 border-0"
-                  >
-                    <div
-                      class="main-Banner-Card-Cover d-flex align-items-center ps-2"
-                    >
-                      <img
-                        src="./assets/imgs/main/magikaaaaarp.png"
-                        class="card-img-top img-fluid"
-                        alt="Album Cover"
-                      />
-                    </div>
-                    <div class="card-body flex-grow-1">
-                      <small>ALBUM</small>
-                      <h3 class="main-Banner-Title fw-bold mt-3">SUPERJAZZ</h3>
-                      <small class="d-block mb-1">magikAAAAArp</small>
-                      <small class="d-block"
-                        >Ascolta il nuovo album di magikAAAAArp!</small
-                      >
-                      <div class="filter-buttons mb-0 mt-3">
-                        <!-- Terzo album: Superjazz -->
-                        <a
-                          class="btn filter-btn active rounded-pill"
-                          href="album.html?id=541686632"
-                          >Play</a
-                        >
-                        <button
-                          type="button"
-                          class="btn filter-btn rounded-pill"
-                        >
-                          Salva
-                        </button>
-                        <button
-                          type="button"
-                          class="dot-Button btn filter-btn border-0 ps-2 m-0 pe-0"
-                        >
-                          <i class="bi bi-three-dots"></i>
-                        </button>
-                      </div>
-                    </div>
-                    <div class="pt-3">
-                      <button class="hide-Annunci-Button rounded-pill">
-                        NASCONDI ANNUNCI
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- FINE CAROUSEL/////////////////////////////////// -->
-
-            <!-- Header con Buonasera e icone -->
-            <div
-              class="header-section d-flex flex-row justify-content-between align-items-center mb-3 mt-1"
+              Musica
+            </button>
+            <button
+              type="button"
+              class="btn fs-6 filter-btn p-0 ms-3 border-0 mb-4"
             >
-              <h2 class="greeting ms-1"><b>Buonasera</b></h2>
-              <div class="header-icons d-lg-none">
-                <i class="bi bi-bell"></i>
-                <i class="bi bi-clock-history"></i>
-                <i class="bi bi-gear"></i>
-              </div>
-            </div>
+              Podcast e show
+            </button>
+          </div>
 
-            <!-- Filtri Musica/Podcast -->
-            <div class="filter-buttons d-md-none d-sm-inline">
-              <button
-                type="button"
-                class="btn fs-6 filter-btn p-0 ms-3 border-0 mb-4"
-              >
-                Musica
-              </button>
-              <button
-                type="button"
-                class="btn fs-6 filter-btn p-0 ms-3 border-0 mb-4"
-              >
-                Podcast e show
-              </button>
-            </div>
-
-            <!-- Layout identico alla foto Spotify: 2 colonne di playlist -->
-            <div class="spotify-home-content">
-              <!-- Playlist in due colonne: 3 sinistra, 3 destra -->
-              <div class="row">
-                <!-- Colonna sinistra -->
-
-                <!-- early stage emily syndrome -->
-                <div class="col col-6 col-lg-4">
-                  <div
-                    class="spotify-playlist-item d-flex align-items-center mb-2"
-                  >
-                    <div class="spotify-grid-covers me-3">
-                      <img
-                        src="assets/imgs/main/image-1.jpg"
-                        alt="Cover 1"
-                        class="spotify-mini-cover"
-                      />
-                      <img
-                        src="assets/imgs/main/image-2.jpg"
-                        alt="Cover 2"
-                        class="spotify-mini-cover"
-                      />
-                      <img
-                        src="assets/imgs/main/image-3.jpg"
-                        alt="Cover 3"
-                        class="spotify-mini-cover"
-                      />
-                      <img
-                        src="assets/imgs/main/image-4.jpg"
-                        alt="Cover 4"
-                        class="spotify-mini-cover"
-                      />
-                    </div>
-                    <div class="spotify-playlist-info">
-                      <h6 class="spotify-title">early stage emily syndr...</h6>
-                    </div>
-                  </div>
-                </div>
-                <div class="col col-6 col-lg-4">
-                  <!-- saggio vibes -->
-                  <div
-                    class="spotify-playlist-item d-flex align-items-center mb-2"
-                  >
-                    <div class="spotify-grid-covers me-3">
-                      <img
-                        src="assets/imgs/main/image-9.jpg"
-                        alt="Cover 1"
-                        class="spotify-mini-cover"
-                      />
-                      <img
-                        src="assets/imgs/main/image-10.jpg"
-                        alt="Cover 2"
-                        class="spotify-mini-cover"
-                      />
-                      <img
-                        src="assets/imgs/main/image-11.jpg"
-                        alt="Cover 3"
-                        class="spotify-mini-cover"
-                      />
-                      <img
-                        src="assets/imgs/main/image-12.jpg"
-                        alt="Cover 4"
-                        class="spotify-mini-cover"
-                      />
-                    </div>
-                    <div class="spotify-playlist-info">
-                      <h6 class="spotify-title">saggio vibes 🎶🗣️🎧</h6>
-                    </div>
-                  </div>
-                </div>
-                <div class="col col-6 col-lg-4">
-                  <div
-                    class="spotify-playlist-item d-flex align-items-center mb-2"
-                  >
-                    <div class="spotify-grid-covers me-3">
-                      <img
-                        src="assets/imgs/main/image-13.jpg"
-                        alt="Cover 1"
-                        class="spotify-mini-cover"
-                      />
-                      <img
-                        src="assets/imgs/main/image-14.jpg"
-                        alt="Cover 2"
-                        class="spotify-mini-cover"
-                      />
-                      <img
-                        src="assets/imgs/main/image-15.jpg"
-                        alt="Cover 3"
-                        class="spotify-mini-cover"
-                      />
-                      <img
-                        src="assets/imgs/main/image-16.jpg"
-                        alt="Cover 4"
-                        class="spotify-mini-cover"
-                      />
-                    </div>
-                    <div class="spotify-playlist-info">
-                      <h6 class="spotify-title">2021 lol</h6>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Colonna destra -->
-
-                <!-- Be The Young -->
-                <div class="col col-6 col-lg-4">
-                  <div
-                    class="spotify-playlist-item d-flex align-items-center mb-2"
-                  >
-                    <div class="spotify-grid-covers me-3">
-                      <img
-                        src="assets/imgs/main/image-5.jpg"
-                        alt="Cover 1"
-                        class="spotify-mini-cover"
-                      />
-                      <img
-                        src="assets/imgs/main/image-6.jpg"
-                        alt="Cover 2"
-                        class="spotify-mini-cover"
-                      />
-                      <img
-                        src="assets/imgs/main/image-7.jpg"
-                        alt="Cover 3"
-                        class="spotify-mini-cover"
-                      />
-                      <img
-                        src="assets/imgs/main/image-8.jpg"
-                        alt="Cover 4"
-                        class="spotify-mini-cover"
-                      />
-                    </div>
-                    <div class="spotify-playlist-info">
-                      <h6 class="spotify-title">Be The Young</h6>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Brani che ti piacciono -->
-                <div class="col col-6 col-lg-4">
-                  <div
-                    class="spotify-playlist-item d-flex align-items-center mb-2"
-                  >
-                    <div class="spotify-single-cover me-3">
-                      <div class="spotify-liked-cover">
-                        <i class="bi bi-heart-fill"></i>
-                      </div>
-                    </div>
-                    <div class="spotify-playlist-info">
-                      <h6 class="spotify-title">Brani che ti piacciono</h6>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Deep Dive with Ali Abdaal -->
-                <div class="col col-6 col-lg-4">
-                  <div
-                    class="spotify-playlist-item d-flex align-items-center mb-2"
-                  >
-                    <div class="spotify-single-cover me-3">
-                      <img
-                        src="assets/imgs/main/image-17.jpg"
-                        alt="Deep Dive"
-                        class="spotify-single-img"
-                      />
-                    </div>
-                    <div class="spotify-playlist-info">
-                      <h6 class="spotify-title">Deep Dive with Ali Ab...</h6>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Tre card grandi in basso -->
-
-            <!-- Study and work space - playlist grande -->
+          <!-- Layout identico alla foto Spotify: 2 colonne di playlist -->
+          <div class="spotify-home-content">
+            <!-- Playlist in due colonne: 3 sinistra, 3 destra -->
             <div class="row">
-              <h2 class="greeting fs-3 m-0 d-none d-lg-block">
-                <b>Altro di ciò che ti piace</b>
-              </h2>
-              <div class="col col-12 col-md-4">
+              <!-- Colonna sinistra -->
+
+              <!-- early stage emily syndrome -->
+              <div class="col col-6 col-lg-4">
                 <div
-                  class="spotify-featured-playlist card mt-4 d-flex flex-md-column"
+                  class="spotify-playlist-item d-flex align-items-center mb-2"
                 >
-                  <div class="spotify-large-cover-grid mw-100">
-                    <img
-                      src="assets/imgs/main/image-18.jpg"
-                      alt="Study 1"
-                      class="spotify-large-cover"
-                    />
-                    <img
-                      src="assets/imgs/main/image-19.jpg"
-                      alt="Study 2"
-                      class="spotify-large-cover"
-                    />
+                  <div class="spotify-grid-covers me-3">
                     <img
                       src="assets/imgs/main/image-1.jpg"
-                      alt="Study 3"
-                      class="spotify-large-cover"
+                      alt="Cover 1"
+                      class="spotify-mini-cover"
                     />
                     <img
                       src="assets/imgs/main/image-2.jpg"
-                      alt="Study 4"
-                      class="spotify-large-cover"
-                    />
-                  </div>
-                  <div class="spotify-featured-info w-100">
-                    <p class="spotify-featured-type">Playlist</p>
-                    <h5 class="spotify-featured-title">study and work space</h5>
-                    <div
-                      class="spotify-featured-controls d-flex justify-content-between align-items-center mt-2"
-                    >
-                      <div
-                        class="spotify-featured-actions d-flex align-items-center"
-                      >
-                        <i class="bi bi-heart-fill text-success me-3 fs-5"></i>
-                        <i class="bi bi-three-dots me-4 text-white"></i>
-                      </div>
-                      <span class="spotify-track-count text-white"
-                        >16 brani</span
-                      >
-                      <i
-                        class="bi bi-play-circle-fill spotify-play-btn text-success"
-                      ></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- Mix Indie - seconda card grande -->
-              <div class="col col-12 col-md-4">
-                <div
-                  class="spotify-featured-playlist card mt-4 d-flex flex-md-column"
-                >
-                  <div class="spotify-large-cover-grid mw-100">
-                    <img
-                      src="assets/imgs/main/image-7.jpg"
-                      alt="Study 1"
-                      class="spotify-large-cover"
-                    />
-                    <img
-                      src="assets/imgs/main/image-8.jpg"
-                      alt="Study 2"
-                      class="spotify-large-cover"
-                    />
-                    <img
-                      src="assets/imgs/main/image-10.jpg"
-                      alt="Study 3"
-                      class="spotify-large-cover"
+                      alt="Cover 2"
+                      class="spotify-mini-cover"
                     />
                     <img
                       src="assets/imgs/main/image-3.jpg"
-                      alt="Study 4"
-                      class="spotify-large-cover"
+                      alt="Cover 3"
+                      class="spotify-mini-cover"
+                    />
+                    <img
+                      src="assets/imgs/main/image-4.jpg"
+                      alt="Cover 4"
+                      class="spotify-mini-cover"
                     />
                   </div>
-                  <div class="spotify-featured-info w-100">
-                    <p class="spotify-featured-type">Playlist</p>
-                    <h5 class="spotify-featured-title">Mix Indie</h5>
-                    <div
-                      class="spotify-featured-controls d-flex justify-content-between align-items-center mt-2"
-                    >
-                      <div
-                        class="spotify-featured-actions d-flex align-items-center"
-                      >
-                        <i class="bi bi-heart-fill text-success me-3 fs-5"></i>
-                        <i class="bi bi-three-dots me-4 text-white"></i>
-                      </div>
-                      <span class="spotify-track-count text-white"
-                        >16 brani</span
-                      >
-                      <i
-                        class="bi bi-play-circle-fill spotify-play-btn text-success"
-                      ></i>
-                    </div>
+                  <div class="spotify-playlist-info">
+                    <h6 class="spotify-title">early stage emily syndr...</h6>
                   </div>
                 </div>
               </div>
-              <!-- Mix Indie - terza card grande -->
-              <div class="col col-12 col-md-4">
+              <div class="col col-6 col-lg-4">
+                <!-- saggio vibes -->
                 <div
-                  class="spotify-featured-playlist card mt-4 d-flex flex-md-column"
+                  class="spotify-playlist-item d-flex align-items-center mb-2"
                 >
-                  <div class="spotify-large-cover-grid mw-100">
+                  <div class="spotify-grid-covers me-3">
                     <img
-                      src="assets/imgs/main/image-11.jpg"
-                      alt="Study 1"
-                      class="spotify-large-cover"
+                      src="assets/imgs/main/image-9.jpg"
+                      alt="Cover 1"
+                      class="spotify-mini-cover"
                     />
                     <img
-                      src="assets/imgs/main/image-19.jpg"
-                      alt="Study 2"
-                      class="spotify-large-cover"
+                      src="assets/imgs/main/image-10.jpg"
+                      alt="Cover 2"
+                      class="spotify-mini-cover"
+                    />
+                    <img
+                      src="assets/imgs/main/image-11.jpg"
+                      alt="Cover 3"
+                      class="spotify-mini-cover"
                     />
                     <img
                       src="assets/imgs/main/image-12.jpg"
-                      alt="Study 3"
-                      class="spotify-large-cover"
-                    />
-                    <img
-                      src="assets/imgs/main/image-17.jpg"
-                      alt="Study 4"
-                      class="spotify-large-cover"
+                      alt="Cover 4"
+                      class="spotify-mini-cover"
                     />
                   </div>
-                  <div class="spotify-featured-info w-100">
-                    <p class="spotify-featured-type">Playlist</p>
-                    <h5 class="spotify-featured-title">Chill Rap</h5>
-                    <div
-                      class="spotify-featured-controls d-flex justify-content-between align-items-center mt-2"
-                    >
-                      <div
-                        class="spotify-featured-actions d-flex align-items-center"
-                      >
-                        <i class="bi bi-heart-fill text-success me-3 fs-5"></i>
-                        <i class="bi bi-three-dots me-4 text-white"></i>
-                      </div>
-                      <span class="spotify-track-count text-white"
-                        >16 brani</span
-                      >
-                      <i
-                        class="bi bi-play-circle-fill spotify-play-btn text-success"
-                      ></i>
+                  <div class="spotify-playlist-info">
+                    <h6 class="spotify-title">saggio vibes 🎶🗣️🎧</h6>
+                  </div>
+                </div>
+              </div>
+              <div class="col col-6 col-lg-4">
+                <div
+                  class="spotify-playlist-item d-flex align-items-center mb-2"
+                >
+                  <div class="spotify-grid-covers me-3">
+                    <img
+                      src="assets/imgs/main/image-13.jpg"
+                      alt="Cover 1"
+                      class="spotify-mini-cover"
+                    />
+                    <img
+                      src="assets/imgs/main/image-14.jpg"
+                      alt="Cover 2"
+                      class="spotify-mini-cover"
+                    />
+                    <img
+                      src="assets/imgs/main/image-15.jpg"
+                      alt="Cover 3"
+                      class="spotify-mini-cover"
+                    />
+                    <img
+                      src="assets/imgs/main/image-16.jpg"
+                      alt="Cover 4"
+                      class="spotify-mini-cover"
+                    />
+                  </div>
+                  <div class="spotify-playlist-info">
+                    <h6 class="spotify-title">2021 lol</h6>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Colonna destra -->
+
+              <!-- Be The Young -->
+              <div class="col col-6 col-lg-4">
+                <div
+                  class="spotify-playlist-item d-flex align-items-center mb-2"
+                >
+                  <div class="spotify-grid-covers me-3">
+                    <img
+                      src="assets/imgs/main/image-5.jpg"
+                      alt="Cover 1"
+                      class="spotify-mini-cover"
+                    />
+                    <img
+                      src="assets/imgs/main/image-6.jpg"
+                      alt="Cover 2"
+                      class="spotify-mini-cover"
+                    />
+                    <img
+                      src="assets/imgs/main/image-7.jpg"
+                      alt="Cover 3"
+                      class="spotify-mini-cover"
+                    />
+                    <img
+                      src="assets/imgs/main/image-8.jpg"
+                      alt="Cover 4"
+                      class="spotify-mini-cover"
+                    />
+                  </div>
+                  <div class="spotify-playlist-info">
+                    <h6 class="spotify-title">Be The Young</h6>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Brani che ti piacciono -->
+              <div class="col col-6 col-lg-4">
+                <div
+                  class="spotify-playlist-item d-flex align-items-center mb-2"
+                >
+                  <div class="spotify-single-cover me-3">
+                    <div class="spotify-liked-cover">
+                      <i class="bi bi-heart-fill"></i>
                     </div>
+                  </div>
+                  <div class="spotify-playlist-info">
+                    <h6 class="spotify-title">Brani che ti piacciono</h6>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Deep Dive with Ali Abdaal -->
+              <div class="col col-6 col-lg-4">
+                <div
+                  class="spotify-playlist-item d-flex align-items-center mb-2"
+                >
+                  <div class="spotify-single-cover me-3">
+                    <img
+                      src="assets/imgs/main/image-17.jpg"
+                      alt="Deep Dive"
+                      class="spotify-single-img"
+                    />
+                  </div>
+                  <div class="spotify-playlist-info">
+                    <h6 class="spotify-title">Deep Dive with Ali Ab...</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tre card grandi in basso -->
+
+          <!-- Study and work space - playlist grande -->
+          <div class="row">
+            <h2 class="greeting fs-3 m-0 d-none d-lg-block">
+              <b>Altro di ciò che ti piace</b>
+            </h2>
+            <div class="col col-12 col-md-4">
+              <div
+                class="spotify-featured-playlist card mt-4 d-flex flex-md-column"
+              >
+                <div class="spotify-large-cover-grid mw-100">
+                  <img
+                    src="assets/imgs/main/image-18.jpg"
+                    alt="Study 1"
+                    class="spotify-large-cover"
+                  />
+                  <img
+                    src="assets/imgs/main/image-19.jpg"
+                    alt="Study 2"
+                    class="spotify-large-cover"
+                  />
+                  <img
+                    src="assets/imgs/main/image-1.jpg"
+                    alt="Study 3"
+                    class="spotify-large-cover"
+                  />
+                  <img
+                    src="assets/imgs/main/image-2.jpg"
+                    alt="Study 4"
+                    class="spotify-large-cover"
+                  />
+                </div>
+                <div class="spotify-featured-info w-100">
+                  <p class="spotify-featured-type">Playlist</p>
+                  <h5 class="spotify-featured-title">study and work space</h5>
+                  <div
+                    class="spotify-featured-controls d-flex justify-content-between align-items-center mt-2"
+                  >
+                    <div
+                      class="spotify-featured-actions d-flex align-items-center"
+                    >
+                      <i class="bi bi-heart-fill text-success me-3 fs-5"></i>
+                      <i class="bi bi-three-dots me-4 text-white"></i>
+                    </div>
+                    <span class="spotify-track-count text-white">16 brani</span>
+                    <i
+                      class="bi bi-play-circle-fill spotify-play-btn text-success"
+                    ></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Mix Indie - seconda card grande -->
+            <div class="col col-12 col-md-4">
+              <div
+                class="spotify-featured-playlist card mt-4 d-flex flex-md-column"
+              >
+                <div class="spotify-large-cover-grid mw-100">
+                  <img
+                    src="assets/imgs/main/image-7.jpg"
+                    alt="Study 1"
+                    class="spotify-large-cover"
+                  />
+                  <img
+                    src="assets/imgs/main/image-8.jpg"
+                    alt="Study 2"
+                    class="spotify-large-cover"
+                  />
+                  <img
+                    src="assets/imgs/main/image-10.jpg"
+                    alt="Study 3"
+                    class="spotify-large-cover"
+                  />
+                  <img
+                    src="assets/imgs/main/image-3.jpg"
+                    alt="Study 4"
+                    class="spotify-large-cover"
+                  />
+                </div>
+                <div class="spotify-featured-info w-100">
+                  <p class="spotify-featured-type">Playlist</p>
+                  <h5 class="spotify-featured-title">Mix Indie</h5>
+                  <div
+                    class="spotify-featured-controls d-flex justify-content-between align-items-center mt-2"
+                  >
+                    <div
+                      class="spotify-featured-actions d-flex align-items-center"
+                    >
+                      <i class="bi bi-heart-fill text-success me-3 fs-5"></i>
+                      <i class="bi bi-three-dots me-4 text-white"></i>
+                    </div>
+                    <span class="spotify-track-count text-white">16 brani</span>
+                    <i
+                      class="bi bi-play-circle-fill spotify-play-btn text-success"
+                    ></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Mix Indie - terza card grande -->
+            <div class="col col-12 col-md-4">
+              <div
+                class="spotify-featured-playlist card mt-4 d-flex flex-md-column"
+              >
+                <div class="spotify-large-cover-grid mw-100">
+                  <img
+                    src="assets/imgs/main/image-11.jpg"
+                    alt="Study 1"
+                    class="spotify-large-cover"
+                  />
+                  <img
+                    src="assets/imgs/main/image-19.jpg"
+                    alt="Study 2"
+                    class="spotify-large-cover"
+                  />
+                  <img
+                    src="assets/imgs/main/image-12.jpg"
+                    alt="Study 3"
+                    class="spotify-large-cover"
+                  />
+                  <img
+                    src="assets/imgs/main/image-17.jpg"
+                    alt="Study 4"
+                    class="spotify-large-cover"
+                  />
+                </div>
+                <div class="spotify-featured-info w-100">
+                  <p class="spotify-featured-type">Playlist</p>
+                  <h5 class="spotify-featured-title">Chill Rap</h5>
+                  <div
+                    class="spotify-featured-controls d-flex justify-content-between align-items-center mt-2"
+                  >
+                    <div
+                      class="spotify-featured-actions d-flex align-items-center"
+                    >
+                      <i class="bi bi-heart-fill text-success me-3 fs-5"></i>
+                      <i class="bi bi-three-dots me-4 text-white"></i>
+                    </div>
+                    <span class="spotify-track-count text-white">16 brani</span>
+                    <i
+                      class="bi bi-play-circle-fill spotify-play-btn text-success"
+                    ></i>
                   </div>
                 </div>
               </div>
