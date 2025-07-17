@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (window.playerManager) {
     window.playerManager.loadSavedTrack();
   }
-  
+
   // Prendi il nome della playlist dalla query string
   const queryParams = new URLSearchParams(location.search);
   const playlistName = queryParams.get("name") || "Nome Playlist";
@@ -14,21 +14,24 @@ document.addEventListener("DOMContentLoaded", function () {
   const titleEl = document.getElementById("playlist-title");
   if (titleEl) titleEl.innerText = playlistName;
 
-    // Popola immagine copertina (mock)
-    const coverEl = document.querySelector('.card-img-top');
-    const coverContainer = document.querySelector('.playlist-cover-container');
-    if (playlistName.toLowerCase() === 'brani che ti piacciono' && coverContainer) {
-        // Rimuovi eventuale immagine esistente
-        if (coverEl) coverEl.remove();
-        // Inserisci il cuore come in homepage
-        const likedDiv = document.createElement('div');
-        likedDiv.className = 'spotify-liked-cover';
-        likedDiv.style.marginTop = '1rem';
-        likedDiv.innerHTML = '<i class="bi bi-heart-fill"></i>';
-        coverContainer.appendChild(likedDiv);
-    } else if (coverEl) {
-        coverEl.setAttribute('src', 'assets/imgs/main/image-1.jpg');
-    }
+  // Popola immagine copertina (mock)
+  const coverEl = document.querySelector(".card-img-top");
+  const coverContainer = document.querySelector(".playlist-cover-container");
+  if (
+    playlistName.toLowerCase() === "brani che ti piacciono" &&
+    coverContainer
+  ) {
+    // Rimuovi eventuale immagine esistente
+    if (coverEl) coverEl.remove();
+    // Inserisci il cuore come in homepage
+    const likedDiv = document.createElement("div");
+    likedDiv.className = "spotify-liked-cover";
+    likedDiv.style.marginTop = "1rem";
+    likedDiv.innerHTML = '<i class="bi bi-heart-fill"></i>';
+    coverContainer.appendChild(likedDiv);
+  } else if (coverEl) {
+    coverEl.setAttribute("src", "assets/imgs/main/image-1.jpg");
+  }
 
   // Popola creatore (mock)
   const creatorEl = document.querySelector(".card-body h6.card-text");
@@ -232,24 +235,24 @@ document.addEventListener("DOMContentLoaded", function () {
       btn.addEventListener("click", function () {
         const audioId = this.getAttribute("data-audio-id");
         const audio = document.getElementById(audioId);
-        
+
         if (!audio) return;
-        
+
         // Trova la traccia associata
         const songItem = this.closest(".song-item");
         const track = {
           id: audioId,
           title: songItem?.querySelector(".song-title")?.innerText || "-",
           artist: {
-            name: songItem?.querySelector(".song-artist")?.innerText || "-"
+            name: songItem?.querySelector(".song-artist")?.innerText || "-",
           },
           album: {
-            cover_medium: songItem?.querySelector(".song-cover img")?.src || ""
+            cover_medium: songItem?.querySelector(".song-cover img")?.src || "",
           },
           preview: audio.src,
-          duration: audio.duration || 30
+          duration: audio.duration || 30,
         };
-        
+
         // Utilizza il PlayerManager globale
         if (window.playerManager) {
           // Se sto già riproducendo questa preview
@@ -260,7 +263,7 @@ document.addEventListener("DOMContentLoaded", function () {
               currentBtn.querySelector("i").className = "bi bi-play-fill";
             }
           }
-          
+
           if (audio.paused) {
             // Riproduce la traccia usando il PlayerManager
             window.playerManager.playTrack(track, audio);
@@ -276,7 +279,7 @@ document.addEventListener("DOMContentLoaded", function () {
             currentBtn = null;
           }
         }
-        
+
         // Quando la preview finisce, torna l'icona play
         audio.onended = () => {
           this.querySelector("i").className = "bi bi-play-fill";
@@ -518,4 +521,81 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       });
     });
+});
+
+// Per chiudere la side destra degli amici
+const closeButton = document.getElementById("chiudi");
+const friendSection = document.getElementById("friendSection");
+const iconFriends = document.getElementById("iconFriends");
+const mainContentSection = document.getElementsByClassName("main-content")[0];
+
+mainContentSection.style.transition = "all 0.1s linear";
+
+let isFriendSideOpen = true;
+let isLeftSideOpen = true;
+
+closeButton.addEventListener("click", () => {
+  console.log("Chiudiamo questa sidebar destra");
+  friendSection.style.width = "0px";
+  friendSection.style.padding = "0px";
+  iconFriends.classList.remove("d-none");
+  mainContentSection.style.setProperty("margin-right", "0px", "important");
+  isFriendSideOpen = false;
+  if (isLeftSideOpen) {
+    mainContentSection.style.width = "calc(100% - 320px)";
+  } else {
+    mainContentSection.style.width = "100%";
+  }
+});
+
+// Per riaprire la side amici
+
+iconFriends.addEventListener("click", () => {
+  isFriendSideOpen = true;
+  friendSection.style.width = "320px";
+  friendSection.style.padding = "16px";
+  iconFriends.classList.add("d-none");
+  mainContentSection.style.marginRight = "320px";
+  if (isLeftSideOpen) {
+    mainContentSection.style.width = "calc(100% - 640px)";
+  } else {
+    mainContentSection.style.width = "calc(100% - 320px)";
+  }
+});
+
+// Per chiudere la side sinistra
+const closeLeftSide = document.getElementById("closeLeftSide");
+const openLeftSide = document.getElementById("openLeftSide");
+const navSection = document.getElementById("navSection");
+
+openLeftSide.style.transition = "all 0.1s linear";
+
+closeLeftSide.addEventListener("click", () => {
+  console.log("Chiudiamo questa sidebar sinistra");
+  navSection.style.setProperty("display", "none", "important");
+  navSection.style.padding = "0px";
+  openLeftSide.classList.remove("d-none");
+  mainContentSection.style.setProperty("margin-left", "0px", "important");
+  isLeftSideOpen = false;
+  if (isFriendSideOpen) {
+    mainContentSection.style.width = "calc(100% - 320px)";
+  } else {
+    mainContentSection.style.width = "100%";
+  }
+});
+
+// Per riaprire la side sinistra
+
+openLeftSide.addEventListener("click", () => {
+  console.log("Apriamo questa side sinistra");
+  isLeftSideOpen = true;
+  navSection.style.setProperty("display", "flex", "important");
+  navSection.style.padding = "16px";
+  openLeftSide.classList.add("d-none");
+  mainContentSection.style.marginLeft = "320px";
+  if (isFriendSideOpen) {
+    mainContentSection.style.width = "calc(100% - 640px)";
+  } else {
+    mainContentSection.style.width = "calc(100% - 320px)";
+  }
 });
