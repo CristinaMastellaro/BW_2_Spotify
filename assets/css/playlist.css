@@ -348,13 +348,13 @@ body {
     /* flex-direction: column !important; */
     flex-direction: flex !important;
     align-items: flex-start !important;
-    justify-content:space-between;
+    justify-content: space-between;
     gap: 0.3rem !important;
     padding: 1rem 0.7rem !important;
     border-radius: 12px;
     background: #181818;
     margin-bottom: 1.2rem;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
     border: 1px solid #232323;
   }
   .song-cover {
@@ -363,7 +363,7 @@ body {
     display: flex;
     justify-content: flex-start;
     margin-bottom: 0.4rem;
-    margin-right: 0.7em
+    margin-right: 0.7em;
   }
   .song-cover img {
     width: 56px !important;
@@ -421,7 +421,8 @@ body {
     font-size: 1.5rem;
     padding: 0.2rem 0.5rem;
   }
-  .song-plays, .song-duration {
+  .song-plays,
+  .song-duration {
     font-size: 0.95rem;
     color: #b3b3b3;
     white-space: nowrap;
@@ -498,7 +499,7 @@ body {
 
 /* Pulsante play custom Spotify - solo cerchio verde, nessun ovale */
 .spotify-play-btn-custom {
-  background: #1DB954;
+  background: #1db954;
   border: none;
   border-radius: 50%;
   width: 40px;
@@ -507,7 +508,7 @@ body {
   align-items: center;
   justify-content: center;
   transition: box-shadow 0.2s, background 0.2s;
-  box-shadow: 0 2px 8px rgba(30,30,30,0.08);
+  box-shadow: 0 2px 8px rgba(30, 30, 30, 0.08);
   color: #fff;
   font-size: 1.4rem;
   cursor: pointer;
@@ -529,9 +530,10 @@ body {
   box-shadow: none !important;
 }
 
-.spotify-play-btn-custom:hover, .spotify-play-btn-custom:focus {
+.spotify-play-btn-custom:hover,
+.spotify-play-btn-custom:focus {
   background: #1ed760;
-  box-shadow: 0 4px 16px rgba(30,30,30,0.18);
+  box-shadow: 0 4px 16px rgba(30, 30, 30, 0.18);
 }
 .spotify-play-btn-custom i {
   font-size: 1.5rem;
