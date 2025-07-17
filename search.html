@@ -538,15 +538,22 @@
             <!-- Barra di ricerca -->
             <div class="search-container">
               <div class="search-input-wrapper">
-                <form>
+                <form class="d-flex">
                   <i class="bi bi-search search-icon"></i>
                   <input
                     id="search"
                     type="text"
-                    class="search-input"
+                    class="search-input me-1"
                     placeholder="Cosa vuoi ascoltare?"
                     aria-label="Cerca"
                   />
+                  <button
+                    class="btn btn-outline-success rounded-4"
+                    type="submit"
+                    id="button-addon2"
+                  >
+                    Cerca
+                  </button>
                 </form>
               </div>
             </div>
