@@ -64,15 +64,22 @@ const showResults = (endpointToUse) => {
           explicit = `<p class="text-secondary mb-0"><i class="fab fa-etsy"></i> ${resultsSearch.data[i].artist.name}</p>`;
         }
 
-        let seconds = parseInt(
-          (resultsSearch.data[i].duration % 60)
-        ).toString();
+        let seconds = parseInt(resultsSearch.data[i].duration % 60).toString();
         if (seconds.length !== 2) {
-          seconds = seconds.padStart(2, '0');
+          seconds = seconds.padStart(2, "0");
         }
 
+        let numberRiproduction;
+        if (!resultsSearch.data[i].rank) numberRiproduction = "-";
+        if (resultsSearch.data[i].rank > 1_000_000)
+          numberRiproduction =
+            (resultsSearch.data[i].rank / 1_000_000).toFixed(1) + "M";
+        if (resultsSearch.data[i].rank > 1_000)
+          numberRiproduction =
+            (resultsSearch.data[i].rank / 1_000).toFixed(1) + "K";
+
         braniSection.innerHTML += `<div
-                    class="playlist-item d-flex row mb-2 text-secondary gap-2 flex-nowrap colSong" 
+                    class="playlist-item d-flex row mb-2 text-secondary gap-2 flex-nowrap colSong align-items-center" 
                   >
                     <div class="d-flex gap-2 col col-6 px-0 align-items-center gap-3">
                       <div>${i + 1}</div>
@@ -81,7 +88,7 @@ const showResults = (endpointToUse) => {
             ${explicit}
           </div></div>
                     </div>
-                    <div class="col col-3 px-0"># 13356325</div>
+                    <div class="col col-3 px-0 d-flex justify-content-end">${numberRiproduction}</div>
                     <div class="col col-3 px-0 d-flex justify-content-end pe-3">${parseInt(
                       resultsSearch.data[i].duration / 60
                     )}:${seconds}</div>
@@ -109,8 +116,8 @@ const showResults = (endpointToUse) => {
             }
             if (k !== resultsSearch.data.length) {
               artistiSection.innerHTML += `
-              <div><a class="text-decoration-none text-light" href="./artist.html?id=${resultsSearch.data[i].artist.id}">
-                <img src="${resultsSearch.data[k].artist.picture_medium}" alt="" />
+              <div><a class=" rounded-circle text-decoration-none text-light" href="./artist.html?id=${resultsSearch.data[i].artist.id}">
+                <img src="${resultsSearch.data[k].artist.picture_medium}" alt=""class="rounded-circle"/>
                 <div>
                   <h5>${resultsSearch.data[k].artist.name}</h5>
                   <p>Artista</p>
@@ -160,7 +167,7 @@ const showResults = (endpointToUse) => {
         } else {
           artistiSection.innerHTML += `
               <div> <a class="text-decoration-none text-light" href="./artist.html?id=${resultsSearch.data[i].artist.id}">
-                <img src="${resultsSearch.data[i].artist.picture_medium}" alt="Picture artist" class="mb-1" />
+                <img src="${resultsSearch.data[i].artist.picture_medium}" alt="Picture artist" class="mb-1 rounded-circle" />
                 <div>
                   <h5>${resultsSearch.data[i].artist.name}</h5>
                   <p>Artista</p>
