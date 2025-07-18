@@ -35,7 +35,11 @@
     <div class="d-none d-lg-block desktop-layout">
       <!-- Barra Sinistra -->
       <section class="sidebar-left" id="navSection">
-        <div class="d-flex align-items-center" style="height: 40px">
+        <div
+          class="d-flex align-items-center"
+          id="closeLeftSide"
+          style="height: 40px"
+        >
           <i class="bi bi-three-dots text-white fs-5"></i>
         </div>
         <nav class="main-nav d-flex flex-column gap-1">
@@ -227,8 +231,6 @@
 
       <!-- Barra Destra -->
       <section class="sidebar-right d-none d-lg-block" id="friendSection">
-       
-
         <!-- Friends Activity Header -->
         <div
           class="activity-header d-flex justify-content-between align-items-center mb-3"
@@ -241,7 +243,11 @@
             >
               <i class="bi bi-person-add"></i>
             </button>
-            <button class="btn btn-link text-muted p-1" title="Chiudi">
+            <button
+              class="btn btn-link text-muted p-1"
+              title="Chiudi"
+              id="chiudi"
+            >
               <i class="bi bi-x-lg"></i>
             </button>
           </div>
@@ -257,12 +263,32 @@
               class="friend-avatar me-3"
             />
             <div class="friend-info flex-grow-1">
-              <div class="friend-name"><a href="https://github.com/Davide-Mancini" class="text-reset text-decoration-none" target="_blank" rel="noopener noreferrer">Davide Mancini</a></div>
+              <div class="friend-name">
+                <a
+                  href="https://github.com/Davide-Mancini"
+                  class="text-reset text-decoration-none"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Davide Mancini</a
+                >
+              </div>
               <div class="friend-activity text-muted">
-                <small><a href="https://open.spotify.com/intl-it/track/0JaU1YsufxBrK8FTpcNzRL?si=e5823e2112544d60" class="link-light text-decoration-none" style="transition: color 0.2s;" target="_blank" rel="noopener noreferrer">Soul Of a Supertramp • Mezzosangue</a></small>
+                <small
+                  ><a
+                    href="https://open.spotify.com/intl-it/track/0JaU1YsufxBrK8FTpcNzRL?si=e5823e2112544d60"
+                    class="link-light text-decoration-none"
+                    style="transition: color 0.2s"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Soul Of a Supertramp • Mezzosangue</a
+                  ></small
+                >
               </div>
               <div class="friend-album text-muted">
-                <small><i class="bi bi-heart-fill text-success"></i>Davide-Mancini</small>
+                <small
+                  ><i class="bi bi-heart-fill text-success"></i
+                  >Davide-Mancini</small
+                >
               </div>
             </div>
             <div class="friend-time">
@@ -278,12 +304,32 @@
               class="friend-avatar me-3"
             />
             <div class="friend-info flex-grow-1">
-              <div class="friend-name"><a href="https://github.com/Porta048" class="text-reset text-decoration-none" target="_blank" rel="noopener noreferrer">Alessandro di Martino</a></div>
+              <div class="friend-name">
+                <a
+                  href="https://github.com/Porta048"
+                  class="text-reset text-decoration-none"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Alessandro di Martino</a
+                >
+              </div>
               <div class="friend-activity text-muted">
-                <small><a href="https://www.youtube.com/watch?v=lWLYkkNQkO0Hello" class="link-light text-decoration-none" style="transition: color 0.2s;" target="_blank" rel="noopener noreferrer"> Kitty • Mirko Fabbreschi</a></small>
+                <small
+                  ><a
+                    href="https://www.youtube.com/watch?v=lWLYkkNQkO0Hello"
+                    class="link-light text-decoration-none"
+                    style="transition: color 0.2s"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Kitty • Mirko Fabbreschi</a
+                  ></small
+                >
               </div>
               <div class="friend-album text-muted">
-                <small><i class="bi bi-heart-fill text-success"></i> Porta048</small>
+                <small
+                  ><i class="bi bi-heart-fill text-success"></i> Porta048</small
+                >
               </div>
             </div>
             <div class="friend-time">
@@ -299,14 +345,33 @@
               class="friend-avatar me-3"
             />
             <div class="friend-info flex-grow-1">
-              
-              <div class="friend-name"><a href="https://github.com/CristinaMastellaro" class="text-reset text-decoration-none" target="_blank" rel="noopener noreferrer">Cristina Mastellaro</a></div>
-              
+              <div class="friend-name">
+                <a
+                  href="https://github.com/CristinaMastellaro"
+                  class="text-reset text-decoration-none"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Cristina Mastellaro</a
+                >
+              </div>
+
               <div class="friend-activity text-muted">
-                <small><a href="https://open.spotify.com/intl-it/track/6CcJMwBtXByIz4zQLzFkKc?si=68eeb2299fa449ae" class="link-light text-decoration-none" style="transition: color 0.2s;" target="_blank" rel="noopener noreferrer">I love you • Billie Ellish</a></small>
+                <small
+                  ><a
+                    href="https://open.spotify.com/intl-it/track/6CcJMwBtXByIz4zQLzFkKc?si=68eeb2299fa449ae"
+                    class="link-light text-decoration-none"
+                    style="transition: color 0.2s"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >I love you • Billie Ellish</a
+                  ></small
+                >
               </div>
               <div class="friend-album text-muted">
-                <small><i class="bi bi-heart-fill text-success"></i> CristinaMastellaro</small>
+                <small
+                  ><i class="bi bi-heart-fill text-success"></i>
+                  CristinaMastellaro</small
+                >
               </div>
             </div>
             <div class="friend-time">
@@ -321,12 +386,33 @@
               class="friend-avatar me-3"
             />
             <div class="friend-info flex-grow-1">
-              <div class="friend-name"><a href="https://github.com/alessandraciccone" class="text-reset text-decoration-none" target="_blank" rel="noopener noreferrer">Alessandra Ciccone</a></div>
+              <div class="friend-name">
+                <a
+                  href="https://github.com/alessandraciccone"
+                  class="text-reset text-decoration-none"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Alessandra Ciccone</a
+                >
+              </div>
               <div class="friend-activity text-muted">
-                <small><a href="https://open.spotify.com/intl-it/track/1QbOvACeYanja5pbnJbAmk?si=c76adb397dc04bb9" class="link-light text-decoration-none" style="transition: color 0.2s;" target="_blank" rel="noopener noreferrer"> Take Me Home, Country Roads • John Denver</a></small>
+                <small
+                  ><a
+                    href="https://open.spotify.com/intl-it/track/1QbOvACeYanja5pbnJbAmk?si=c76adb397dc04bb9"
+                    class="link-light text-decoration-none"
+                    style="transition: color 0.2s"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Take Me Home, Country Roads • John Denver</a
+                  ></small
+                >
               </div>
               <div class="friend-album text-muted">
-                <small><i class="bi bi-heart-fill text-success"></i> alessandraciccone</small>
+                <small
+                  ><i class="bi bi-heart-fill text-success"></i>
+                  alessandraciccone</small
+                >
               </div>
             </div>
             <div class="friend-time">
@@ -341,12 +427,32 @@
               class="friend-avatar me-3"
             />
             <div class="friend-info flex-grow-1">
-              <div class="friend-name"><a href="https://github.com/Dade1991" class="text-reset text-decoration-none" target="_blank" rel="noopener noreferrer">Davide Braghi</a></div>
+              <div class="friend-name">
+                <a
+                  href="https://github.com/Dade1991"
+                  class="text-reset text-decoration-none"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Davide Braghi</a
+                >
+              </div>
               <div class="friend-activity text-muted">
-                <small><a href="https://open.spotify.com/intl-it/track/2NSw8SOcQ6EVLf1QZFMH1h?si=8cd68cf17dec434f" class="link-light text-decoration-none" style="transition: color 0.2s;" target="_blank" rel="noopener noreferrer"> Trash Metal Cassette • Dinosaur Pile-Up</a></small>
+                <small
+                  ><a
+                    href="https://open.spotify.com/intl-it/track/2NSw8SOcQ6EVLf1QZFMH1h?si=8cd68cf17dec434f"
+                    class="link-light text-decoration-none"
+                    style="transition: color 0.2s"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Trash Metal Cassette • Dinosaur Pile-Up</a
+                  ></small
+                >
               </div>
               <div class="friend-album text-muted">
-                <small><i class="bi bi-heart-fill text-success"></i> Dade1991</small>
+                <small
+                  ><i class="bi bi-heart-fill text-success"></i> Dade1991</small
+                >
               </div>
             </div>
             <div class="friend-time">
@@ -354,30 +460,45 @@
             </div>
           </div>
         </div>
-         <!-- Emiliano Massari -->
-         <div class="friend-item d-flex align-items-center mb-3">
+        <!-- Emiliano Massari -->
+        <div class="friend-item d-flex align-items-center mb-3">
           <img
             src="https://avatars.githubusercontent.com/u/158219820?v=4"
             alt="lightdark02"
             class="friend-avatar me-3"
           />
           <div class="friend-info flex-grow-1">
-            <div class="friend-name"><a href="https://github.com/epsyFRG" class="text-reset text-decoration-none" target="_blank" rel="noopener noreferrer">Emiliano Massari</a></div>
+            <div class="friend-name">
+              <a
+                href="https://github.com/epsyFRG"
+                class="text-reset text-decoration-none"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Emiliano Massari</a
+              >
+            </div>
             <div class="friend-activity text-muted">
-              <small><a href="https://www.youtube.com/watch?v=zuESv_zqMT8&list=RDzuESv_zqMT8&start_radio=1" class="link-light text-decoration-none" style="transition: color 0.2s;" target="_blank" rel="noopener noreferrer">Overtaken • One Piece</a></small>
+              <small
+                ><a
+                  href="https://www.youtube.com/watch?v=zuESv_zqMT8&list=RDzuESv_zqMT8&start_radio=1"
+                  class="link-light text-decoration-none"
+                  style="transition: color 0.2s"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Overtaken • One Piece</a
+                ></small
+              >
             </div>
             <div class="friend-album text-muted">
-              <small><i class="bi bi-heart-fill text-success"></i> epsyFRG</small>
+              <small
+                ><i class="bi bi-heart-fill text-success"></i> epsyFRG</small
+              >
             </div>
           </div>
           <div class="friend-time">
             <small class="text-muted">13 ore</small>
           </div>
         </div>
-      </div>
-        
-
-
       </section>
     </div>
     <!--  Qui andranno inseriti i contenuti delle pagine -->
@@ -385,6 +506,9 @@
     <!-- <section id="content" class="bg-dark"> -->
     <div class="main-content min-vh-100 d-flex flex-column">
       <!-- Pulsante di ritorno -->
+      <div class="mb-2 bg-dark w-100 px-3 py-1 d-none" id="openLeftSide">
+        <i class="bi bi-three-dots fs-3"></i>
+      </div>
       <div class="position-absolute top-0 start-0 p-3" style="z-index: 10">
         <a href="artist.html" class="btn btn-link text-white p-0">
           <i class="bi bi-arrow-left fs-4 d-lg-none"></i>
@@ -423,20 +547,29 @@
             </div>
           </div>
           <!--fine div icone-->
-          <div
-            class="d-flex align-items-center gap-2 bg-dark rounded-pill px-2"
-          >
-            <!--inizio div login-->
-            <img
-              src="./assets/imgs/profile Pic/Stefano.png"
-              style="width: 30px; height: 30px"
-              class="rounded-5"
-            />
-            <p class="m-0">Stefano Casasola</p>
-            <i class="bi bi-caret-down-fill" style="width: 15px"></i>
+          <div class="d-flex align-items-center">
+            <div
+              class="d-flex align-items-center gap-2 bg-dark rounded-pill px-2 me-3"
+            >
+              <!--inizio div login-->
+              <img
+                src="./assets/imgs/profile Pic/Stefano.png"
+                style="width: 30px; height: 30px"
+                class="rounded-5"
+              />
+              <p class="m-0">Stefano Casasola</p>
+              <i class="bi bi-caret-down-fill" style="width: 15px"></i>
+            </div>
+            <div>
+              <i
+                class="bi bi-people-fill text-dark d-none"
+                id="iconFriends"
+              ></i>
+            </div>
           </div>
         </div>
         <!--fine div icone e login -->
+
         <div class="container p-0">
           <div class="row">
             <div class="col d-flex">
@@ -489,15 +622,7 @@
                     <div class="text-light d-none d-lg-block">•</div>
 
                     <!--artista  album-->
-                    <div>
-                      <p
-                        id="albumWithYear"
-                        class="d-flex text-secondary d-lg-none mb-0"
-                      >
-                        <!--si vede solo con mobile-->
-                        Album -
-                      </p>
-                    </div>
+
                     <!--anno album-->
                     <div class="d-flex align-items-center">
                       <p
@@ -517,6 +642,13 @@
 
                     <!-- minuti brani da sistemare con js-->
                   </div>
+                  <p
+                    id="albumWithYear"
+                    class="d-flex text-secondary d-lg-none mb-0"
+                  >
+                    <!--si vede solo con mobile-->
+                    Album -
+                  </p>
                 </div>
               </div>
             </div>
@@ -821,236 +953,3 @@
     <script src="scripts/album.js"></script>
   </body>
 </html>
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Album Spotify</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
-    />
-    <link rel="stylesheet" href="./assets/css/album.css" />
-    <style>
-      body {
-        background: linear-gradient(to bottom, #9c9c03 0%, #000000 20%);
-        padding-left: 1em;
-        padding-right: 1em;
-      }
-
-      .container {
-        max-width: 100% !important;
-      }
-
-      .card-title {
-        font-size: 2.2em;
-      }
-
-      #containerSongs i {
-        transform: scale(1.5);
-        margin-right: 1.5em;
-      }
-
-      #iconsContainer {
-        margin-bottom: 1.5em;
-        margin-right: 1em;
-      }
-
-      #iconsContainer > div > div:nth-of-type(1) {
-        width: 120px;
-      }
-
-      #iconsContainer > div > div:nth-of-type(2) {
-        width: 90px;
-      }
-
-      .infoSong {
-        margin-bottom: 0.5em;
-      }
-
-      .infoSong h5 {
-        margin-bottom: 0;
-      }
-
-      .infoSong i {
-        font-size: 1.5em;
-        margin-right: 0.5em !important;
-      }
-    </style>
-  </head>
-
-  <body>
-    <main>
-      Pulsante di ritorno
-      <div class="position-absolute top-0 start-0 p-3" style="z-index: 10">
-        <a href="artist.html" class="btn btn-link text-white p-0">
-          <i class="bi bi-arrow-left fs-4"></i>
-        </a>
-      </div>
-
-      <div class="container">
-        <div class="row">
-          <div class="col d-flex">
-            <div class="card bg-transparent border-0 d-flex w-100">
-              <div class="d-flex d-flex justify-content-center">
-                <img
-                  src="..."
-                  class="card-img-top mt-4 d-block"
-                  style="max-width: 300px"
-                  alt="..."
-                />
-              </div>
-              <div
-                class="card-body d-flex flex-column justify-content-start my-3"
-              >
-                <h5 class="card-title text-white fw-semibold">Card title</h5>
-                Gioventù bruciata
-                <div class="d-flex align-items-center mb-2 gap-2">
-                  <img
-                    id="artistImg"
-                    src=".."
-                    class="rounded-5"
-                    style="width: 30px"
-                  />
-
-                  <h6 class="card-text text-white"></h6>
-                </div>
-
-                artista  album
-                <p class="card-text text-secondary">Album -</p>
-                anno album
-              </div>
-            </div>
-          </div>
-          fine div col
-        </div>
-        fine div row
-      </div>
-      fine div container
-
-      <section id="containerSongs">
-        sezione canzoni
-        <div id="iconsContainer">
-          <div
-            class="d-flex ms-3 justify-content-between px-2 align-items-center"
-          >
-            <div class="d-flex justify-content-between">
-              <i class="bi bi-heart text-white me-2"></i>
-              <i class="bi bi-arrow-down-circle text-secondary me-2"></i>
-              <i class="bi bi-three-dots-vertical text-secondary me-2"></i>
-            </div>
-            icone dx
-            <div class="d-flex justify-content-between align-items-center">
-              <i class="bi bi-shuffle me-2 text-secondary"></i>
-              <div
-                class="d-flex justify-content-center align-items-center text-center ps-4"
-                style="
-                  background-color: #2d8c2d;
-                  border-radius: 50%;
-                  width: 42px;
-                  height: 42px;
-                "
-              >
-                <i
-                  class="bi bi-play-fill"
-                  style="color: white; font-size: 15px"
-                ></i>
-              </div>
-            </div>
-            incone sx
-          </div>
-        </div>
-        finw div incone
-
-        <div class="infoSong">
-          <div class="song">"
-            <h5>Titolo canzone</h5>
-            <p>Nome dell'artista</p>
-          </div>
-          nome singolo e artista
-          <div class="point"></div>
-        </div>
-      </section>
-
-      <nav
-        class="navbar navbar-expand-lg bg-black border-bottom border-body"
-        data-bs-theme="dark"
-      >
-        <div class="container-fluid justify-content-evenly"></div>
-      </nav>
-    </main>
-
-    Player musicale
-    <footer
-      class="player-footer position-fixed start-0 w-100 bg-dark border-top"
-    >
-      <div
-        class="current-playing px-3 py-2 d-flex align-items-center justify-content-between"
-      >
-        <div class="d-flex align-items-center flex-grow-1">
-          <div
-            class="now-playing-cover me-3 bg-secondary d-flex align-items-center justify-content-center"
-          >
-            <i class="bi bi-music-note text-muted"></i>
-          </div>
-          <div class="flex-grow-1">
-            <div class="now-playing-title text-truncate">
-              rnatural Parody by The Hillywood Show
-            </div>
-          </div>
-        </div>
-        <div class="d-flex align-items-center gap-3">
-          <button class="btn btn-link text-white p-0">
-            <i class="bi bi-laptop ms-2"></i>
-          </button>
-          <button class="btn btn-link text-white p-0">
-            <i class="bi bi-heart"></i>
-          </button>
-          <button class="btn btn-link text-white p-0">
-            <i class="bi bi-play-fill fs-4"></i>
-          </button>
-        </div>
-      </div>
-
-      Navigazione
-      <nav class="bottom-nav d-flex">
-        <a
-          href="homepage.html"
-          class="nav-item text-center flex-fill py-2 text-decoration-none text-muted"
-        >
-          <div><i class="bi bi-house-door-fill"></i></div>
-          <small>Home</small>
-        </a>
-        <a
-          href="search.html"
-          class="nav-item text-center flex-fill py-2 text-decoration-none text-muted"
-        >
-          <div><i class="bi bi-search"></i></div>
-          <small>Cerca</small>
-        </a>
-        <a
-          href="libreria.html"
-          class="nav-item text-center flex-fill py-2 text-decoration-none text-white"
-        >
-          <div><i class="bi bi-list"></i></div>
-          <small>La tua libreria</small>
-        </a>
-      </nav>
-    </footer>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
-      crossorigin="anonymous"
-    ></script>
-
-    <script src="./scripts/album.js"></script>
-  </body>
-</html> -->

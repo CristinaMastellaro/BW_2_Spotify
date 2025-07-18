@@ -98,7 +98,7 @@ const showResults = (endpointToUse) => {
           if (!nameArtists.includes(resultsSearch.data[i].artist.name)) {
             artistiSection.innerHTML += `
               <div> <a class="text-decoration-none text-light" href="./artist.html?id=${resultsSearch.data[i].artist.id}">
-                <img src="${resultsSearch.data[i].artist.picture_medium}" alt="" />
+                <img src="${resultsSearch.data[i].artist.picture_medium}" alt="" class="rounded-circle"/>
                 <div>
                   <h5>${resultsSearch.data[i].artist.name}</h5>
                   <p>Artista</p>
@@ -116,8 +116,8 @@ const showResults = (endpointToUse) => {
             }
             if (k !== resultsSearch.data.length) {
               artistiSection.innerHTML += `
-              <div><a class=" rounded-circle text-decoration-none text-light" href="./artist.html?id=${resultsSearch.data[i].artist.id}">
-                <img src="${resultsSearch.data[k].artist.picture_medium}" alt=""class="rounded-circle"/>
+              <div><a class=" rounded-circle text-decoration-none text-light" href="./artist.html?id=${resultsSearch.data[k].artist.id}">
+                <img src="${resultsSearch.data[k].artist.picture_medium}" alt="" class="rounded-circle"/>
                 <div>
                   <h5>${resultsSearch.data[k].artist.name}</h5>
                   <p>Artista</p>
@@ -205,4 +205,81 @@ form.addEventListener("submit", (e) => {
   document.getElementById("artisti").innerHTML = "";
   document.getElementById("album").innerHTML = "";
   showResults(endpointToUse);
+});
+
+// Per chiudere la side destra degli amici
+const closeButton = document.getElementById("chiudi");
+const friendSection = document.getElementById("friendSection");
+const iconFriends = document.getElementById("iconFriends");
+const mainContentSection = document.getElementsByClassName("main-content")[0];
+
+mainContentSection.style.transition = "all 0.1s linear";
+
+let isFriendSideOpen = true;
+let isLeftSideOpen = true;
+
+closeButton.addEventListener("click", () => {
+  console.log("Chiudiamo questa sidebar destra");
+  friendSection.style.width = "0px";
+  friendSection.style.padding = "0px";
+  iconFriends.classList.remove("d-none");
+  mainContentSection.style.marginRight = "0px";
+  isFriendSideOpen = false;
+  if (isLeftSideOpen) {
+    mainContentSection.style.width = "calc(100% - 240px)";
+  } else {
+    mainContentSection.style.width = "100%";
+  }
+});
+
+// Per riaprire la side amici
+
+iconFriends.addEventListener("click", () => {
+  isFriendSideOpen = true;
+  friendSection.style.width = "240px";
+  friendSection.style.padding = "16px";
+  iconFriends.classList.add("d-none");
+  mainContentSection.style.marginRight = "240px";
+  if (isLeftSideOpen) {
+    mainContentSection.style.width = "calc(100% - 480px)";
+  } else {
+    mainContentSection.style.width = "calc(100% - 240px)";
+  }
+});
+
+// Per chiudere la side sinistra
+const closeLeftSide = document.getElementById("closeLeftSide");
+const openLeftSide = document.getElementById("openLeftSide");
+const navSection = document.getElementById("navSection");
+
+openLeftSide.style.transition = "all 0.1s linear";
+
+closeLeftSide.addEventListener("click", () => {
+  console.log("Chiudiamo questa sidebar sinistra");
+  navSection.style.setProperty("display", "none", "important");
+  navSection.style.padding = "0px";
+  openLeftSide.classList.remove("d-none");
+  mainContentSection.style.marginLeft = "0px";
+  isLeftSideOpen = false;
+  if (isFriendSideOpen) {
+    mainContentSection.style.width = "calc(100% - 240px)";
+  } else {
+    mainContentSection.style.width = "100%";
+  }
+});
+
+// Per riaprire la side sinistra
+
+openLeftSide.addEventListener("click", () => {
+  console.log("Apriamo questa side sinistra");
+  isLeftSideOpen = true;
+  navSection.style.setProperty("display", "flex", "important");
+  navSection.style.padding = "16px";
+  openLeftSide.classList.add("d-none");
+  mainContentSection.style.marginLeft = "240px";
+  if (isFriendSideOpen) {
+    mainContentSection.style.width = "calc(100% - 480px)";
+  } else {
+    mainContentSection.style.width = "calc(100% - 240px)";
+  }
 });

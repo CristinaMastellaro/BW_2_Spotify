@@ -309,7 +309,11 @@
     <main class="mt-4 position-relative d-flex w-100 px-0">
       <!-- Sidebar sinistra -->
       <section class="sidebar-left d-none d-lg-block" id="navSection">
-        <div class="d-flex align-items-center" style="height: 40px">
+        <div
+          class="d-flex align-items-center"
+          id="closeLeftSide"
+          style="height: 40px"
+        >
           <i class="bi bi-three-dots text-white fs-5"></i>
         </div>
         <nav class="main-nav d-flex flex-column gap-1">
@@ -501,6 +505,9 @@
 
       <!-- Contenuto centrale -->
       <div class="main-content flex-grow-1">
+        <div class="mb-2 bg-black w-100 px-3 py-1 d-none" id="openLeftSide">
+          <i class="bi bi-three-dots fs-3"></i>
+        </div>
         <section id="content" class="bg-dark">
           <!-- Pulsante di ritorno -->
           <div class="position-absolute top-0 start-0 p-3" style="z-index: 10">
@@ -520,7 +527,7 @@
                 </button>
               </div>
               <div
-                class="position-absolute end-0 top-0 p-3 d-none d-lg-flex align-items-center gap-2"
+                class="position-absolute end-0 top-0 p-3 d-none d-lg-flex align-items-center gap-2 me-3"
               >
                 <img
                   src="./assets/imgs/profile Pic/Stefano.png"
@@ -535,6 +542,15 @@
                 >
                   <i class="bi bi-chevron-down"></i>
                 </button>
+              </div>
+              <div
+                class="position-absolute"
+                style="top: 22px; right: 10px; z-index: 100"
+              >
+                <i
+                  class="bi bi-people-fill text-dark d-none"
+                  id="iconFriends"
+                ></i>
               </div>
             </div>
             <div class="row">
@@ -556,9 +572,9 @@
                     class="card-body d-flex flex-column justify-content-start mt-4 p-0"
                   >
                     <p
-                      class="card-text text-secondary d-sm-none d-lg-block text-white"
+                      class="card-text text-secondary d-none d-lg-block text-white"
                     >
-                      Playlist -
+                      Playlist
                     </p>
                     <h5
                       class="card-title text-white fw-semibold ms-lg-2"
@@ -575,7 +591,7 @@
                       />
                       <h6 class="card-text text-white">Creatore</h6>
                     </div>
-                    <p class="card-text text-secondary d-lg-none">Playlist -</p>
+                    <p class="card-text text-secondary d-lg-none">Playlist</p>
                   </div>
                 </div>
               </div>
@@ -668,7 +684,11 @@
             >
               <i class="bi bi-person-add"></i>
             </button>
-            <button class="btn btn-link text-muted p-1" title="Chiudi">
+            <button
+              class="btn btn-link text-muted p-1"
+              title="Chiudi"
+              id="chiudi"
+            >
               <i class="bi bi-x-lg"></i>
             </button>
           </div>
@@ -684,12 +704,32 @@
               class="friend-avatar me-3"
             />
             <div class="friend-info flex-grow-1">
-              <div class="friend-name"><a href="https://github.com/Davide-Mancini" class="text-reset text-decoration-none" target="_blank" rel="noopener noreferrer">Davide Mancini</a></div>
+              <div class="friend-name">
+                <a
+                  href="https://github.com/Davide-Mancini"
+                  class="text-reset text-decoration-none"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Davide Mancini</a
+                >
+              </div>
               <div class="friend-activity text-muted">
-                <small><a href="https://open.spotify.com/intl-it/track/0JaU1YsufxBrK8FTpcNzRL?si=e5823e2112544d60" class="link-light text-decoration-none" style="transition: color 0.2s;" target="_blank" rel="noopener noreferrer">Soul Of a Supertramp • Mezzosangue</a></small>
+                <small
+                  ><a
+                    href="https://open.spotify.com/intl-it/track/0JaU1YsufxBrK8FTpcNzRL?si=e5823e2112544d60"
+                    class="link-light text-decoration-none"
+                    style="transition: color 0.2s"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Soul Of a Supertramp • Mezzosangue</a
+                  ></small
+                >
               </div>
               <div class="friend-album text-muted">
-                <small><i class="bi bi-heart-fill text-success"></i>Davide-Mancini</small>
+                <small
+                  ><i class="bi bi-heart-fill text-success"></i
+                  >Davide-Mancini</small
+                >
               </div>
             </div>
             <div class="friend-time">
@@ -705,12 +745,32 @@
               class="friend-avatar me-3"
             />
             <div class="friend-info flex-grow-1">
-              <div class="friend-name"><a href="https://github.com/Porta048" class="text-reset text-decoration-none" target="_blank" rel="noopener noreferrer">Alessandro di Martino</a></div>
+              <div class="friend-name">
+                <a
+                  href="https://github.com/Porta048"
+                  class="text-reset text-decoration-none"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Alessandro di Martino</a
+                >
+              </div>
               <div class="friend-activity text-muted">
-                <small><a href="https://www.youtube.com/watch?v=lWLYkkNQkO0Hello" class="link-light text-decoration-none" style="transition: color 0.2s;" target="_blank" rel="noopener noreferrer"> Kitty • Mirko Fabbreschi</a></small>
+                <small
+                  ><a
+                    href="https://www.youtube.com/watch?v=lWLYkkNQkO0Hello"
+                    class="link-light text-decoration-none"
+                    style="transition: color 0.2s"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Kitty • Mirko Fabbreschi</a
+                  ></small
+                >
               </div>
               <div class="friend-album text-muted">
-                <small><i class="bi bi-heart-fill text-success"></i> Porta048</small>
+                <small
+                  ><i class="bi bi-heart-fill text-success"></i> Porta048</small
+                >
               </div>
             </div>
             <div class="friend-time">
@@ -726,14 +786,33 @@
               class="friend-avatar me-3"
             />
             <div class="friend-info flex-grow-1">
-              
-              <div class="friend-name"><a href="https://github.com/CristinaMastellaro" class="text-reset text-decoration-none" target="_blank" rel="noopener noreferrer">Cristina Mastellaro</a></div>
-              
+              <div class="friend-name">
+                <a
+                  href="https://github.com/CristinaMastellaro"
+                  class="text-reset text-decoration-none"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Cristina Mastellaro</a
+                >
+              </div>
+
               <div class="friend-activity text-muted">
-                <small><a href="https://open.spotify.com/intl-it/track/6CcJMwBtXByIz4zQLzFkKc?si=68eeb2299fa449ae" class="link-light text-decoration-none" style="transition: color 0.2s;" target="_blank" rel="noopener noreferrer">I love you • Billie Ellish</a></small>
+                <small
+                  ><a
+                    href="https://open.spotify.com/intl-it/track/6CcJMwBtXByIz4zQLzFkKc?si=68eeb2299fa449ae"
+                    class="link-light text-decoration-none"
+                    style="transition: color 0.2s"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >I love you • Billie Ellish</a
+                  ></small
+                >
               </div>
               <div class="friend-album text-muted">
-                <small><i class="bi bi-heart-fill text-success"></i> CristinaMastellaro</small>
+                <small
+                  ><i class="bi bi-heart-fill text-success"></i>
+                  CristinaMastellaro</small
+                >
               </div>
             </div>
             <div class="friend-time">
@@ -748,12 +827,33 @@
               class="friend-avatar me-3"
             />
             <div class="friend-info flex-grow-1">
-              <div class="friend-name"><a href="https://github.com/alessandraciccone" class="text-reset text-decoration-none" target="_blank" rel="noopener noreferrer">Alessandra Ciccone</a></div>
+              <div class="friend-name">
+                <a
+                  href="https://github.com/alessandraciccone"
+                  class="text-reset text-decoration-none"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Alessandra Ciccone</a
+                >
+              </div>
               <div class="friend-activity text-muted">
-                <small><a href="https://open.spotify.com/intl-it/track/1QbOvACeYanja5pbnJbAmk?si=c76adb397dc04bb9" class="link-light text-decoration-none" style="transition: color 0.2s;" target="_blank" rel="noopener noreferrer"> Take Me Home, Country Roads • John Denver</a></small>
+                <small
+                  ><a
+                    href="https://open.spotify.com/intl-it/track/1QbOvACeYanja5pbnJbAmk?si=c76adb397dc04bb9"
+                    class="link-light text-decoration-none"
+                    style="transition: color 0.2s"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Take Me Home, Country Roads • John Denver</a
+                  ></small
+                >
               </div>
               <div class="friend-album text-muted">
-                <small><i class="bi bi-heart-fill text-success"></i> alessandraciccone</small>
+                <small
+                  ><i class="bi bi-heart-fill text-success"></i>
+                  alessandraciccone</small
+                >
               </div>
             </div>
             <div class="friend-time">
@@ -768,12 +868,32 @@
               class="friend-avatar me-3"
             />
             <div class="friend-info flex-grow-1">
-              <div class="friend-name"><a href="https://github.com/Dade1991" class="text-reset text-decoration-none" target="_blank" rel="noopener noreferrer">Davide Braghi</a></div>
+              <div class="friend-name">
+                <a
+                  href="https://github.com/Dade1991"
+                  class="text-reset text-decoration-none"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Davide Braghi</a
+                >
+              </div>
               <div class="friend-activity text-muted">
-                <small><a href="https://open.spotify.com/intl-it/track/2NSw8SOcQ6EVLf1QZFMH1h?si=8cd68cf17dec434f" class="link-light text-decoration-none" style="transition: color 0.2s;" target="_blank" rel="noopener noreferrer"> Trash Metal Cassette • Dinosaur Pile-Up</a></small>
+                <small
+                  ><a
+                    href="https://open.spotify.com/intl-it/track/2NSw8SOcQ6EVLf1QZFMH1h?si=8cd68cf17dec434f"
+                    class="link-light text-decoration-none"
+                    style="transition: color 0.2s"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Trash Metal Cassette • Dinosaur Pile-Up</a
+                  ></small
+                >
               </div>
               <div class="friend-album text-muted">
-                <small><i class="bi bi-heart-fill text-success"></i> Dade1991</small>
+                <small
+                  ><i class="bi bi-heart-fill text-success"></i> Dade1991</small
+                >
               </div>
             </div>
             <div class="friend-time">
@@ -781,32 +901,46 @@
             </div>
           </div>
         </div>
-         <!-- Emiliano Massari -->
-         <div class="friend-item d-flex align-items-center mb-3">
+        <!-- Emiliano Massari -->
+        <div class="friend-item d-flex align-items-center mb-3">
           <img
             src="https://avatars.githubusercontent.com/u/158219820?v=4"
             alt="lightdark02"
             class="friend-avatar me-3"
           />
           <div class="friend-info flex-grow-1">
-            <div class="friend-name"><a href="https://github.com/epsyFRG" class="text-reset text-decoration-none" target="_blank" rel="noopener noreferrer">Emiliano Massari</a></div>
+            <div class="friend-name">
+              <a
+                href="https://github.com/epsyFRG"
+                class="text-reset text-decoration-none"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Emiliano Massari</a
+              >
+            </div>
             <div class="friend-activity text-muted">
-              <small><a href="https://www.youtube.com/watch?v=zuESv_zqMT8&list=RDzuESv_zqMT8&start_radio=1" class="link-light text-decoration-none" style="transition: color 0.2s;" target="_blank" rel="noopener noreferrer">Overtaken • One Piece</a></small>
+              <small
+                ><a
+                  href="https://www.youtube.com/watch?v=zuESv_zqMT8&list=RDzuESv_zqMT8&start_radio=1"
+                  class="link-light text-decoration-none"
+                  style="transition: color 0.2s"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Overtaken • One Piece</a
+                ></small
+              >
             </div>
             <div class="friend-album text-muted">
-              <small><i class="bi bi-heart-fill text-success"></i> epsyFRG</small>
+              <small
+                ><i class="bi bi-heart-fill text-success"></i> epsyFRG</small
+              >
             </div>
           </div>
           <div class="friend-time">
             <small class="text-muted">13 ore</small>
           </div>
         </div>
-      </div>
-        
-
-
       </section>
-    </div>
     </main>
     <!-- Player musicale -->
     <footer
