@@ -98,7 +98,7 @@ const showResults = (endpointToUse) => {
           if (!nameArtists.includes(resultsSearch.data[i].artist.name)) {
             artistiSection.innerHTML += `
               <div> <a class="text-decoration-none text-light" href="./artist.html?id=${resultsSearch.data[i].artist.id}">
-                <img src="${resultsSearch.data[i].artist.picture_medium}" alt="" />
+                <img src="${resultsSearch.data[i].artist.picture_medium}" alt="" class="rounded-circle"/>
                 <div>
                   <h5>${resultsSearch.data[i].artist.name}</h5>
                   <p>Artista</p>
@@ -117,7 +117,7 @@ const showResults = (endpointToUse) => {
             if (k !== resultsSearch.data.length) {
               artistiSection.innerHTML += `
               <div><a class=" rounded-circle text-decoration-none text-light" href="./artist.html?id=${resultsSearch.data[i].artist.id}">
-                <img src="${resultsSearch.data[k].artist.picture_medium}" alt=""class="rounded-circle"/>
+                <img src="${resultsSearch.data[k].artist.picture_medium}" alt="" class="rounded-circle"/>
                 <div>
                   <h5>${resultsSearch.data[k].artist.name}</h5>
                   <p>Artista</p>
