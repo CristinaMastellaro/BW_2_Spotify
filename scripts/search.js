@@ -116,7 +116,7 @@ const showResults = (endpointToUse) => {
             }
             if (k !== resultsSearch.data.length) {
               artistiSection.innerHTML += `
-              <div><a class=" rounded-circle text-decoration-none text-light" href="./artist.html?id=${resultsSearch.data[i].artist.id}">
+              <div><a class=" rounded-circle text-decoration-none text-light" href="./artist.html?id=${resultsSearch.data[k].artist.id}">
                 <img src="${resultsSearch.data[k].artist.picture_medium}" alt="" class="rounded-circle"/>
                 <div>
                   <h5>${resultsSearch.data[k].artist.name}</h5>
