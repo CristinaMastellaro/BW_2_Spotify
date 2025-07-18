@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Popola creatore (mock)
   const creatorEl = document.querySelector(".card-body h6.card-text");
-  if (creatorEl) creatorEl.innerText = "Creatore Playlist";
+  if (creatorEl) creatorEl.innerText = "Stefano Casasola";
 
   // --- INIZIO BLOCCO CANZONI DINAMICHE ---
   // Mappa nome playlist -> query di ricerca
